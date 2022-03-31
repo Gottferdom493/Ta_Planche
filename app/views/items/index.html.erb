@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
+      <h1> <%= @famille.name %> </h1>
+      <%= link_to 'Retour', familles_path %>
+
+      <% @items.each do |item| %>
+        <h2><%= item.name %></h2>
+        <p><%= item.price %>€</p>
+      <%= link_to "entrer", famille_items_path(item) %>
+
+      <% end %>
+
+
+
+
+
+
+
+
+      <%# <%= link_to "Allez voir", famille_item_path(item) %>
