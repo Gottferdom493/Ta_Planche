@@ -7,15 +7,6 @@
       <% @items.each do |item| %>
         <h2><%= item.name %></h2>
         <p><%= item.price %>€</p>
-      <%= link_to "entrer", famille_items_path(item) %>
+      <%= link_to "entrer", famille_item_path(@famille, item) %>
 
       <% end %>
-
-
-
-
-
-
-
-
-      <%# <%= link_to "Allez voir", famille_item_path(item) %>
