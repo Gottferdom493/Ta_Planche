@@ -1,0 +1,2 @@
+class Litrage < ApplicationRecord
+end
