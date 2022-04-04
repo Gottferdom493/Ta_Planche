@@ -18,3 +18,5 @@ Item.create(name: "Olaian", price: "354", famille: Famille.where( name: "LongBor
 Item.create(name: "Roxy", price: "459", famille: Famille.where( name: "LongBord")[0])
 Item.create(name: "Prism", price: "525", famille: Famille.where( name: "Evolutive")[0])
 
+Litrage.destroy_all
+Famille.create(kg: "35", debutant: "26", intermediaire: "17", confirme: "15")

@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 2022_04_04_193529) do
 
   create_table "litrages", force: :cascade do |t|
     t.integer "kg"
-    t.integer "debutant"
-    t.integer "intermediaire"
-    t.integer "confirme"
+    t.float "debutant"
+    t.float "intermediaire"
+    t.float "confirme"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
