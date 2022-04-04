@@ -17,3 +17,4 @@ Item.create(name: "Olaian", price: "250", famille: Famille.where( name: "Fish")[
 Item.create(name: "Olaian", price: "354", famille: Famille.where( name: "LongBord")[0])
 Item.create(name: "Roxy", price: "459", famille: Famille.where( name: "LongBord")[0])
 Item.create(name: "Prism", price: "525", famille: Famille.where( name: "Evolutive")[0])
+
