@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_29_122922) do
+ActiveRecord::Schema.define(version: 2022_04_04_193529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2022_03_29_122922) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["famille_id"], name: "index_items_on_famille_id"
+  end
+
+  create_table "litrages", force: :cascade do |t|
+    t.integer "kg"
+    t.float "debutant"
+    t.float "intermediaire"
+    t.float "confirme"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "items", "familles"
