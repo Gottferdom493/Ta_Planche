@@ -1,0 +1,23 @@
+<<h2>coucou</h2>
+
+<%# <form action="/familles/:famille_id/items" method="post">
+  <input type="text" name="item [name]">
+  <input type="number" name="item [price]">
+  <input type="submit" value="Creation">
+
+</form> %>
+
+<%= link_to'Retour', famille_items_path %>
+
+
+  <%= form_for [@famille, @item] do |f| %>
+
+    <%= f.label :name, "Entre un nom" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :price, "Entre un prix" %>
+    <%= f.number_field :price %>
+
+    <%= f.submit :Création %>
+
+  <% end %>
