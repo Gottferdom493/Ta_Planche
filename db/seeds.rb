@@ -11,12 +11,12 @@ Famille.create(name: "Evolutive", info: "Ce sont des planches de 1,90 à 2,20 m 
 Famille.create(name: "Fish", info: "Les fishs ressemblent aux évolutives mais sont beaucoup plus courtes et plus larges. De 1,70 à 1,90 m, très large (52cm ou plus), pas mal de volume, un outline assez rond, c'est l'outil idéal des petites vagues.")
 
 Item.destroy_all
-Item.create(name: "Torq", price: "450", famille: Famille.where( name: "LongBord")[0])
-Item.create(name: "FSC", price: "525", famille: Famille.where( name: "Evolutive")[0])
-Item.create(name: "Olaian", price: "250", famille: Famille.where( name: "Fish")[0])
-Item.create(name: "Olaian", price: "354", famille: Famille.where( name: "LongBord")[0])
-Item.create(name: "Roxy", price: "459", famille: Famille.where( name: "LongBord")[0])
-Item.create(name: "Prism", price: "525", famille: Famille.where( name: "Evolutive")[0])
+Item.create(name: "Torq", price: "450", famille: Famille.where(name: "LongBord")[0])
+Item.create(name: "FSC", price: "525", famille: Famille.where(name: "Evolutive")[0])
+Item.create(name: "Olaian", price: "250", famille: Famille.where(name: "Fish")[0])
+Item.create(name: "Olaian", price: "354", famille: Famille.where(name: "LongBord")[0])
+Item.create(name: "Roxy", price: "459", famille: Famille.where(name: "LongBord")[0])
+Item.create(name: "Prism", price: "525", famille: Famille.where(name: "Evolutive")[0])
 
 Litrage.destroy_all
 Litrage.create(kg: "35", confirme: "15", intermediaire: "17", debutant: "26")
