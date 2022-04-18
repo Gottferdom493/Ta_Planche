@@ -10,6 +10,6 @@
         <h2><%= item.taille %></h2>
         <p><%= item.price %>€</p>
       <%= link_to "entrer", famille_item_path(@famille, item) %>
-      <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete %>
+      <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
 
       <% end %>
