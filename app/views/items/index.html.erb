@@ -2,13 +2,14 @@
   <div class="row mt-5">
     <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
       <h1> <%= @famille.name %> </h1>
+      <h2><%= link_to'Ajout ta Planche', new_famille_item_path %></h2>
       <%= link_to 'Retour', familles_path %>
 
       <% @items.each do |item| %>
+        <h2><%= item.marque %></h2>
         <h2><%= item.name %></h2>
         <p><%= item.price %>€</p>
       <%= link_to "entrer", famille_item_path(@famille, item) %>
       <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete %>
 
       <% end %>
-<h2><%= link_to'Ajout ta Planche', new_famille_item_path %></h2>

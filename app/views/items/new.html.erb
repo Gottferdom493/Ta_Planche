@@ -16,11 +16,13 @@
     <%= f.number_field :price, placeholder: "Entre un prix en €" %>
 
     <%= f.label :url_image, " 3 - " %>
-    <%= f.text_field :url_image,  placeholder: "https://some_nice_image_found_on_google.jpg" %>
+    <%= f.text_field :url_image,  placeholder: "Entre le lien de l'image" %>
 
     <%= f.label :url_achat, " 4 - " %>
     <%= f.text_field :url_achat,  placeholder: "Entre le lien d'achat" %>
 
+    <%= f.label :marque, " 6 - " %>
+    <%= f.text_field :marque,  placeholder: "Entre la marque" %>
 
     <%= f.submit :Création %>
 
