@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_174612) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "url_image"
     t.text "url_achat"
-    t.float "taille"
+    t.string "taille"
     t.string "marque"
     t.index ["famille_id"], name: "index_items_on_famille_id"
   end
