@@ -28,6 +28,19 @@ class ItemsController < ApplicationController
     redirect_to famille_items_path
   end
 
+  def edit
+    @famille = Famille.find(params[:famille_id])
+    @item = Item.find(params[:id])
+
+  end
+
+  def update
+    @famille = Famille.find(params[:famille_id])
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to famille_item_path(@famille, @item)
+  end
+
   private
 
   def item_params

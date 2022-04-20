@@ -1,11 +1,4 @@
-<h2>Ajoute ta Planche</h2>
-
-<%# <form action="/familles/:famille_id/items" method="post">
-  <input type="text" name="item [name]">
-  <input type="number" name="item [price]">
-  <input type="submit" value="Creation">
-
-</form> %>
+<h2>Modife ta Planche</h2>
 
   <%= form_for [@famille, @item] do |f| %>
 
@@ -22,12 +15,12 @@
     <%= f.number_field :price, placeholder: "Le prix en €" %>
 
     <%= f.label :url_image, " 5 - " %>
-    <%= f.text_field :url_image,  placeholder: "Le lien de l'image"%>
+    <%= f.text_field :url_image,  placeholder: "Le lien de l'image" %>
 
     <%= f.label :url_achat, " 6 - " %>
     <%= f.text_field :url_achat,  placeholder: "Le lien d'achat" %>
 
-    <%= f.submit :Création %>
+    <%= f.submit :Modification %>
 
   <% end %>
 

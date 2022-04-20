@@ -1,15 +1,18 @@
+
 <div class="container">
   <div class="row mt-5">
     <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
-      <h1> <%= @famille.name %> </h1>
-      <h2><%= link_to'Ajout ta Planche', new_famille_item_path %></h2>
-      <%= link_to 'Retour', familles_path %>
+      <h1>Tes Planches</h1>
+      <h2> <%= @famille.name %> </h2>
+      <%= link_to 'Famille de Planche/', familles_path %>
+      <h3><%= link_to'Ajout ta Planche', new_famille_item_path %></h3>
 
       <% @items.each do |item| %>
-        <h2><%= item.marque %></h2>
-        <h2><%= item.taille %></h2>
+        <h3><%= item.marque %></h3>
+        <h3><%= item.taille %></h3>
         <p><%= item.price %>€</p>
-      <%= link_to "entrer", famille_item_path(@famille, item) %>
+      <%= link_to "Entrer", famille_item_path(@famille, item) %>
+      <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
       <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
 
       <% end %>
