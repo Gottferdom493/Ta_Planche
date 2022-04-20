@@ -12,6 +12,11 @@ class FamillesController < ApplicationController
     redirect_to familles_path(famille)
   end
 
+  def edit
+
+  end
+
+
   def destroy
     @famille = Famille.find(params[:id])
     @famille.destroy
