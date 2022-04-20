@@ -1,0 +1,27 @@
+<h2>Modife ta Planche</h2>
+
+  <%= form_for [@famille, @item] do |f| %>
+
+    <%= f.label :marque, " 1 - " %>
+    <%= f.text_field :marque,  placeholder: "La marque" %>
+
+    <%= f.label :name, " 2 - " %>
+    <%= f.text_field :name, placeholder: "Le nom" %>
+
+    <%= f.label :taille, " 3 - " %>
+    <%= f.text_field :taille,  placeholder: "La taille (pouce)" %>
+
+    <%= f.label :price, " 4 - " %>
+    <%= f.number_field :price, placeholder: "Le prix en €" %>
+
+    <%= f.label :url_image, " 5 - " %>
+    <%= f.text_field :url_image,  placeholder: "Le lien de l'image" %>
+
+    <%= f.label :url_achat, " 6 - " %>
+    <%= f.text_field :url_achat,  placeholder: "Le lien d'achat" %>
+
+    <%= f.submit :Modification %>
+
+  <% end %>
+
+<%= link_to'Retour', famille_items_path %>
