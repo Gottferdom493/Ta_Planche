@@ -35,9 +35,10 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @famille = Famille.find(params[:famille_id])
     @item = Item.find(params[:id])
     @item.update(item_params)
-    redirect_to famille_item_path(@item)
+    redirect_to famille_item_path(@famille, @item)
   end
 
   private
