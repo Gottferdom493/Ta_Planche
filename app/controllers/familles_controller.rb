@@ -16,7 +16,6 @@ class FamillesController < ApplicationController
 
   end
 
-
   def destroy
     @famille = Famille.find(params[:id])
     @famille.destroy
@@ -28,5 +27,4 @@ class FamillesController < ApplicationController
   def famille_params
     params.require(:famille).permit(:name, :info)
   end
-
 end
