@@ -12,6 +12,8 @@
         <h3><%= item.taille %></h3>
         <p><%= item.price %>€</p>
       <%= link_to "Entrer", famille_item_path(@famille, item) %>
+        <img src="<%= item.url_image %>", width="500" , height="500">
+
       <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
       <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
 

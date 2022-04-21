@@ -20,7 +20,7 @@
     <%= f.label :url_achat, " 6 - " %>
     <%= f.text_field :url_achat,  placeholder: "Le lien d'achat" %>
 
-    <%= f.submit :Modification %>
+    <%= f.submit :Modification, data: {confirm: "Valider les modifs"}  %>
 
   <% end %>
 

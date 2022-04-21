@@ -1,0 +1,14 @@
+<h1>Coucou</h1>
+
+<%= form_for @famille do |f| %>
+
+  <%= f.label :name, "Entre un nom" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :info, "Entre les infos" %>
+  <%= f.text_field :info %>
+
+  <%= f.submit :Création, data: {confirm: "Valider les modifs"}  %>
+
+<% end %>
+<%= link_to'Retour', familles_path %>

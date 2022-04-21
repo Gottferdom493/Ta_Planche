@@ -12,6 +12,16 @@ class FamillesController < ApplicationController
     redirect_to familles_path(famille)
   end
 
+  def edit
+    @famille = Famille.find(params[:id])
+  end
+
+  def update
+    @famille = Famille.find(params[:id])
+    @famille.update(famille_params)
+    redirect_to familles_path
+  end
+
   def destroy
     @famille = Famille.find(params[:id])
     @famille.destroy
@@ -23,5 +33,4 @@ class FamillesController < ApplicationController
   def famille_params
     params.require(:famille).permit(:name, :info)
   end
-
 end
