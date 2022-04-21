@@ -13,7 +13,13 @@ class FamillesController < ApplicationController
   end
 
   def edit
+    @famille = Famille.find(params[:id])
+  end
 
+  def update
+    @famille = Famille.find(params[:id])
+    @famille.update(famille_params)
+    redirect_to familles_path
   end
 
   def destroy

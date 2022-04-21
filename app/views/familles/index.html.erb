@@ -11,6 +11,7 @@
               <div class="card_category">
                 <h2><%= link_to famille.name, famille_items_path(famille) %></h2>
                 <p><%= famille.info %></p>
+                <%= link_to 'Modifier', edit_famille_path(famille) %>
                 <%= link_to 'Supprimer', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %>
               </div>
             <% end %>
