@@ -15,9 +15,15 @@
     <%= f.number_field :price, placeholder: "Le prix en €" %>
 
     <%= f.label :url_image, " 5 - " %>
-    <%= f.text_field :url_image,  placeholder: "Le lien de l'image" %>
+    <%= f.text_field :url_image,  placeholder: "Le lien de l'image n°1" %>
 
-    <%= f.label :url_achat, " 6 - " %>
+    <%= f.label :url_img2, " 6 - " %>
+    <%= f.text_field :url_img2,  placeholder: "Le lien de l'image n°2" %>
+
+    <%= f.label :url_img3, " 7 - " %>
+    <%= f.text_field :url_img3,  placeholder: "Le lien de l'image n°3" %>
+
+    <%= f.label :url_achat, " 8 - " %>
     <%= f.text_field :url_achat,  placeholder: "Le lien d'achat" %>
 
     <%= f.submit :Modification, data: {confirm: "Valider les modifs"}  %>
