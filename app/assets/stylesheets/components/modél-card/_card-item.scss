@@ -1,0 +1,17 @@
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.card-item {
+  border: 1px solid black;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  padding: 10px;
+}
+
+.card-img {
+  width: 100%;
+}

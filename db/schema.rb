@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_18_174612) do
+ActiveRecord::Schema.define(version: 2022_04_22_094501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_174612) do
     t.text "url_achat"
     t.string "taille"
     t.string "marque"
+    t.text "description"
     t.index ["famille_id"], name: "index_items_on_famille_id"
   end
 
