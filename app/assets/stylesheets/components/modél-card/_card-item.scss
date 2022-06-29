@@ -1,14 +1,34 @@
+.body {
+  background: #E6E7E5;
+}
+
 .container {
   width: 1000px;
   margin: 0 auto;
 }
 
+.banner {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.banner-choix {
+  background: #C3B4D2;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+
 .card-img {
-  background: #F4F4F4;
+  border: 1px solid black;
+  background: #FFFFFF;
+  border-radius: 5px;
   padding: 10px;
-  width: 400px;
-  height: 550px;
+  width: 500px;
+  height: 520px;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .img {
@@ -21,7 +41,7 @@
 .card-title {
   border: 1px solid black;
   border-radius: 5px;
-  background: white;
+  background: #FFFFFF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 10px;
 }
@@ -29,9 +49,10 @@
 .card-achat {
   border: 1px solid black;
   border-radius: 5px;
-  background: white;
+  background: #FFFFFF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 .card-grid {
