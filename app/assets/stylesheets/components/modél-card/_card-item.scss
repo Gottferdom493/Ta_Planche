@@ -3,15 +3,40 @@
   margin: 0 auto;
 }
 
-.card-item {
+.card-img {
+  background: #F4F4F4;
+  padding: 10px;
+  width: 400px;
+  height: 550px;
+  object-fit: cover;
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
+
+.card-title {
   border: 1px solid black;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 100%;
   padding: 10px;
 }
 
-.card-img {
-  width: 100%;
+.card-achat {
+  border: 1px solid black;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+.card-grid {
+  display: grid; /* creéation de la grille  */
+  grid-template-columns: 1fr 1fr; /* nombre de colonne */
+  row-gap: 1ch; /* espace en les lignes */
+  column-gap: 1ch; /* espace entre les colonnes */
 }
