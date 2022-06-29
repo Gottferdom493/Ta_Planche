@@ -33,7 +33,10 @@
     <%= f.label :url_achat, " 8 - " %>
     <%= f.text_field :url_achat,  placeholder: "Le lien d'achat" %>
 
-    <%= f.submit :Création %>
+    <%= f.label :detail, " 8 - " %>
+    <%= f.text_field :detail %>
+
+    <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
 
   <% end %>
 

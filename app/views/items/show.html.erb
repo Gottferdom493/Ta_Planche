@@ -18,10 +18,12 @@
     <h2><%= @item.name %></h2>
     <h2><%= @item.taille %></h2>
     <h2><%= @item.price %>€</h2>
+
   </div>
 
   <div class="card-grid">
     <div class="card-achat">
+        <h2><%= @item.detail %></h2>
         <a href="<%= @item.url_achat %>" target="_blank">ACHAT</a>
     </div>
 
