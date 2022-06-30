@@ -1,20 +1,30 @@
 
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
+<%#   <div class="row mt-5">
+    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
       <h1>Tes Planches</h1>
-      <h2> <%= @famille.name %> </h2>
       <%= link_to 'Famille de Planche/', familles_path %>
       <h3><%= link_to'Ajout ta Planche', new_famille_item_path %></h3>
 
-      <% @items.each do |item| %>
-        <h3><%= item.marque %></h3>
-        <h3><%= item.taille %></h3>
-        <p><%= item.price %>€</p>
-      <%= link_to "Entrer", famille_item_path(@famille, item) %>
-        <img src="<%= item.url_image %>", width="500" , height="500">
+          <h2> <%= @famille.name %> </h2>
+        <div class="card-store">
 
-      <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
-      <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
+            <% @items.each do |item| %>
+              <div class="card-index">
+                <h3><%= item.marque %></h3>
+                <h3><%= item.taille %></h3>
+                  <p><%= item.price %>€</p>
+                <a href="<%= famille_item_path(@famille, item) %>">
+                  <img class="card-index-img" src="<%= item.url_image %>", width="300" , height="300">
+                </a>
 
-      <% end %>
+            <%# <%= link_to "Entrer", famille_item_path(@famille, item) %>
+            <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
+            <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
+              </div>
+
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div>

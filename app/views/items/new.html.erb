@@ -16,7 +16,7 @@
     <%= f.text_field :name, placeholder: "Le nom" %>
 
     <%= f.label :taille, " 3 - " %>
-    <%= f.text_field :taille,  placeholder: "La taille (pouce)" %>
+    <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
 
     <%= f.label :price, " 4 - " %>
     <%= f.number_field :price, placeholder: "Le prix en €" %>
@@ -24,10 +24,19 @@
     <%= f.label :url_image, " 5 - " %>
     <%= f.text_field :url_image,  placeholder: "Le lien de l'image"%>
 
-    <%= f.label :url_achat, " 6 - " %>
+    <%= f.label :url_img2, " 6 - " %>
+    <%= f.text_field :url_img2,  placeholder: "Le lien de l'image n°2" %>
+
+    <%= f.label :url_img3, " 7 - " %>
+    <%= f.text_field :url_img3,  placeholder: "Le lien de l'image n°3" %>
+
+    <%= f.label :url_achat, " 8 - " %>
     <%= f.text_field :url_achat,  placeholder: "Le lien d'achat" %>
 
-    <%= f.submit :Création %>
+    <%= f.label :detail, " 8 - " %>
+    <%= f.text_field :detail %>
+
+    <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
 
   <% end %>
 

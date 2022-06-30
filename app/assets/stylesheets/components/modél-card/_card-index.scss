@@ -1,0 +1,68 @@
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* @media (max-width: 900px) {
+  .container{
+    width: 650px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container{
+    width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .container{
+    width: 300px;
+  }
+}
+ */
+
+.card-index {
+  border: 1px solid green;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  padding: 10px;
+
+}
+
+.card-index-img {
+/*   width: 100%; */
+  object-fit: cover;
+}
+
+.card-store {
+  display: grid; /* creéation de la grille  */
+  grid-template-columns: 1fr 1fr; /* nombre de colonne */
+  row-gap: 1ch; /* espace en les lignes */
+  column-gap: 1ch; /* espace entre les colonnes */
+/* row-gap: 3%;
+margin-top: 25px;
+max-width: 90%;
+margin: auto;
+  margin-top: auto;
+margin-top: 6%;
+border-radius: 10px; */
+
+}
+
+/* <% @items.each do |item| %> */
+  /* <div class="card-body">
+        <h5 class="card-title"><%= item.name %></h5>
+          <div class="card-info">
+            <p class="card-text"><%= item.description %></p>
+            <p class="item-price">$ <%= item.price %>/day</p>
+          </div>
+          <div class="card-btn1">
+            <%= link_to "Reserve", new_user_item_booking_path(current_user.id,item) %>
+        </div>
+    </div> */
+/*   <% end %>
+ */
