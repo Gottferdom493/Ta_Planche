@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [:index, :show] #permet de donner les droit de visualisation seulement sur index et show.
+
   def index
     @famille = Famille.find(params[:famille_id])
     @items = Item.where(famille: @famille)
