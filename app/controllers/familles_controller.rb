@@ -1,4 +1,8 @@
 class FamillesController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: :index
+
+
   def index
     @familles = Famille.all
   end

@@ -3,6 +3,7 @@
     <%# <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
       <div class="banner_homepage">
         <h1> Famille de Planche </h1>
+
         <% if user_signed_in? %>
           <p> Bonjour <%= current_user.email =%></p>
         <% end %>
