@@ -14,7 +14,7 @@
     </div>
 
     <div class="profile">
-    
+
     </div>
 
     <div class="card-title">
@@ -23,6 +23,10 @@
       <h2><%= @item.taille %></h2>
       <h2><%= @item.price %>€</h2>
 
+    </div>
+
+    <div>
+    <%= cl_image_tag @item.photo.key, alt: "test", height: 400, width: 300, crop: :fill%>
     </div>
 
     <div class="card-grid">
