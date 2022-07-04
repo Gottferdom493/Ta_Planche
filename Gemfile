@@ -33,6 +33,7 @@ gem 'font-awesome-sass'
 gem 'simple_form', github: 'heartcombo/simple_form'
 
 # Gem Rajouté
+gem 'cloudinary'
 gem 'devise'
 
 group :development, :test do
