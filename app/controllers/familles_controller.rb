@@ -14,6 +14,7 @@ class FamillesController < ApplicationController
   def create
     famille = Famille.create(famille_params)
     redirect_to familles_path(famille)
+
   end
 
   def edit
