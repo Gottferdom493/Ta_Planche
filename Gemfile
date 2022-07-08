@@ -35,6 +35,7 @@ gem 'simple_form', github: 'heartcombo/simple_form'
 # Gem Rajouté
 gem 'cloudinary'
 gem 'devise'
+gem 'pundit'
 
 group :development, :test do
   gem 'pry-byebug'
