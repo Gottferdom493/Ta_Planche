@@ -12,4 +12,14 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
+  include Pundit
+
+  after_action :verify_authorized, except: :index, unless: :skip_pundit? #Bloque tout par defaut sauf l'index
+  # after_action :verify_policy_scoped, only: :index, unless: :skip_pundit? #Bloque juste l'index
+
+  private
+  def skip_pundit?
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
 end

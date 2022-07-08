@@ -9,6 +9,7 @@ class FamillesController < ApplicationController
 
   def new
     @famille = Famille.new
+    authorize @famille
   end
 
   def create
