@@ -1,10 +1,13 @@
 class FamillesController < ApplicationController
-
+  before_action :set_nomtable, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
 
 
   def index
     @familles = Famille.all
+  end
+
+  def show
   end
 
   def new
@@ -13,9 +16,14 @@ class FamillesController < ApplicationController
   end
 
   def create
-    famille = Famille.create(famille_params)
-    redirect_to familles_path(famille)
-
+    @famille = Famille.new(famille_params)
+    @famille.user = current_user
+    if @famille.save
+      redirect_to familles_path(@famille)
+      authorize @famille
+    else
+      render :new
+    end
   end
 
   def edit
@@ -36,7 +44,12 @@ class FamillesController < ApplicationController
 
   private
 
+  def set_famille
+    @famille = Famille.find(params[:id])
+    authorize @famille
+  end
+
   def famille_params
-    params.require(:famille).permit(:name, :info)
+    params.require(:famille).permit(:name, :info, :user_id)
   end
 end

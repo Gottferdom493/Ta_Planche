@@ -25,4 +25,7 @@
             <% end %>
           </div>
         </div>
+  <% if policy(Famille).create? %>
+    <%= link_to 'Ajouter' , new_famille_path%>
+  <% end %>
 <h2><%= link_to'Création', new_famille_path %></h2>
