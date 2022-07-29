@@ -43,6 +43,7 @@ class FamillesController < ApplicationController
     @famille = Famille.find(params[:id])
     @famille.destroy
     redirect_to familles_path
+    authorize @famille
   end
 
   private

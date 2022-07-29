@@ -3,6 +3,7 @@
     <%# <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
       <div class="banner_homepage">
         <h1> Famille de Planche </h1>
+<h1> Le seed </h1>
 
         <% if user_signed_in? %>
           <p> Bonjour <%= current_user.nickname =%></p>
@@ -16,8 +17,13 @@
                 <h2><%= link_to famille.name, famille_items_path(famille) %></h2>
                 <p><%= famille.info %></p>
   <% if famille.user == current_user %>
-  <td><%= link_to 'edite', edit_famille_path(famille) %></td>
-  <td><%= link_to 'supp', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %></td>
+    <% if policy(Famille).update? %>
+      <td><%= link_to 'edite', edit_famille_path(famille) %></td>
+    <% end %>
+
+    <% if policy(Famille).destroy? %>
+      <td><%= link_to 'supp', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %></td>
+    <% end %>
   <% end %>
                 <%# <%= link_to 'Modifier', edit_famille_path(famille) %>
                 <%# <%= link_to 'Supprimer', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %>
@@ -26,6 +32,5 @@
           </div>
         </div>
   <% if policy(Famille).create? %>
-    <%= link_to 'Ajouter' , new_famille_path%>
+    <h4><%= link_to 'Ajouter' , new_famille_path %></h4>
   <% end %>
-<h2><%= link_to'Création', new_famille_path %></h2>

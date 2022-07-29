@@ -7,7 +7,7 @@ class FamillePolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    false
   end
 
   # def show?
@@ -15,6 +15,12 @@ class FamillePolicy < ApplicationPolicy
   # end
 
   def update?
-    record.user == user
+    # record.user == user
+    false
+  end
+
+  def destroy?
+    # record.user == user
+    false
   end
 end
