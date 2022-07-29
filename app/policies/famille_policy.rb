@@ -6,20 +6,21 @@ class FamillePolicy < ApplicationPolicy
     end
   end
 
-  # def new?
-  #   true
-  # end
-
   def create?
-    true
+    false
   end
 
   # def show?
   #   true
   # end
 
-  # def update?
-  #   record.user == user
-  # end
+  def update?
+    # record.user == user
+    false
+  end
 
+  def destroy?
+    # record.user == user
+    false
+  end
 end
