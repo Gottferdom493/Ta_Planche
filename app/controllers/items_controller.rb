@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def new
@@ -50,6 +51,11 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def set_item
+    @famille = Famille.find(params[:famille_id])
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(:name, :price, :img_avatar, :photo_1, :photo_2, :photo_3, :url_img2, :url_img3, :url_achat, :taille, :marque, :detail, :user_id)
