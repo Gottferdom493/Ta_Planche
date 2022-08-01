@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-
-  skip_before_action :authenticate_user!, only: [:index, :show] #permet de donner les droit de visualisation seulement sur index et show.
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index #permet de donner les droit de visualisation seulement sur index et show.
 
   def index
     @famille = Famille.find(params[:famille_id])
@@ -14,14 +14,20 @@ class ItemsController < ApplicationController
   def new
     @famille = Famille.find(params[:famille_id])
     @item = Item.new
+    authorize @item
   end
 
   def create
     @famille = Famille.find(params[:famille_id])
     @item = Item.create(item_params)
     @item.famille = @famille
-    @item.save
-    redirect_to famille_item_path(@famille, @item)
+    @item.user = current_user
+    if @item.save
+      redirect_to famille_item_path(@famille, @item)
+      authorize @item
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -46,7 +52,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :img_avatar, :photo_1, :photo_2, :photo_3, :url_img2, :url_img3, :url_achat, :taille, :marque, :detail)
+    params.require(:item).permit(:name, :price, :img_avatar, :photo_1, :photo_2, :photo_3, :url_img2, :url_img3, :url_achat, :taille, :marque, :detail, :user_id)
   end
 
 end
