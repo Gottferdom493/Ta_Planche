@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
   def edit
     @famille = Famille.find(params[:famille_id])
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def update
