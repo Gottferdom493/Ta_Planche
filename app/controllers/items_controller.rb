@@ -39,6 +39,7 @@ class ItemsController < ApplicationController
   def update
     @famille = Famille.find(params[:famille_id])
     @item = Item.find(params[:id])
+    @item.user = current_user
     @item.update(item_params)
     redirect_to famille_item_path(@famille, @item)
     authorize @item
@@ -46,8 +47,9 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
+    authorize @item
     redirect_to famille_items_path
+    @item.destroy
   end
 
   private
