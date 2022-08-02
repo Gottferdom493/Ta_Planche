@@ -19,8 +19,15 @@
                   <% end %>
 
             <%# <%= link_to "Entrer", famille_item_path(@famille, item) %>
-            <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
-            <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
+
+              <% if policy(item).update? %>
+                <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
+              <% end %>
+
+              <% if policy(item).destroy? %>
+                <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
+              <% end %>
+
               </div>
 
             <% end %>
