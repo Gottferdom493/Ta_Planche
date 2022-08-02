@@ -1,6 +1,6 @@
 class FamillesController < ApplicationController
   before_action :set_famille, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: :index #permet de donner les droit de visualisation seulement sur index et show.
 
 
   def index

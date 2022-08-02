@@ -31,23 +31,26 @@ class ItemsController < ApplicationController
     end
   end
 
-  def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-    redirect_to famille_items_path
-  end
-
   def edit
     @famille = Famille.find(params[:famille_id])
     @item = Item.find(params[:id])
-
+    authorize @item
   end
 
   def update
     @famille = Famille.find(params[:famille_id])
     @item = Item.find(params[:id])
+    @item.user = current_user
     @item.update(item_params)
     redirect_to famille_item_path(@famille, @item)
+    authorize @item
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    authorize @item
+    redirect_to famille_items_path
+    @item.destroy
   end
 
   private
