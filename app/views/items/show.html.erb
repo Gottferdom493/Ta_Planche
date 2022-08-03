@@ -32,22 +32,18 @@
     </div>
 
     <div class="card-grid">
-      <div class="card-achat">
-          <h2><%= @item.detail %></h2>
-          <a href="<%= @item.url_achat %>" target="_blank">ACHAT</a>
-      </div>
 
-      <div class="card-img">
+      <%# <div class="card-img"> %>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag @item.photo_1.key, alt: "test", height: 400, width: 400, crop: :fill%>
+              <%= cl_image_tag @item.photo_1.key, alt: "photo n°1", class:"card-item-img"%>
             </div>
             <div class="carousel-item">
-              <%= cl_image_tag @item.photo_2.key, alt: "test", height: 400, width: 400, crop: :fill%>
+              <%= cl_image_tag @item.photo_2.key, alt: "photo n°2", class:"card-item-img"%>
             </div>
             <div class="carousel-item">
-              <%= cl_image_tag @item.photo_3.key, alt: "test", height: 400, width: 400, crop: :fill%>
+              <%= cl_image_tag @item.photo_3.key, alt: "photo n°3", class:"card-item-img"%>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -59,7 +55,12 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+      <div class="card-achat">
+          <h2><%= @item.detail %></h2>
       </div>
+      <%# </div> %>
   </div>
+
+
 
 </body>
