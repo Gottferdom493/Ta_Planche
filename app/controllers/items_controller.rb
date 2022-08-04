@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   def new
     @famille = Famille.find(params[:famille_id])
     @item = Item.new
+    authorize @item
   end
 
   def create
