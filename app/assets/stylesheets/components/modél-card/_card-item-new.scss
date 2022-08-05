@@ -8,4 +8,15 @@ li {
   border-radius: 5px;
   margin: 5%;
   padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* nombre de colonne */
+
+}
+
+.card-grid-02 {
+  display: grid;
+  grid-template-columns: 0fr 1fr 0fr; /* nombre de colonne */
+  row-gap: 1ch; /* espace en les lignes */
+  column-gap: 1ch; 
+
 }

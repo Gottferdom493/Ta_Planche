@@ -6,11 +6,11 @@
 
     <%= form_for [@famille, @item] do |f| %>
 
+      <div class="card-grid-01">
         <li>
           <%= f.label :marque, " 1 - " %>
           <%= f.text_field :marque,  placeholder: "La marque" %>
         </li>
-
         <li>
           <%= f.label :name, " 2 - " %>
           <%= f.text_field :name, placeholder: "Le nom" %>
@@ -25,28 +25,35 @@
           <%= f.label :price, " 4 - " %>
           <%= f.number_field :price, placeholder: "Le prix en €" %>
         </li>
+      </div>
 
-        <li>
-          <%= f.label :detail, " 5 - " %>
-          <%= f.text_area :detail, placeholder: "La description" %>
-        </li>
+    <% end %>
+  </ul>
 
-        <li>
-          <%= f.file_field :photo_1 %>
-        </li>
+  <%= form_for [@famille, @item] do |f| %>
+    <div class="card-grid-02">
+      <%= f.label :detail, " 5 - " %>
+      <%= f.text_area :detail, placeholder: "La description" %>
+    </div>
+  <% end %>
 
-        <li>
-          <%= f.file_field :photo_2 %>
-        </li>
+  <ul style="list-style-type:none">
+    <%= form_for [@famille, @item] do |f| %>
+      <li>
+        <%= f.file_field :photo_1 %>
+      </li>
 
-        <li>
-          <%= f.file_field :photo_3 %>
-        </li>
+      <li>
+        <%= f.file_field :photo_2 %>
+      </li>
 
+      <li>
+        <%= f.file_field :photo_3 %>
+      </li>
 
-        <li>
-          <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
-        </li>
+      <li>
+        <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
+      </li>
     <% end %>
   </ul>
 </div>
