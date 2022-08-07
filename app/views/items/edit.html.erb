@@ -15,9 +15,7 @@
     <%= f.number_field :price, placeholder: "Le prix en €" %>
 
       <%= f.file_field :photo_1 %>
-
       <%= f.file_field :photo_2 %>
-
       <%= f.file_field :photo_3 %>
 
     <%= f.label :url_achat, " 8 - " %>
@@ -27,8 +25,6 @@
     <%= f.text_field :detail %>
 
     <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
-
-
   <% end %>
-
+  
 <%= link_to'Retour', famille_items_path %>

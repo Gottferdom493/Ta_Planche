@@ -1,6 +1,7 @@
 
+
 li {
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .card-new {
@@ -13,10 +14,22 @@ li {
 
 }
 
+// .card-grid-01 {
+// }
+
 .card-grid-02 {
   display: grid;
   grid-template-columns: 0fr 1fr 0fr; /* nombre de colonne */
   row-gap: 1ch; /* espace en les lignes */
-  column-gap: 1ch; 
+  column-gap: 1ch;
+  width: 100%;
+  height: 100%;
+  padding-left: 1%;
+  padding-right: 1%;
+
+}
+
+.card-grid-04 {
+  padding-top: 100px;
 
 }

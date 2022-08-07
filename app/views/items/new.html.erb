@@ -1,62 +1,30 @@
-<h2>Ajoute ta Planche</h2>
-
-<div>
-<div class="card-new">
-  <ul style="list-style-type:none; padding-left:38%; margin-bottom:0px;">
-
-    <%= form_for [@famille, @item] do |f| %>
-
-      <div class="card-grid-01">
-        <li>
-          <%= f.label :marque, " 1 - " %>
-          <%= f.text_field :marque,  placeholder: "La marque" %>
-        </li>
-        <li>
-          <%= f.label :name, " 2 - " %>
-          <%= f.text_field :name, placeholder: "Le nom" %>
-        </li>
-
-        <li>
-          <%= f.label :taille, " 3 - " %>
-          <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
-        </li>
-
-        <li>
-          <%= f.label :price, " 4 - " %>
-          <%= f.number_field :price, placeholder: "Le prix en €" %>
-        </li>
-      </div>
-
-    <% end %>
-  </ul>
+<h2>Modife ta Planche</h2>
 
   <%= form_for [@famille, @item] do |f| %>
-    <div class="card-grid-02">
-      <%= f.label :detail, " 5 - " %>
-      <%= f.text_area :detail, placeholder: "La description" %>
-    </div>
+
+    <%= f.label :marque, " 1 - " %>
+    <%= f.text_field :marque,  placeholder: "La marque" %>
+
+    <%= f.label :name, " 2 - " %>
+    <%= f.text_field :name, placeholder: "Le nom" %>
+
+    <%= f.label :taille, " 3 - " %>
+    <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
+
+    <%= f.label :price, " 4 - " %>
+    <%= f.number_field :price, placeholder: "Le prix en €" %>
+
+      <%= f.file_field :photo_1 %>
+      <%= f.file_field :photo_2 %>
+      <%= f.file_field :photo_3 %>
+
+    <%= f.label :url_achat, " 8 - " %>
+    <%= f.text_field :url_achat,  placeholder: "Le lien d'achat" %>
+
+    <%= f.label :detail, " 8 - " %>
+    <%= f.text_field :detail %>
+
+    <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
   <% end %>
 
-  <ul style="list-style-type:none">
-    <%= form_for [@famille, @item] do |f| %>
-      <li>
-        <%= f.file_field :photo_1 %>
-      </li>
-
-      <li>
-        <%= f.file_field :photo_2 %>
-      </li>
-
-      <li>
-        <%= f.file_field :photo_3 %>
-      </li>
-
-      <li>
-        <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
-  <%= link_to'Retour', famille_items_path %>
-</div>
+<%= link_to'Retour', famille_items_path %>
