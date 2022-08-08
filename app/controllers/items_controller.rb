@@ -48,9 +48,9 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    authorize @item
     redirect_to famille_items_path
     @item.destroy
+    authorize @item
   end
 
   private

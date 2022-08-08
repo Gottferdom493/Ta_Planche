@@ -1,40 +1,55 @@
 <h2>Ajoute ta Planche</h2>
 
-<%# <form action="/familles/:famille_id/items" method="post">
-  <input type="text" name="item [name]">
-  <input type="number" name="item [price]">
-  <input type="submit" value="Creation">
+<div class="card-new">
+  <ul style="list-style-type:none; padding-left:38%; margin-bottom:0px;">
 
-</form> %>
+    <%= form_for [@famille, @item] do |f| %>
 
-  <%= form_for [@famille, @item] do |f| %>
+      <div class="card-grid-01">
+        <li>
+          <%= f.label :marque, " 1 - " %>
+          <%= f.text_field :marque,  placeholder: "La marque" %>
+        </li>
+        <li>
+          <%= f.label :name, " 2 - " %>
+          <%= f.text_field :name, placeholder: "Le nom" %>
+        </li>
 
-    <%= f.label :marque, " 1 - " %>
-    <%= f.text_field :marque,  placeholder: "La marque" %>
+        <li>
+          <%= f.label :taille, " 3 - " %>
+          <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
+        </li>
 
-    <%= f.label :name, " 2 - " %>
-    <%= f.text_field :name, placeholder: "Le nom" %>
+        <li>
+          <%= f.label :price, " 4 - " %>
+          <%= f.number_field :price, placeholder: "Le prix en €" %>
+        </li>
+      </div>
+      </ul>
 
-    <%= f.label :taille, " 3 - " %>
-    <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
+      <ul>
+        <%= f.label :detail, " 5 - " %>
+        <%= f.text_area :detail, placeholder: "La description" %>
+      </ul>
 
-    <%= f.label :price, " 4 - " %>
-    <%= f.number_field :price, placeholder: "Le prix en €" %>
+      <ul style="list-style-type:none">
+        <li>
+          <%= f.file_field :photo_1 %>
+        </li>
 
-      <%= f.file_field :photo_1 %>
+        <li>
+          <%= f.file_field :photo_2 %>
+        </li>
 
-      <%= f.file_field :photo_2 %>
+        <li>
+          <%= f.file_field :photo_3 %>
+        </li>
 
-      <%= f.file_field :photo_3 %>
-
-    <%= f.label :url_achat, " 8 - " %>
-    <%= f.text_field :url_achat,  placeholder: "Le lien d'achat" %>
-
-    <%= f.label :detail, " 8 - " %> 
-    <%= f.text_field :detail %>
-
-    <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
-
-  <% end %>
-
-<%= link_to'Retour', famille_items_path %>
+        <li>
+          <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
+        </li>
+      </ul>
+    <% end %>
+    <%= link_to'Retour', famille_items_path %>
+  </ul>
+</div>
