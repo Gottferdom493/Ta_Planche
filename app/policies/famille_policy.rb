@@ -7,7 +7,7 @@ class FamillePolicy < ApplicationPolicy
   end
 
   def create?
-    false
+    true
   end
 
   # def show?
