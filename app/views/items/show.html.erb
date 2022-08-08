@@ -18,10 +18,7 @@
     </div>
 
     <div class="card-title">
-      <h2><%= @item.marque %></h2>
-      <h2><%= @item.name %></h2>
-      <h2><%= @item.taille %></h2>
-      <h2><%= @item.price %>€</h2>
+      <h2>Planche en mise en vente par : <%= @item.user.nickname %></h2>
 
     </div>
 
@@ -56,7 +53,11 @@
           </button>
         </div>
       <div class="card-achat">
-          <h2><%= @item.detail %></h2>
+        <h2><%= @item.marque %></h2>
+        <h2><%= @item.name %></h2>
+        <h2><%= @item.taille %></h2>
+        <h2><%= @item.price %>€</h2>
+        <h2><%= @item.detail %></h2>
       </div>
       <%# </div> %>
   </div>
