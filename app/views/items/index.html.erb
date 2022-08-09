@@ -2,20 +2,28 @@
 <div class="container">
 <%#   <div class="row mt-5">
     <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
-      <h1>Tes Planches</h1>
+      <h1>Les Planches</h1>
       <%= link_to 'Famille de Planche/', familles_path %>
+
+<% @familles = [@famille.name] %>
+
+<% @familles.each do |famille| %>
+  <%= @famille.name.capitalize  %>
+<% end %>
 
       <% if policy(Item).new? %>
         <h3><%= link_to'Ajout ta Planche', new_famille_item_path %></h3>
       <% end %>
 
           <h2> <%= @famille.name %> </h2>
+
+
         <div class="card-store">
 
             <% @items.each do |item| %>
               <div class="card-index">
               <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
-                <li>Marque :<%= item.marque %></li>
+                <li>Marque :<%= item.marque.capitalize %></li>
                 <li>Taille :<%= item.taille %></li>
                 <li>Prix :<%= item.price %>€</li>
                     <%= link_to famille_item_path(@famille, item) do %>

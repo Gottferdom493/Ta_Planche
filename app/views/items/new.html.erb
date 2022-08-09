@@ -24,6 +24,16 @@
           <%= f.label :price, " 4 - " %>
           <%= f.number_field :price, placeholder: "Le prix en €" %>
         </li>
+
+<h2><%= @item.detail %></h2>
+        <select :matiere="matiere" id="choix-matiere">
+            <option value="">--Choisi la matière--</option>
+            <option :matiere = "Mousse" >Mousse</option>
+            <option value="Epoxy">Epoxy</option>
+            <option value="Bois">Bois</option>
+            <option value="Bois">Autres...</option>
+
+        </select>
       </div>
       </ul>
 
@@ -48,6 +58,6 @@
       <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
       </ul>
     <% end %>
-    <%= link_to'Retour', famille_items_path %>
   </ul>
 </div>
+    <%= link_to'Retour', famille_items_path %>
