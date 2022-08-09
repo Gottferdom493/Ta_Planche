@@ -114,6 +114,7 @@ GEM
       sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    google-webfonts-rails (0.0.1)
     http-accept (1.7.0)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
@@ -275,6 +276,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass
+  google-webfonts-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

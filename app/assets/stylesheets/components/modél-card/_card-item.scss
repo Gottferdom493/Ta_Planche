@@ -40,15 +40,20 @@
 
 }
 
+
 .card-title {
   border: 1px solid black;
   border-radius: 5px;
   background: #FFFFFF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 10px;
+  h2 {
+    font-family: 'Lato', sans-serif;
+  }
 }
 
 .card-achat {
+  font-family: 'Ubuntu', sans-serif;
   border: 1px solid black;
   border-radius: 5px;
   background: #FFFFFF;
