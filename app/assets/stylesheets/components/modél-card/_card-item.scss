@@ -10,56 +10,91 @@
 }
 
 .banner {
+  width: 100%;
+  border-bottom: 1px solid #B0B0B0;
+  background: #FFFFFF;
   margin-top: 5px;
   margin-bottom: 5px;
   text-align: center;
-}
-
-.banner-choix {
-  background: #C3B4D2;
-  text-decoration: none;
-  text-decoration: underline;
-}
-
-
-.card-img {
-  border: 1px solid black;
-  background: #FFFFFF;
-  border-radius: 5px;
-  padding: 10px;
-  width: 500px;
-  height: 520px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.img {
-  width: 100%;
-  object-fit: cover;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
-}
-
-
-.card-title {
-  border: 1px solid black;
-  border-radius: 5px;
-  background: #FFFFFF;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 10px;
-  h2 {
-    font-family: 'Lato', sans-serif;
+  .banner-choix {
+    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
+
+
+// .card-img {
+//   border: 1px solid black;
+//   background: #FFFFFF;
+//   border-radius: 5px;
+//   padding: 10px;
+//   width: 500px;
+//   height: 520px;
+//   object-fit: cover;
+//   margin-bottom: 10px;
+// }
+
+.card-item-img{
+  width: 85%;
+  padding-left: 0px;
+  border-radius: 5px;
+}
+
+// .img {
+  //   width: 100%;
+//   object-fit: cover;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+// }
+
 .card-achat {
   font-family: 'Ubuntu', sans-serif;
-  border: 1px solid black;
+  // border: 1px solid black;
   border-radius: 5px;
   background: #FFFFFF;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 10px;
   margin-bottom: 10px;
+
+  h1 {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 700;
+  font-size: 2.7rem;
+  }
+
+  h2{
+    font-family: 'Lato', sans-serif;
+    opacity: .7;
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+  h3 {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+  }
+
+  h4 {
+    padding-top: 5%;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+  }
+
+}
+
+.card-user {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  border-top: 1px solid #B0B0B0;
+  background: #FFFFFF;
+  h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
 }
 
 .card-grid {
@@ -67,10 +102,4 @@
   grid-template-columns: 1fr 1fr; /* nombre de colonne */
   row-gap: 1ch; /* espace en les lignes */
   column-gap: 1ch; /* espace entre les colonnes */
-}
-
-.card-item-img{
-  width: 100%;
-  padding-left: 0px;
-  border-radius: 5px;
 }
