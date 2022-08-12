@@ -54,35 +54,33 @@
       <%# </div> %>
     </div>
 
-  <div class="card-user">
-  <h2>La Planche est mise en vente par : <%= @item.user.nickname %></h2>
+    <div class="card-user">
+    <h2>La Planche est mise en vente par : <%= @item.user.nickname %></h2>
+    </div>
+
+    <h2>Recommandation <%= @famille.name %> </h2>
+
+    <div class="recommadation">
+      <% @items.sample(4).each do |item| %>
+      <div class="card-recommandation">
+        <div>
+            <%= link_to famille_item_path(@famille, item) do %>
+              <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
+            <% end %>
+        </div>
+        <div>
+          <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
+            <h1><%= item.marque.capitalize %></h1>
+            <h2><%= item.taille %></h2>
+            <h3><%= item.price %>€</h3>
+          </ul>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 
-  <h2>Recommandation <%= @famille.name %> </h2>
-
-<div class="recommadation">
-  <% @items.sample(4).each do |item| %>
-  <div class="card-recommandation">
-    <div>
-        <%= link_to famille_item_path(@famille, item) do %>
-          <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
-        <% end %>
-    </div>
-    <div>
-      <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
-        <h1><%= item.marque.capitalize %></h1>
-        <h2><%= item.taille %></h2>
-        <h3><%= item.price %>€</h3>
-      </ul>
-    </div>
-  </div>
-  <% end %>
 </div>
-
-
-
-
-  </div>
 
 
 
