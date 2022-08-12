@@ -1,12 +1,20 @@
-<%= form_for @famille do |f| %>
+<h2>Ajoute la famille</h2>
 
-  <%= f.label :name, "Entre un nom" %>
-  <%= f.text_field :name %>
+<div class="card-new">
+  <ul style="list-style-type:none; padding-left:38%; margin-bottom:0px;">
 
-  <%= f.label :info, "Entre les infos" %>
-  <%= f.text_field :info %>
+    <%= form_for @famille do |f| %>
 
-  <%= f.submit :Création %>
+      <%= f.label :name, "Entre un nom" %>
+      <%= f.text_field :name %>
 
-<% end %>
-<%= link_to'Retour', familles_path %>
+      <%= f.label :info, "Entre les infos" %>
+      <%= f.text_area :info %>
+
+      <%= f.submit :Création %>
+
+    <% end %>
+
+  </ul>
+</div>
+    <%= link_to'Retour', familles_path %>

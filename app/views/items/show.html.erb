@@ -1,3 +1,5 @@
+<head google_webfonts_init(config hash)>
+</head>
 
 <body class="body">
 
@@ -8,8 +10,9 @@
       <h1>Ta Planche</h1>
 
       <div class="banner-choix">
-          <%= link_to 'Famille de Planche/', familles_path %>
-          <%= link_to 'Tes Planches/', famille_items_path %>
+        <%= link_to 'Famille de Planche/', familles_path %>
+        <%= link_to 'Tes Planches/', famille_items_path %>
+
       </div>
     </div>
 
@@ -17,19 +20,6 @@
 
     </div>
 
-    <div class="card-title">
-      <h2><%= @item.marque %></h2>
-      <h2><%= @item.name %></h2>
-      <h2><%= @item.taille %></h2>
-      <h2><%= @item.price %>€</h2>
-
-    </div>
-
-    <div>
-    <%# <%= cl_image_tag @item.photo_1.key, alt: "test", height: 400, width: 300, crop: :fill%>
-    <%# <%= cl_image_tag @item.photo_2.key, alt: "test", height: 400, width: 300, crop: :fill%>
-    <%# <%= cl_image_tag @item.photo_3.key, alt: "test", height: 400, width: 300, crop: :fill%>
-    </div>
 
     <div class="card-grid">
 
@@ -46,21 +36,30 @@
               <%= cl_image_tag @item.photo_3.key, alt: "photo n°3", class:"card-item-img"%>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="width: 45%";>
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+
       <div class="card-achat">
-          <h2><%= @item.detail %></h2>
+        <h1><%= @item.marque.capitalize %></h2>
+        <h2><%= @item.name.capitalize %></h2>
+        <h2><%= @item.taille %></h2>
+        <h3><%= @item.price %>€</h2>
+        <h4><%= @item.detail %></h2>
+        <h4><%= @item.matiere %></h2>
       </div>
       <%# </div> %>
   </div>
 
+    <div class="card-user">
+      <h2>Planche en mise en vente par : <%= @item.user.nickname %></h2>
+    </div>
 
 
 </body>
