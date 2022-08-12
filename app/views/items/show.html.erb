@@ -59,7 +59,7 @@
   </div>
 
   <h2>Recommandation <%= @famille.name %> </h2>
-  
+
 <div class="recommadation">
   <% @items.sample(4).each do |item| %>
   <div class="card-recommandation">
@@ -70,9 +70,9 @@
     </div>
     <div>
       <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
-        <li><%= item.marque.capitalize %></li>
-        <li><%= item.taille %></li>
-        <li><%= item.price %>€</li>
+        <h1><%= item.marque.capitalize %></h1>
+        <h2><%= item.taille %></h2>
+        <h3><%= item.price %>€</h3>
       </ul>
     </div>
   </div>
