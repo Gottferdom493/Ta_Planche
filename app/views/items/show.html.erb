@@ -62,4 +62,22 @@
     </div>
 
 
+
+<h2>Recommandation <%= @famille.name %> </h2>
+    <div class="card-grid">
+
+<% @items.first(4).each do |item| %>
+  <div class="card-recommandation">
+  <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
+    <li>Marque :<%= item.marque.capitalize %></li>
+    <li>Taille :<%= item.taille %></li>
+    <li>Prix :<%= item.price %>€</li>
+      <%= link_to famille_item_path(@famille, item) do %>
+        <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
+      <% end %>
+  </ul>
+  </div>
+<% end %>
+</div>
+
 </body>
