@@ -4,8 +4,9 @@
 <body class="body">
 
   <div class="container">
-  <%#   <div class="row mt-5">
-      <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
+    <div class="row">
+
+      <%# <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
     <div class="banner">
       <h1>Ta Planche</h1>
 
@@ -14,10 +15,6 @@
         <%= link_to 'Tes Planches/', famille_items_path %>
 
       </div>
-    </div>
-
-    <div class="profile">
-
     </div>
 
 
@@ -55,11 +52,42 @@
         <h4><%= @item.matiere %></h2>
       </div>
       <%# </div> %>
-  </div>
+    </div>
 
     <div class="card-user">
-      <h2>Planche en mise en vente par : <%= @item.user.nickname %></h2>
+    <h2>La Planche est mise en vente par : <%= @item.user.nickname %></h2>
     </div>
+
+    <h2>Recommandation <%= @famille.name %> </h2>
+
+    <div class="recommadation">
+      <% @items.sample(4).each do |item| %>
+      <div class="card-recommandation">
+        <div>
+            <%= link_to famille_item_path(@famille, item) do %>
+              <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
+            <% end %>
+        </div>
+        <div>
+          <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
+            <h1><%= item.marque.capitalize %></h1>
+            <h2><%= item.taille %></h2>
+            <h3><%= item.price %>€</h3>
+          </ul>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
 
 
 </body>

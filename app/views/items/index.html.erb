@@ -7,10 +7,6 @@
 
 <% @familles = [@famille.name] %>
 
-<% @familles.each do |famille| %>
-  <%= @famille.name.capitalize  %>
-<% end %>
-
       <% if policy(Item).new? %>
         <h3><%= link_to'Ajout ta Planche', new_famille_item_path %></h3>
       <% end %>

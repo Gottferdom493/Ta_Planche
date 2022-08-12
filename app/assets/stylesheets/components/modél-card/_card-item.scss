@@ -88,3 +88,44 @@
   row-gap: 1ch; /* espace en les lignes */
   column-gap: 1ch; /* espace entre les colonnes */
 }
+
+.recommadation {
+  display: grid; /* creéation de la grille  */
+  grid-template-columns: 1fr 1fr 1fr; /* nombre de colonne */
+  row-gap: 1ch; /* espace en les lignes */
+  column-gap: 1ch;
+}
+
+.card-recommandation{
+  display: grid; /* creéation de la grille  */
+  grid-template-columns: 1fr 1fr; /* nombre de colonne */
+  row-gap: 1ch; /* espace en les lignes */
+  column-gap: 1ch;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  h1 {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 700;
+  font-size: 1.2rem;
+  }
+
+  h2{
+    font-family: 'Lato', sans-serif;
+    opacity: .7;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  h3 {
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+}

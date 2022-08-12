@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @items = Item.where(famille: @famille)
     @item = Item.find(params[:id])
     authorize @item
   end
