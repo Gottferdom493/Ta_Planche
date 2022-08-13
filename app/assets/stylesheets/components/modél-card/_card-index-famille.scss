@@ -2,6 +2,13 @@
 
 
 
+.grid-famille-index {
+  display: grid; /* creéation de la grille  */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* nombre de colonne */
+  row-gap: 1ch; /* espace en les lignes */
+  column-gap: 1ch; /* espace entre les colonnes */
+  margin-bottom: 20px;
+}
 
 .card_category {
   border: 1px solid black;
