@@ -1,3 +1,4 @@
+<body class="body">
 <%# <div class="container"> %>
   <%# <div class="row mt-5"> %>
     <%# <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
@@ -18,11 +19,11 @@
                 <p><%= famille.info %></p>
 
                 <% if famille.user == current_user %>
-                  <% if policy(Famille).update? %>
+                  <% if policy(famille).update? %>
                     <td><%= link_to 'edite', edit_famille_path(famille) %></td>
                   <% end %>
 
-                  <% if policy(Famille).destroy? %>
+                  <% if policy(famille).destroy? %>
                     <td><%= link_to 'supp', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %></td>
                   <% end %>
                 <% end %>
