@@ -61,7 +61,7 @@
     <h2>Recommandation <%= @famille.name %> </h2>
 
     <div class="recommadation">
-      <% @items.sample(4).each do |item| %>
+      <% @items.sample(6).each do |item| %>
       <div class="card-recommandation">
         <div>
             <%= link_to famille_item_path(@famille, item) do %>
