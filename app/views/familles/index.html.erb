@@ -17,8 +17,9 @@
               <div class="card_category">
                 <h2><%= link_to famille.name, famille_items_path(famille) %></h2>
                 <p><%= famille.info %></p>
-                <%= cl_image_tag famille.photo_famille.key, class:"card-index-img" %>
-
+                <%= link_to famille_items_path(famille,@items) do %>
+                  <%= cl_image_tag famille.photo_famille.key, class:"card-index-img" %>
+                <% end %>
 
                 <% if famille.user == current_user %>
                   <% if policy(famille).update? %>
