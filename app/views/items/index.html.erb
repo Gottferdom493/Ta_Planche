@@ -2,43 +2,42 @@
 <div class="container">
 <%#   <div class="row mt-5">
     <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
-      <h1>Les Planches</h1>
-      <%= link_to 'Famille de Planche/', familles_path %>
+  <div class="banner">
+    <h1>Les Planches</h1>
+  </div>
 
-<% @familles = [@famille.name] %>
+  <div class='card-titre'>
+    <h2> <%= @famille.name %> </h2>
+    <h5> <%= @famille.info %> </h5>
 
-      <% if policy(Item).new? %>
-        <h3><%= link_to'Ajout ta Planche', new_famille_item_path %></h3>
-      <% end %>
+    <%= link_to 'Famille de Planche/', familles_path %>
 
-          <h2> <%= @famille.name %> </h2>
+    <% if policy(Item).new? %>
+      <h3><%= link_to'Ajout ta Planche', new_famille_item_path %></h3>
+    <% end %>
+  </div>
 
+  <div class="card-store">
 
-        <div class="card-store">
-
-            <% @items.each do |item| %>
-              <div class="card-index">
-              <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
-                <li>Marque :<%= item.marque.capitalize %></li>
-                <li>Taille :<%= item.taille %></li>
-                <li>Prix :<%= item.price %>€</li>
-                    <%= link_to famille_item_path(@famille, item) do %>
-                      <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
-                    <% end %>
-              </ul>
-
-              <% if policy(item).update? %>
-                <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
+      <% @items.each do |item| %>
+        <div class="card-index">
+          <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
+            <li>Marque :<%= item.marque.capitalize %></li>
+            <li>Taille :<%= item.taille %></li>
+            <li>Prix :<%= item.price %>€</li>
+              <%= link_to famille_item_path(@famille, item) do %>
+                <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
               <% end %>
+          </ul>
 
-              <% if policy(item).destroy? %>
-                <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
-              <% end %>
+          <% if policy(item).update? %>
+            <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
+          <% end %>
 
-              </div>
-
-            <% end %>
+          <% if policy(item).destroy? %>
+            <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
+          <% end %>
         </div>
-    </div>
+      <% end %>
   </div>
 </div>

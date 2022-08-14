@@ -15,12 +15,12 @@ class FamillePolicy < ApplicationPolicy
   # end
 
   def update?
-    # record.user == user
-    false
+    record.user == user
+    # false
   end
 
   def destroy?
-    # record.user == user
-    false
+    record.user == user
+    # false
   end
 end

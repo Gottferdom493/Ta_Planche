@@ -53,6 +53,6 @@ class FamillesController < ApplicationController
   end
 
   def famille_params
-    params.require(:famille).permit(:name, :info, :user_id)
+    params.require(:famille).permit(:name, :info, :user_id, :photo_famille)
   end
 end
