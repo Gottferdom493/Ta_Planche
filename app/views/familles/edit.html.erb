@@ -8,9 +8,9 @@
   <%= f.label :info, "Entre les infos" %>
   <%= f.text_field :info %>
 
+  <%= f.file_field :photo_famille %>
+
   <%= f.submit :Création, data: {confirm: "Valider les modifs"}  %>
 
 <% end %>
 <%= link_to'Retour', familles_path %>
-
-

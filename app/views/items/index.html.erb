@@ -25,9 +25,9 @@
             <li>Marque :<%= item.marque.capitalize %></li>
             <li>Taille :<%= item.taille %></li>
             <li>Prix :<%= item.price %>€</li>
-                <%= link_to famille_item_path(@famille, item) do %>
-                  <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
-                <% end %>
+              <%= link_to famille_item_path(@famille, item) do %>
+                <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
+              <% end %>
           </ul>
 
           <% if policy(item).update? %>
