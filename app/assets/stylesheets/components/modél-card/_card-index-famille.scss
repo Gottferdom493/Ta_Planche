@@ -3,18 +3,39 @@
 
 
 .grid-famille-index {
-  display: grid; /* creéation de la grille  */
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* nombre de colonne */
-  row-gap: 1ch; /* espace en les lignes */
+  display: flex;
+  align-items: center;
   column-gap: 1ch; /* espace entre les colonnes */
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.card_category {
+.card-famille-index {
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 100%;
   padding: 10px;
+}
+
+.img-index-famille{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titre-index-famille {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bouton-index-famille{
+
+
+  flex-grow: 1;
 }
