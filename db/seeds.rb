@@ -5,10 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+user1 = User.create!(email: "user1@gmail.com", password: "000000", nickname: "cassius")
+
+# photo1 = photo_famille.create!( cl_image_tag: "https://res.cloudinary.com/dx8iv40ym/image/upload/v1660593607/development/86sfmqugfl3h6jx6bimx35owm08f.png")
+# img_seed = cl_image_tag famille.photo_famille.o597royu6tdobg92sw8dcdqqapcp
+# photo_famille: cl_image_tag famille.photo_famille.o597royu6tdobg92sw8dcdqqapcp,
+
+puts "cleaning database..."
 Famille.destroy_all
-Famille.create(name: "LongBord", info: "Le longboard est un type de planche de surf bien particulier, qui permet une pratique différente de celle des plus petites planches. Les planches de longboard sont des planches plus longues que la moyenne.")
-Famille.create(name: "Evolutive", info: "Ce sont des planches de 1,90 à 2,20 m pour une largeur comprise entre 49 et 52 cm. Large, épaisse, ce style de planche est tolérant tout en offrant des possibiltés de manoeuvres étendues. Beaucoup de surfers moyens adoptent une évolutive comme petite planche même si cela manque un peu de radicalité.")
-Famille.create(name: "Fish", info: "Les fishs ressemblent aux évolutives mais sont beaucoup plus courtes et plus larges. De 1,70 à 1,90 m, très large (52cm ou plus), pas mal de volume, un outline assez rond, c'est l'outil idéal des petites vagues.")
+
+puts "creating familles..."
+Famille.create!(user: user1, name: "LongBord", info: "Le longboard est un type de planche de surf bien particulier, qui permet une pratique différente de celle des plus petites planches. Les planches de longboard sont des planches plus longues que la moyenne.")
+Famille.create!(user: user1, name: "Evolutive", info: "Ce sont des planches de 1,90 à 2,20 m pour une largeur comprise entre 49 et 52 cm. Large, épaisse, ce style de planche est tolérant tout en offrant des possibiltés de manoeuvres étendues. Beaucoup de surfers moyens adoptent une évolutive comme petite planche même si cela manque un peu de radicalité.")
+Famille.create!(user: user1, name: "Fish", info: "Les fishs ressemblent aux évolutives mais sont beaucoup plus courtes et plus larges. De 1,70 à 1,90 m, très large (52cm ou plus), pas mal de volume, un outline assez rond, c'est l'outil idéal des petites vagues.")
+
+# puts "Finished!"
 
 # Item.destroy_all
 # Item.create(name: "Torq", price: "450", famille: Famille.where(name: "LongBord")[0])

@@ -7,8 +7,8 @@
   </div>
 
   <div class='card-titre'>
-    <h2> <%= @famille.name %> </h2>
-    <h5> <%= @famille.info %> </h5>
+    <h2> <%= @famille.name.capitalize %> </h2>
+    <h5> <%= @famille.info.capitalize %> </h5>
 
     <%= link_to 'Famille de Planche/', familles_path %>
 
