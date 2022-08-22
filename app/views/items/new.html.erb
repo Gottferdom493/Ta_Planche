@@ -1,9 +1,10 @@
 <h2>Ajoute ta Planche</h2>
 
 <div class="card-new">
-  <ul style="list-style-type:none; padding-left:38%; margin-bottom:0px;">
 
+  <ul style="list-style-type:none; padding-left:38%; margin-bottom:0px;">
     <%= form_for [@famille, @item] do |f| %>
+
 
       <div class="card-grid-01">
         <li>
@@ -24,18 +25,9 @@
           <%= f.label :price, " 4 - " %>
           <%= f.number_field :price, placeholder: "Le prix en €" %>
         </li>
-
-<h2><%= @item.detail %></h2>
-        <select :matiere="matiere" id="choix-matiere">
-            <option value="">--Choisi la matière--</option>
-            <option :matiere = "Mousse" >Mousse</option>
-            <option value="Epoxy">Epoxy</option>
-            <option value="Bois">Bois</option>
-            <option value="Bois">Autres...</option>
-
-        </select>
       </div>
-      </ul>
+  </ul>
+
 
       <ul>
         <%= f.label :detail, " 5 - " %>
@@ -55,8 +47,8 @@
           <%= f.file_field :photo_3 %>
         </li>
 
-      <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
       </ul>
+      <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
     <% end %>
   </ul>
 </div>
