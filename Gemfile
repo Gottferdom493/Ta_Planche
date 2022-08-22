@@ -37,6 +37,7 @@ gem 'cloudinary'
 gem 'devise'
 gem 'google-webfonts-rails'
 gem 'pundit'
+gem 'geocoder'
 
 group :development, :test do
   gem 'pry-byebug'
