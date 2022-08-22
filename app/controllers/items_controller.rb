@@ -5,12 +5,27 @@ class ItemsController < ApplicationController
   def index
     @famille = Famille.find(params[:famille_id])
     @items = Item.where(famille: @famille)
+
+
+    @markers = @items.geocoded.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude,
+      }
+    end
   end
 
   def show
     @items = Item.where(famille: @famille)
     @item = Item.find(params[:id])
     authorize @item
+
+    @markers = @items.geocoded.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude,
+      }
+    end
   end
 
   def new
@@ -63,7 +78,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :price, :img_avatar, :photo_1, :photo_2, :photo_3, :url_img2, :url_img3, :url_achat,
-    :taille, :marque, :detail, :user_id, :matiere)
+    :taille, :marque, :detail, :user_id, :matiere, :address)
   end
 
 end

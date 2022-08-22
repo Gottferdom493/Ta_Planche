@@ -6,6 +6,12 @@
     <%= form_for [@famille, @item] do |f| %>
 
       <div class="card-grid-01">
+
+        <li>
+          <%= f.label :address, " 1 - " %>
+          <%= f.text_field :address,  placeholder: "Ton adresse?" %>
+        </li>
+
         <li>
           <%= f.label :marque, " 1 - " %>
           <%= f.text_field :marque,  placeholder: "La marque" %>
@@ -45,8 +51,9 @@
           <%= f.file_field :photo_3 %>
         </li>
 
-      </ul>
         <%= f.submit :Creation, data: {confirm: "Valide ta planche"} %>
+
+      </ul>
     <% end %>
   </ul>
 </div>
