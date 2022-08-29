@@ -22,8 +22,14 @@
 
                 <div class= "img-index-famille">
                   <%= link_to famille_items_path(famille) do %>
+                  <% if famille.photo_famille.attached? %>
                     <%= cl_image_tag famille.photo_famille.key, crop: :fill %>
+                  <% else %>
+                    <img class="img-item" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1YH75wFp4irf8B9FyHX5NOExAdeuyqGaeEA&usqp=CAU" alt="photo">
                   <% end %>
+
+            <% end %>
+
                 </div>
 
                 <div class="titre-index-famille">
