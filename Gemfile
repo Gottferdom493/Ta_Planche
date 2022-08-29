@@ -38,6 +38,7 @@ gem 'devise'
 gem 'google-webfonts-rails'
 gem 'pundit'
 gem 'geocoder'
+gem 'stimulus-rails'
 
 group :development, :test do
   gem 'pry-byebug'

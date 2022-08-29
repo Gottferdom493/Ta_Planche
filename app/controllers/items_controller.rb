@@ -1,18 +1,12 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show] #permet de donner les droit de visualisation seulement sur index et show.
+  skip_before_action :authenticate_user!, only: [:index, :show] #permet de donner les droits de visualisation seulement sur index et show.
 
   def index
     @famille = Famille.find(params[:famille_id])
     @items = Item.where(famille: @famille)
 
 
-    @markers = @items.geocoded.map do |item|
-      {
-        lat: item.latitude,
-        lng: item.longitude,
-      }
-    end
   end
 
   def show
@@ -20,10 +14,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     authorize @item
 
+    @items = Item.where(address: @item.address)
     @markers = @items.geocoded.map do |item|
       {
         lat: item.latitude,
-        lng: item.longitude,
+        lng: item.longitude
       }
     end
   end
