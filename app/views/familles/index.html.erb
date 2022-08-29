@@ -22,8 +22,13 @@
 
                 <div class= "img-index-famille">
                   <%= link_to famille_items_path(famille) do %>
+                  <% if famille.photo_famille.attached? %>
                     <%= cl_image_tag famille.photo_famille.key, crop: :fill %>
+                  <% else %>
+                    <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
                   <% end %>
+            <% end %>
+
                 </div>
 
                 <div class="titre-index-famille">
