@@ -24,7 +24,12 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag @item.photo_1.key, alt: "photo n°1", class:"card-item-img"%>
+              <% if @item.photo_1.attached? %>
+                <%= cl_image_tag @item.photo_1.key, alt: "photo n°1", class:"card-item-img"%>
+              <% else %>
+                <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
+              <% end %>
+
             </div>
             <div class="carousel-item">
               <%= cl_image_tag @item.photo_2.key, alt: "photo n°2", class:"card-item-img"%>
@@ -76,7 +81,12 @@
       <div class="card-recommandation">
         <div>
             <%= link_to famille_item_path(@famille, item) do %>
-              <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
+              <% if @item.photo_1.attached? %>
+                <%= cl_image_tag @item.photo_1.key, alt: "photo n°1", class:"card-item-img"%>
+              <% else %>
+                <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
+              <% end %>
+
             <% end %>
         </div>
         <div>
