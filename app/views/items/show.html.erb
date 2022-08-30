@@ -33,7 +33,7 @@
 
             <div class="carousel-item">
               <% if @item.photo_2.attached? %>
-                <%= cl_image_tag @item.photo_2.key, alt: "photo n°1", class:"card-item-img"%>
+                <%= cl_image_tag @item.photo_2.key, alt: "photo n°2", class:"card-item-img"%>
               <% else %>
                 <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
               <% end %>
@@ -42,7 +42,7 @@
 
             <div class="carousel-item">
               <% if @item.photo_3.attached? %>
-                <%= cl_image_tag @item.photo_3.key, alt: "photo n°1", class:"card-item-img"%>
+                <%= cl_image_tag @item.photo_3.key, alt: "photo n°3", class:"card-item-img"%>
               <% else %>
                 <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
               <% end %>

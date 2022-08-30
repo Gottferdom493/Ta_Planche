@@ -1,32 +1,62 @@
 
+.card-new-item {
+  // background: white;
+  // border-radius: 5px;
+  // margin: 5%;
+  // padding: 20px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr; /* nombre de colonne */
+  display: flex;
+  align-items:center;
+  align-content:center
+}
+
+.container-new-item {
+display: flex;
+justify-content:space-evenly;
+border-color: black;
+align-items:center;
+
+}
 
 li {
   padding-bottom: 15px;
 }
 
-.card-new-item {
-  background: white;
-  border-radius: 5px;
-  margin: 5%;
-  padding: 20px;
+.card-grid-01 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* nombre de colonne */
+  grid-template-columns: 1fr 0fr 0fr; /* nombre de colonne */
+  // row-gap: 1ch; /* espace en les lignes */
+  column-gap: 1ch;
+  width: 100%;
+  height: 100%;
+  padding-left: 1%;
+  padding-right: 1%;
+  border-color: black;
 
 }
-
-// .card-grid-01 {
-// }
 
 .card-grid-02 {
   display: grid;
   grid-template-columns: 0fr 1fr 0fr; /* nombre de colonne */
-  row-gap: 1ch; /* espace en les lignes */
+  // row-gap: 1ch; /* espace en les lignes */
   column-gap: 1ch;
   width: 100%;
   height: 100%;
   padding-left: 1%;
   padding-right: 1%;
 
+}
+
+.card-grid-03 {
+  display: grid;
+  grid-template-columns: 0fr 0fr 1fr; /* nombre de colonne */
+  // row-gap: 1ch; /* espace en les lignes */
+  column-gap: 1ch;
+  width: 100%;
+  height: 100%;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
 .card-grid-04 {
