@@ -27,9 +27,9 @@
             <li>Prix :<%= item.price %>€</li>
               <%= link_to famille_item_path(@famille, item) do %>
                   <% if item.photo_1.attached? %>
-                <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
+                    <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
                   <% else %>
-                    <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
+                    <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
                   <% end %>
             <% end %>
 

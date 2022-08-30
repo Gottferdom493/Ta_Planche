@@ -1,60 +1,71 @@
-<h2>Modife ta Planche</h2>
 
-<div class="card-new">
-  <ul style="list-style-type:none; padding-left:38%; margin-bottom:0px;">
+<h2>Modif ta Planche</h2>
+<%# <div class="card-new-item"> %>
+  <%# <ul style="list-style-type:none; padding-left:38%; margin-bottom:0px;"> %>
 
     <%= form_for [@famille, @item] do |f| %>
 
-      <div class="card-grid-01">
+      <div class = "container-new-item">
+        <div class="card-grid-01">
+          <ul style="list-style-type:none">
+              <li>
+                <%= f.label :address, " 1 / " %>
+                <%= f.text_field :address,  placeholder: "Modif ton adresse?" %>
+              </li>
 
-        <li>
-          <%= f.label :address, " 1 - " %>
-          <%= f.text_field :address,  placeholder: "Ton adresse?" %>
-        </li>
+              <li>
+                <%= f.label :marque, " 2 / " %>
+                <%= f.text_field :marque,  placeholder: "Modif ta marque" %>
+              </li>
 
-        <li>
-          <%= f.label :marque, " 1 - " %>
-          <%= f.text_field :marque,  placeholder: "La marque" %>
-        </li>
-        <li>
-          <%= f.label :name, " 2 - " %>
-          <%= f.text_field :name, placeholder: "Le nom" %>
-        </li>
+              <li>
+                <%= f.label :name, " 3 / " %>
+                <%= f.text_field :name, placeholder: "Modif le nom" %>
+              </li>
 
-        <li>
-          <%= f.label :taille, " 3 - " %>
-          <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
-        </li>
+              <li>
+                <%= f.label :taille, " 4 / " %>
+                <%= f.text_field :taille, placeholder: "Modif la taille (pouce)" %>
+              </li>
 
-        <li>
-          <%= f.label :price, " 4 - " %>
-          <%= f.number_field :price, placeholder: "Le prix en €" %>
-        </li>
+              <li>
+                <%= f.label :price, " 5 / " %>
+                <%= f.number_field :price, placeholder: "Modif le prix en €" %>
+              </li>
+          </ul>
+        </div>
+
+        <div class="card-grid-02">
+          <ul style="list-style-type:none">
+              <li>
+                <%= f.label :detail, "6 / " %>
+                <%= f.text_area :detail, placeholder: "Modif la description" %>
+              </li>
+          </ul>
+        </div>
+
+        <div class="card-grid-03">
+          <ul style="list-style-type:none">
+              <li>
+                <%= f.file_field :photo_1 %>
+              </li>
+
+              <li>
+                <%= f.file_field :photo_2 %>
+              </li>
+
+              <li>
+                <%= f.file_field :photo_3 %>
+              </li>
+      <%= f.submit :Création, data: {confirm: "Modifi ta planche"} %>
+          </ul>
+        </div>
       </div>
-      </ul>
 
-      <ul>
-        <%= f.label :detail, " 5 - " %>
-        <%= f.text_area :detail, placeholder: "La description" %>
-      </ul>
-
-      <ul style="list-style-type:none">
-        <li>
-          <%= f.file_field :photo_1 %>
-        </li>
-
-        <li>
-          <%= f.file_field :photo_2 %>
-        </li>
-
-        <li>
-          <%= f.file_field :photo_3 %>
-        </li>
-
-        <%= f.submit :Creation, data: {confirm: "Valide ta planche"} %>
-
-      </ul>
     <% end %>
-  </ul>
-</div>
+
+  <%# </ul> %>
+
+
+<%# </div> %>
     <%= link_to'Retour', famille_items_path %>

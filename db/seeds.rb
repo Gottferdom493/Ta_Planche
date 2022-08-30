@@ -16,10 +16,10 @@ user1 = User.create!(email: "user1@gmail.com", password: "000000", nickname: "ca
 puts "cleaning database..."
 Famille.destroy_all
 
-puts "creating familles..."
-Famille.create!(user: user1, name: "LongBord", info: "Le longboard est un type de planche de surf bien particulier, qui permet une pratique différente de celle des plus petites planches. Les planches de longboard sont des planches plus longues que la moyenne.")
-Famille.create!(user: user1, name: "Evolutive", info: "Ce sont des planches de 1,90 à 2,20 m pour une largeur comprise entre 49 et 52 cm. Large, épaisse, ce style de planche est tolérant tout en offrant des possibiltés de manoeuvres étendues. Beaucoup de surfers moyens adoptent une évolutive comme petite planche même si cela manque un peu de radicalité.")
-Famille.create!(user: user1, name: "Fish", info: "Les fishs ressemblent aux évolutives mais sont beaucoup plus courtes et plus larges. De 1,70 à 1,90 m, très large (52cm ou plus), pas mal de volume, un outline assez rond, c'est l'outil idéal des petites vagues.")
+# puts "creating familles..."
+# Famille.create!(user: user1, name: "LongBord", info: "Le longboard est un type de planche de surf bien particulier, qui permet une pratique différente de celle des plus petites planches. Les planches de longboard sont des planches plus longues que la moyenne.")
+# Famille.create!(user: user1, name: "Evolutive", info: "Ce sont des planches de 1,90 à 2,20 m pour une largeur comprise entre 49 et 52 cm. Large, épaisse, ce style de planche est tolérant tout en offrant des possibiltés de manoeuvres étendues. Beaucoup de surfers moyens adoptent une évolutive comme petite planche même si cela manque un peu de radicalité.")
+# Famille.create!(user: user1, name: "Fish", info: "Les fishs ressemblent aux évolutives mais sont beaucoup plus courtes et plus larges. De 1,70 à 1,90 m, très large (52cm ou plus), pas mal de volume, un outline assez rond, c'est l'outil idéal des petites vagues.")
 
 # puts "Finished!"
 
