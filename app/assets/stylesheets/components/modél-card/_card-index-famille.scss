@@ -32,8 +32,75 @@
   flex-direction: column;
 }
 
-.bouton-index-famille{
+.bouton-index-famille-edit{
+  background-color: #DCDCDC;
+  margin-left: 45%;
+  margin-right: 45%;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.bouton-index-famille-edit a {
+  text-decoration: none !important;
+  color:black
+}
+
+.bouton-index-famille-edit:hover{
+  background-color: #C0C0C0;
+  color: white;
+}
 
 
-  flex-grow: 1;
+.bouton-index-famille-supp{
+  background-color: #DCDCDC;
+  margin-left: 45%;
+  margin-right: 45%;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  color: white;
+}
+
+.bouton-index-famille-supp a {
+  text-decoration: none !important;
+  color:black
+}
+
+.bouton-index-famille-supp:hover{
+  background-color: #C0C0C0;
+  color: white;
+}
+
+.bouton-famille-add{
+  background-color: #DCDCDC;
+  margin-left: 1%;
+  margin-right: 93%;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.bouton-famille-add a {
+  text-decoration: none !important;
+  color:black
+}
+
+.bouton-famille-add:hover{
+  background-color: #C0C0C0;
+  color: white;
+}
+
+.btn-5 {
+  text-decoration: none;
 }
