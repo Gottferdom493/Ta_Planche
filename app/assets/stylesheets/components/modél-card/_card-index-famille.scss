@@ -32,7 +32,7 @@
   flex-direction: column;
 }
 
-.bouton-index-famille-edit{
+.bouton {
   background-color: #DCDCDC;
   margin-left: 45%;
   margin-right: 45%;
@@ -45,40 +45,17 @@
   margin-bottom: 5px;
 }
 
-.bouton-index-famille-edit a {
+.bouton a {
   text-decoration: none !important;
   color:black
 }
 
-.bouton-index-famille-edit:hover{
+.bouton:hover{
   background-color: #C0C0C0;
   color: white;
 }
 
-
-.bouton-index-famille-supp{
-  background-color: #DCDCDC;
-  margin-left: 45%;
-  margin-right: 45%;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: 1px solid #808080;
-  border-radius: 8px;
-  color: white;
-}
-
-.bouton-index-famille-supp a {
-  text-decoration: none !important;
-  color:black
-}
-
-.bouton-index-famille-supp:hover{
-  background-color: #C0C0C0;
-  color: white;
-}
-
-.bouton-famille-add{
+.bouton-add{
   background-color: #DCDCDC;
   margin-left: 1%;
   margin-right: 93%;
@@ -89,18 +66,15 @@
   border-radius: 8px;
   color: white;
   margin-bottom: 25px;
+  margin-top: 25px;
 }
 
-.bouton-famille-add a {
+.bouton-add a {
   text-decoration: none !important;
   color:black
 }
 
-.bouton-famille-add:hover{
+.bouton-add:hover{
   background-color: #C0C0C0;
   color: white;
-}
-
-.btn-5 {
-  text-decoration: none;
 }
