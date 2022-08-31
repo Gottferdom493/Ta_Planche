@@ -7,26 +7,12 @@ body{
 .container {
   width: 1000px;
   margin: 0 auto;
-}
 
-.card-titre{
-  border-bottom: 1px solid #B0B0B0;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-.card-index {
-  border: 1px solid black;
-  border-radius: 5px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 100%;
-  padding: 10px;
-}
-
-.card-index-img {
-  width: 100%;
-  padding-left: 0px;
+  .card-titre{
+    border-bottom: 1px solid #B0B0B0;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
 }
 
 .card-store {
@@ -35,6 +21,34 @@ body{
   row-gap: 1ch; /* espace en les lignes */
   column-gap: 1ch; /* espace entre les colonnes */
   margin-bottom: 20px;
+}
+
+.card-index {
+  // border: 1px solid black;
+  // border-radius: 15px;
+  background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 70%;
+  // padding: 10px;
+}
+
+.card-index-img {
+  border-radius: 15px;
+  width: 100%;
+  padding-left: 0px;
+  padding-bottom: 5px;
+}
+
+.info-index-item {
+  list-style-type:none;
+  padding-left:0px;
+  margin-bottom:0px;
+}
+
+.info-index-item li {
+  padding-bottom: 5px;
+}
+
   // display: grid; /* creéation de la grille  */
   // grid-template-columns: 1fr 1fr; /* nombre de colonne */
   // row-gap: 1ch; /* espace en les lignes */
@@ -46,7 +60,6 @@ margin: auto;
   margin-top: auto;
 margin-top: 6%;
 border-radius: 10px; */
-}
 
 /* <% @items.each do |item| %> */
   /* <div class="card-body">

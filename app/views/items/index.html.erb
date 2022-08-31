@@ -21,32 +21,31 @@
 
       <% @items.each do |item| %>
         <div class="card-index">
-          <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
+          <%= link_to famille_item_path(@famille, item) do %>
+            <% if item.photo_1.attached? %>
+              <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
+            <% else %>
+              <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
+            <% end %>
+          <% end %>
+
+          <ul class="info-index-item">
             <li>Marque :<%= item.marque.capitalize %></li>
             <li>Taille :<%= item.taille %></li>
             <li>Prix :<%= item.price %>€</li>
-              <%= link_to famille_item_path(@famille, item) do %>
-                  <% if item.photo_1.attached? %>
-                <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
-                  <% else %>
-                    <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
-                  <% end %>
-            <% end %>
-
-
           </ul>
 
-            <% if policy(item).update? %>
-              <div class="bouton-user-item">
-                <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
-              </div>
-            <% end %>
+          <% if policy(item).update? %>
+            <div class="bouton-user-item">
+              <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
+            </div>
+          <% end %>
 
-            <% if policy(item).destroy? %>
-              <div class="bouton-user-item">
-                <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
-              </div>
-            <% end %>
+          <% if policy(item).destroy? %>
+            <div class="bouton-user-item">
+              <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
+            </div>
+          <% end %>
         </div>
       <% end %>
   </div>
