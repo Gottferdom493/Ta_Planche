@@ -35,13 +35,15 @@
                   <h2><%= famille.name.capitalize %></h2>
                 </div>
 
-                <div class="bouton-index-famille">
                   <% if famille.user == current_user %>
+                <div class="bouton-user-famille">
                     <% if policy(famille).update? %>
                       <td><%= link_to 'edite', edit_famille_path(famille) %></td>
                     <% end %>
+                </div>
 
                     <% if policy(famille).destroy? %>
+                <div class="bouton-user-famille">
                       <td><%= link_to 'supp', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %></td>
                     <% end %>
                   <% end %>
@@ -56,5 +58,7 @@
           </div>
 
   <% if policy(Famille).create? %>
-    <h4><%= link_to 'Ajouter' , new_famille_path %></h4>
+<div class="bouton-admin">
+    <%= link_to 'Ajouter' , new_famille_path %>
   <% end %>
+</div>
