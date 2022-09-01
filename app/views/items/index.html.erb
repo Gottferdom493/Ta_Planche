@@ -13,7 +13,9 @@
     <%= link_to 'Famille de Planche/', familles_path %>
 
     <% if policy(Item).new? %>
-      <h3><%= link_to'Ajout ta Planche', new_famille_item_path %></h3>
+      <div class="bouton-add-item">
+        <h3><%= link_to'Ajout ta Planche', new_famille_item_path %></h3>
+      </div>
     <% end %>
   </div>
 
