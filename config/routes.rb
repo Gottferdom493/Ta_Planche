@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'familles#index'
-  
+
   resources :familles do
     resources :items
   end
 
-  resources :profils do
-    resources :items
+  resources :items do
+    resources :profils
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

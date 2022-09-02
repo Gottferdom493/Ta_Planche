@@ -1,1 +1,5 @@
 <h1>Bonjour</h1>
+          <%= current_user.nickname.capitalize %>
+
+<%= link_to "tous les articles", profil_items_path(profil) %>
+<%# <%= link_to 'Modifier', edit_famille_path(famille) %>

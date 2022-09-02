@@ -6,6 +6,9 @@ class ItemsController < ApplicationController
     @famille = Famille.find(params[:famille_id])
     @items = Item.where(famille: @famille)
 
+    @profil = Profil.find(params[:profil_id])
+    @items = Item.where(profil: @profil)
+
 
   end
 
@@ -68,6 +71,8 @@ class ItemsController < ApplicationController
 
   def set_item
     @famille = Famille.find(params[:famille_id])
+    @profil = Profil.find(params[:profil_id])
+
     @item = Item.find(params[:id])
   end
 
