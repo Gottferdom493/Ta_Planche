@@ -5,11 +5,6 @@ class ItemsController < ApplicationController
   def index
     @famille = Famille.find(params[:famille_id])
     @items = Item.where(famille: @famille)
-
-    @profil = Profil.find(params[:profil_id])
-    @items = Item.where(profil: @profil)
-
-
   end
 
   def show
@@ -71,8 +66,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @famille = Famille.find(params[:famille_id])
-    @profil = Profil.find(params[:profil_id])
-
     @item = Item.find(params[:id])
   end
 

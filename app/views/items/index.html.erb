@@ -23,6 +23,8 @@
 
       <% @items.each do |item| %>
         <div class="card-index">
+          <%=link_to 'profil', item_profils_path(item)%>
+
           <%= link_to famille_item_path(@famille, item) do %>
             <% if item.photo_1.attached? %>
               <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
@@ -39,7 +41,7 @@
 
           <% if policy(item).update? %>
             <div class="bouton-user-item">
-              <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
+              <%= link_to 'Modifier', edit_item_path(@famille, item) %>
             </div>
           <% end %>
 
@@ -51,4 +53,5 @@
         </div>
       <% end %>
   </div>
+
 </div>
