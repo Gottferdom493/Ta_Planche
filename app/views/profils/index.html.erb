@@ -1,0 +1,16 @@
+<h1>Bonjour c'est ton profil
+<%= current_user.nickname.capitalize %>
+</h1>
+
+
+    <h2> <%= @item.name.capitalize %>
+        <%= @item.marque.capitalize %>
+        <%= @item.taille %>
+        <%= @item.price %>€
+    </h2>
+
+          <%# <% if policy(profil).update? %>
+            <%# <div class="bouton-user-item"> %>
+              <%# <%= link_to 'Modifier', edit_famille_item_profil_path(@famille, @item, profil) %>
+            <%# </div> %>
+          <%# <% end %>

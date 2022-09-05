@@ -4,5 +4,4 @@ class Famille < ApplicationRecord
   belongs_to :user
 
   has_one_attached :photo_famille
-
 end
