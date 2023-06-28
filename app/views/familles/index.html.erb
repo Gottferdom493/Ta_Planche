@@ -6,17 +6,20 @@
       <%# </div> %>
         <div class="banner">
           <h1> Famille de Planche </h1>
-        <% if user_signed_in? %>
-          <p>
-          <span>&#129305;</span>
-          Bonjour
-          <%= current_user.nickname.capitalize %>
-          <span>&#129305;</span>
-          </p>
-        <% end %>
+            <% if user_signed_in? %>
+              <p>
+                <span>&#129305;</span>
+                  Bonjour
+                <%= current_user.nickname.capitalize %>
+                <span>&#129305;</span>
+              </p>
+            <% end %>
         </div>
+<%# <div class="box-card">
+</div> %>
+<div class="container-test">
 
-          <div class="grid-famille-index">
+          <div class="container-card-famille">
             <% @familles.each do |famille| %>
               <div class="card-famille-index">
 
@@ -26,35 +29,47 @@
                     <%= cl_image_tag famille.photo_famille.key, crop: :fill %>
                   <% else %>
                     <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
+                </div>
                   <% end %>
             <% end %>
-
-                </div>
 
                 <div class="titre-index-famille">
                   <h2><%= famille.name.capitalize %></h2>
                 </div>
-
+                <div class="container-btn">
                   <% if famille.user == current_user %>
-                <div class="bouton-user-famille">
-                    <% if policy(famille).update? %>
-                      <td><%= link_to 'edite', edit_famille_path(famille) %></td>
-                    <% end %>
-                </div>
-
+                    <div class="bouton-user-famille">
+                      <% if policy(famille).update? %>
+                        <td><%= link_to 'edite', edit_famille_path(famille) %></td>
+                      <% end %>
+                    </div>
                     <% if policy(famille).destroy? %>
-                <div class="bouton-user-famille">
-                      <td><%= link_to 'supp', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %></td>
+                      <div class="bouton-user-famille">
+                        <td><%= link_to 'supp', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %></td>
+                      </div>
                     <% end %>
                   <% end %>
                 </div>
-              </div>
+          </div>
+</div>
+                  <%# </div> %>
 
-              <div>
+<%# <div class="box-titre-btn"> %>
+            <%# <div class="titre-index-famille"> %>
+              <%# <h2><%= famille.name.capitalize %></h2>
+            <%# </div> %>
+
+
+
+<%# </div> %>
+
+              <%# <div> %>
                 <%# <%= link_to 'Modifier', edit_famille_path(famille) %>
                 <%# <%= link_to 'Supprimer', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %>
-              </div>
+              <%# </div> %>
             <% end %>
+            </div>
+</div>
           </div>
 
   <% if policy(Famille).create? %>
