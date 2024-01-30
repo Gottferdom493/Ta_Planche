@@ -1,5 +1,8 @@
-<h1>Bonjour c'est ton profil
+<h1>Bonjour c'est l'index des profils
   <%= current_user.nickname.capitalize %>
+  <%= current_user.email %>
+  <%= current_user.password %>
+
 </h1>
 
   <% @profils.each do |profil| %>
@@ -7,16 +10,14 @@
             <h2><%= profil.nom %></h2>
             <h2><%= profil.prenom %></h2>
           </ul>
-          <%= link_to "Ton profil", profil_path %>
+
+          <%= link_to "Ton profil", profil_path(profil) %>
+          <%= link_to "Modifie ton profil", edit_profil_path(profil) %>
+
+          <td><%= link_to 'supprime ton profil', profil_path(profil), method: :delete, data: {confirm: "tu es sure?"} %></td>
+
   <% end %>
 
 <div class="bouton-admin">
   <%= link_to "Retouche ton profil", new_profil_path %>
 </div>
-
-
-          <%# <% if policy(profil).update? %>
-            <%# <div class="bouton-user-item"> %>
-              <%# <%= link_to 'Modifier', edit_famille_item_profil_path(@famille, @item, profil) %>
-            <%# </div> %>
-          <%# <% end %>

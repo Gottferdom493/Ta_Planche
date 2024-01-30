@@ -8,6 +8,7 @@ class ProfilsController < ApplicationController
 
   def show
     @profil = Profil.find(params[:id])
+    authorize @profil
   end
 
   def new
@@ -25,6 +26,27 @@ class ProfilsController < ApplicationController
       render :new
       puts @profil.errors.full_messages
     end
+  end
+
+
+  def edit
+    @profil = Profil.find(params[:id])
+    authorize @profil
+  end
+
+  def update
+    @profil = Profil.find(params[:id])
+    @profil.user = current_user
+    @profil.update(profil_params)
+    redirect_to profils_path
+    authorize @profil
+  end
+
+  def destroy
+    @profil = Profil.find(params[:id])
+    @profil.destroy
+    redirect_to profils_path
+    authorize @profil
   end
 
   private
