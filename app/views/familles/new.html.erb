@@ -11,11 +11,31 @@
       <%= f.label :info, "Entre les infos" %>
       <%= f.text_area :info %>
 
-      <%= f.file_field :photo_famille %>
+    <%= f.file_field :photo_famille, onchange: "previewImage(this);" %>
 
       <%= f.submit :Création %>
 
     <% end %>
+
+<img id="photo-famille-preview" src="#" alt="Aperçu de l'image" style="display:none; max-width: 100%; max-height: 200px;" />
+
+
+<script type="text/javascript">
+  function previewImage(input) {
+    var preview = document.getElementById('photo-famille-preview');
+    preview.style.display = 'block';
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+</script>
+
+
 
   </ul>
 </div>
