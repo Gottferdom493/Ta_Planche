@@ -1,5 +1,8 @@
 <h1>Bonjour c'est l'index des profils
   <%= current_user.nickname.capitalize %>
+  <%= current_user.email %>
+  <%= current_user.password %>
+
 </h1>
 
   <% @profils.each do |profil| %>
@@ -7,6 +10,7 @@
             <h2><%= profil.nom %></h2>
             <h2><%= profil.prenom %></h2>
           </ul>
+
           <%= link_to "Ton profil", profil_path(profil) %>
           <%= link_to "Modifie ton profil", edit_profil_path(profil) %>
 
