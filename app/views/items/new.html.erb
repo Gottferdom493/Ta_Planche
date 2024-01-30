@@ -8,6 +8,13 @@
       <div class = "container-new-item">
         <div class="card-grid-01">
           <ul style="list-style-type:none">
+
+              <div class="field">
+                <%= f.label :famille_id, "Quelle est le type de Planche?" %>
+                <%# <%= f.collection_select :famille_id, Famille.all, :id, :name, prompt: "Choisissez une famille" %> %>
+                <%= f.collection_select :famille_id, @familles, :id, :name, prompt: "Choisissez une famille" %>
+              </div>
+
               <li>
                 <%= f.label :address, " 1 / " %>
                 <%= f.text_field :address,  placeholder: "Ton adresse?" %>
@@ -21,6 +28,9 @@
               <li>
                 <%= f.label :name, " 3 / " %>
                 <%= f.text_field :name, placeholder: "Le nom" %>
+
+
+
 
                 <%# <%= form.select :name, ["Longboard", "Test user1"] %> %>
                   <%# <select name="city" id="city"> %>
