@@ -8,29 +8,35 @@
       <div class = "container-new-item">
         <div class="card-grid-01">
           <ul style="list-style-type:none">
+
+              <div class="field">
+                <%= f.label :famille_id, "Quelle est le type de Planche?" %>
+                <%= f.collection_select :famille_id, @familles, :id, :name, prompt: "Choisissez une famille" %>
+              </div>
+
               <li>
                 <%= f.label :address, " 1 / " %>
-                <%= f.text_field :address,  placeholder: "Modif ton adresse?" %>
+                <%= f.text_field :address,  placeholder: "Ton adresse?" %>
               </li>
 
               <li>
                 <%= f.label :marque, " 2 / " %>
-                <%= f.text_field :marque,  placeholder: "Modif ta marque" %>
+                <%= f.text_field :marque,  placeholder: "La marque" %>
               </li>
 
               <li>
                 <%= f.label :name, " 3 / " %>
-                <%= f.text_field :name, placeholder: "Modif le nom" %>
+                <%= f.text_field :name, placeholder: "Le nom" %>
               </li>
 
               <li>
                 <%= f.label :taille, " 4 / " %>
-                <%= f.text_field :taille, placeholder: "Modif la taille (pouce)" %>
+                <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
               </li>
 
               <li>
                 <%= f.label :price, " 5 / " %>
-                <%= f.number_field :price, placeholder: "Modif le prix en €" %>
+                <%= f.number_field :price, placeholder: "Le prix en €" %>
               </li>
           </ul>
         </div>
@@ -39,7 +45,7 @@
           <ul style="list-style-type:none">
               <li>
                 <%= f.label :detail, "6 / " %>
-                <%= f.text_area :detail, placeholder: "Modif la description" %>
+                <%= f.text_area :detail, placeholder: "La description" %>
               </li>
           </ul>
         </div>
@@ -47,25 +53,47 @@
         <div class="card-grid-03">
           <ul style="list-style-type:none">
               <li>
-                <%= f.file_field :photo_1 %>
+                <%= f.file_field :photo_1, onchange: "previewImage(this, 'preview-1');" %>
               </li>
 
               <li>
-                <%= f.file_field :photo_2 %>
+                <%= f.file_field :photo_2, onchange: "previewImage(this, 'preview-2');" %>
               </li>
 
               <li>
-                <%= f.file_field :photo_3 %>
+                <%= f.file_field :photo_3, onchange: "previewImage(this, 'preview-3');" %>
               </li>
-      <%= f.submit :Création, data: {confirm: "Modifi ta planche"} %>
+
+                <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
           </ul>
         </div>
       </div>
 
     <% end %>
 
-  <%# </ul> %>
+<img id="preview-1" src="#" alt="Aperçu de l'image 1" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+<img id="preview-2" src="#" alt="Aperçu de l'image 2" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+<img id="preview-3" src="#" alt="Aperçu de l'image 3" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+
+<script type="text/javascript">
+  function previewImage(input, previewId) {
+    var preview = document.getElementById(previewId);
+    preview.style.display = 'block';
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+</script>
+
+  </ul>
+
+    <%= link_to'Retour', familles_path %>
 
 
-<%# </div> %>
+
     <%= link_to'Retour', famille_items_path %>

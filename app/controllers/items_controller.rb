@@ -22,28 +22,28 @@ class ItemsController < ApplicationController
   end
 
   def new
-
     @famille = Famille.find(params[:famille_id])
     @item = Item.new
+    @familles = Famille.all
     authorize @item
   end
 
   def create
-    @famille = Famille.find(params[:famille_id])
-    @item = Item.create(item_params)
-    @item.famille = @famille
+    @item = Item.new(item_params)
     @item.user = current_user
+
     if @item.save
-      redirect_to famille_item_path(@famille, @item)
+      redirect_to famille_item_path(@item.famille, @item)
       authorize @item
     else
+      @familles = Famille.all
       render :new
     end
   end
 
   def edit
-    @famille = Famille.find(params[:famille_id])
-    @item = Item.find(params[:id])
+    @item = @famille.items.find(params[:id])
+    @familles = Famille.all
     authorize @item
   end
 
@@ -72,7 +72,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :price, :img_avatar, :photo_1, :photo_2, :photo_3, :url_img2, :url_img3, :url_achat,
-    :taille, :marque, :detail, :user_id, :matiere, :address)
+    :taille, :marque, :detail, :user_id, :matiere, :address, :famille_id)
   end
 
 end
