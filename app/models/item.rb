@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :famille
   belongs_to :user
 
-  has_many :profils
+  # has_many :profils
 
   has_one_attached :photo_1;
   has_one_attached :photo_2;

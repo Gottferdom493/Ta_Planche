@@ -22,17 +22,33 @@
   color: white;
 }
 
+.container-btn {
+  display: flex;
+  // border: 1px solid red;
+
+
+
+}
+
 .bouton-user-famille {
-  background-color: #DCDCDC;
-  margin-left: 45%;
-  margin-right: 45%;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: 1px solid #808080;
-  border-radius: 8px;
-  color: white;
-  margin-bottom: 5px;
+  // background-color: #DCDCDC;
+  // margin-left: 45%;
+  // margin-right: 45%;
+  // text-align: center;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
+  // border: 1px solid #808080;
+  // border-radius: 8px;
+  // color: white;
+  // margin-bottom: 5px;
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+
 }
 
 .bouton-user-famille a {

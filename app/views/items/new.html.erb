@@ -21,6 +21,23 @@
               <li>
                 <%= f.label :name, " 3 / " %>
                 <%= f.text_field :name, placeholder: "Le nom" %>
+
+                <%# <%= form.select :name, ["Longboard", "Test user1"] %> %>
+                  <%# <select name="city" id="city"> %>
+                    <%# <option value="Longboard">Longboard</option>
+                    <option value="Test user1">Test user1</option>
+                  </select> %>
+
+      <select name="languages" id="lang">
+        <option value="Test user1">Test user1</option>
+        <option value="Longboard">Longboard</option>
+        <option value="java">Java</option>
+        <option value="golang">Golang</option>
+        <option value="python">Python</option>
+        <option value="c#">C#</option>
+        <option value="C++">C++</option>
+        <option value="erlang">Erlang</option>
+      </select>
               </li>
 
               <li>
@@ -43,6 +60,10 @@
               </li>
           </ul>
         </div>
+
+    <label for="lang">Language</label>
+
+
 
         <div class="card-grid-03">
           <ul style="list-style-type:none">
@@ -68,4 +89,17 @@
 
 
 <%# </div> %>
-    <%= link_to'Retour', famille_items_path %>
+    <%= link_to'Retour', familles_path %>
+      <%# <select name="languages" id="lang"> %>
+            <%# <% @familles.each do |famille| %>
+              <%# <h2><%= @famille.name.capitalize %></h2>
+            <%# <% end %>
+        <%# <option value="Test user1">Test user1</option>
+        <option value="Longboard">Longboard</option>
+        <option value="java">Java</option>
+        <option value="golang">Golang</option>
+        <option value="python">Python</option>
+        <option value="c#">C#</option>
+        <option value="C++">C++</option>
+        <option value="erlang">Erlang</option> %>
+      <%# </select> %>

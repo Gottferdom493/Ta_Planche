@@ -1,13 +1,19 @@
 <h1>Bonjour c'est ton profil
-<%= current_user.nickname.capitalize %>
+  <%= current_user.nickname.capitalize %>
 </h1>
 
+  <% @profils.each do |profil| %>
+          <ul>
+            <h2><%= profil.nom %></h2>
+            <h2><%= profil.prenom %></h2>
+          </ul>
+          <%= link_to "Ton profil", profil_path %>
+  <% end %>
 
-    <h2> <%= @item.name.capitalize %>
-        <%= @item.marque.capitalize %>
-        <%= @item.taille %>
-        <%= @item.price %>€
-    </h2>
+<div class="bouton-admin">
+  <%= link_to "Retouche ton profil", new_profil_path %>
+</div>
+
 
           <%# <% if policy(profil).update? %>
             <%# <div class="bouton-user-item"> %>
