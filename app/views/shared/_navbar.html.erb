@@ -24,7 +24,6 @@
               <%= link_to "Profil",  profil_path(current_user.profil), class: "dropdown-item" %>
               <%= link_to "Modif ton Profil", edit_profil_path(current_user.profil), class: "dropdown-item"%>
               <%= link_to "Modif tes paramétres", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Supprimer ton Profil", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

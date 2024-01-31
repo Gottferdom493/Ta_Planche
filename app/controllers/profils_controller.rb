@@ -41,7 +41,7 @@ class ProfilsController < ApplicationController
 
     @profil.user = current_user
     @profil.update(profil_params)
-    redirect_to profils_path
+    redirect_to profil_path
   end
 
   def destroy
