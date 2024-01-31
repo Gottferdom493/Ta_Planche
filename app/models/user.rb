@@ -6,8 +6,9 @@ class User < ApplicationRecord
 
   has_one_attached :img_user;
 
+  has_one :profil
 
   validates :nickname, presence: true
   has_many :familles
-  has_many :profils, dependent: :destroy
+  # has_many :profils, dependent: :destroy
 end
