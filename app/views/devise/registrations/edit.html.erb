@@ -6,6 +6,24 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+
+    <%= f.file_field :img_user, onchange: "previewImage(this, 'preview-1');" %>
+<img id="preview-1" src="#" alt="Aperçu de l'image 1" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+<script type="text/javascript">
+  function previewImage(input, previewId) {
+    var preview = document.getElementById(previewId);
+    preview.style.display = 'block';
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+</script>
+
     <%= f.input :nickname %>
 
     <%= f.input :email, required: true, autofocus: true %>
