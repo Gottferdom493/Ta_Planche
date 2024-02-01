@@ -9,6 +9,8 @@ class ProfilsController < ApplicationController
   def show
     @profil = Profil.find(params[:id])
     authorize @profil
+
+    @user = current_user
   end
 
   def new
