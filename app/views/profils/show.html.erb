@@ -8,10 +8,12 @@
             <h2><%= @profil.prenom.capitalize %></h2>
             <h3><%= @profil.age %>ans</h3>
             <h3><%= @user.email %></h3>
+            <h3><%= @profil.email %></h3>
+
           </ul>
 
   <div class="bouton-add">
     <%= link_to'Retour', profils_path %>
-    <%= link_to "Modifie ton profil", edit_profil_path(current_user.profil) %>
+    <%# <%= link_to "Modifie ton profil", edit_profil_path(current_user.profil) %> %>
 
   </div>
