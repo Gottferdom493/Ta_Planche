@@ -3,6 +3,18 @@
   <%= current_user.email %>
   <%= current_user.password %>
 
+<% @profils.each do |profil| %>
+  <div>
+    <!-- Autres informations du profil -->
+
+    <% if profil.user && profil.user.img_user.attached? %>
+      <%= cl_image_tag profil.user.img_user.key, class: "profil-img" %>
+    <% else %>
+      <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
+    <% end %>
+  </div>
+<% end %>
+      <%# <%= image_tag profil.user.img_user, class: "profil-img" %> %>
 </h1>
 
   <% @profils.each do |profil| %>

@@ -9,6 +9,8 @@ class ProfilsController < ApplicationController
   def show
     @profil = Profil.find(params[:id])
     authorize @profil
+
+    @user = current_user
   end
 
   def new
@@ -18,8 +20,9 @@ class ProfilsController < ApplicationController
 
   def create
     @profil = Profil.new(profil_params)
-    @profil.user = current_user
     authorize @profil
+
+    @profil.user = current_user
     if @profil.save
       redirect_to profil_path(@profil)
     else
@@ -36,17 +39,19 @@ class ProfilsController < ApplicationController
 
   def update
     @profil = Profil.find(params[:id])
+    authorize @profil
+
     @profil.user = current_user
     @profil.update(profil_params)
-    redirect_to profils_path
-    authorize @profil
+    redirect_to profil_path
   end
 
   def destroy
     @profil = Profil.find(params[:id])
+    authorize @profil
+
     @profil.destroy
     redirect_to profils_path
-    authorize @profil
   end
 
   private

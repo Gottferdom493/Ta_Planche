@@ -1,13 +1,19 @@
 <h1>Ton Profil</h1>
 
+
           <ul>
-            <h1><%= @profil.img_profil %></h1>
-            <h1><%= @profil.nom.capitalize %></h1>
+            <h1><%= @user.nickname %></h3>
+<%= cl_image_tag @profil.img_profil.key, class: "profil_avatar", gravity: :face %>
+            <h2><%= @profil.nom.capitalize %></h1>
             <h2><%= @profil.prenom.capitalize %></h2>
-            <h3><%= @profil.age %></h3>
+            <h3><%= @profil.age %>ans</h3>
+            <h3><%= @user.email %></h3>
             <h3><%= @profil.email %></h3>
+
           </ul>
 
   <div class="bouton-add">
     <%= link_to'Retour', profils_path %>
+    <%# <%= link_to "Modifie ton profil", edit_profil_path(current_user.profil) %> %>
+
   </div>
