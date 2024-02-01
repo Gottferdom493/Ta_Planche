@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # devise_for :users
   devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_scope :user do
+    delete 'users/destroy', to: 'users/registrations#destroy', as: :destroy_user_registration
+  end
+
 
   root to: 'familles#index'
 

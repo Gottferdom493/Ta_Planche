@@ -29,6 +29,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def destroy
+    current_user.profils.destroy_all
+    current_user.destroy
+    redirect_to root_path, notice: "Votre compte a été supprimé avec succès."
+  end
+
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to
