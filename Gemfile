@@ -39,6 +39,8 @@ gem 'google-webfonts-rails'
 gem 'pundit'
 gem 'geocoder'
 gem 'stimulus-rails'
+gem 'httparty' # Gem de météo - API Storm Glass
+
 
 group :development, :test do
   gem 'pry-byebug'
