@@ -12,6 +12,14 @@ class FamillesController < ApplicationController
 
       @familles = @familles.where(id: famille_ids) if famille_ids.present?
     end
+
+    if params[:filter].present? && params[:filter][:min_price].present? && params[:filter][:max_price].present?
+      min_price = params[:filter][:min_price].to_i
+      max_price = params[:filter][:max_price].to_i
+
+      @familles = @familles.joins(:items).where(items: { price: min_price..max_price })
+    end
+
   end
 
   def show

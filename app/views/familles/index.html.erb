@@ -84,6 +84,16 @@
                 as: :check_boxes
     %>
   </div>
+  <div class="form-group">
+    <%= f.label :min_price, "Prix minimum" %>
+    <%= f.input :min_price, as: :numeric, input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :max_price, "Prix maximum" %>
+    <%= f.input :max_price, as: :numeric, input_html: { class: 'form-control' } %>
+  </div>
+
   <%= f.button :submit, "Filter", class: "btn btn-primary" %>
   <% end %>
 
@@ -99,6 +109,7 @@
           <ul>
             <% famille.items.each do |item| %>
               <li><%= item.name %></li>
+              <li><%= item.taille %></li>
               <li><%= item.price %>€</li>
                 <%= link_to famille_item_path(famille, item), class: "card-link" do %>
                 <% if item.photo_1.attached? %>
