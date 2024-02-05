@@ -5,6 +5,7 @@ class FamillesController < ApplicationController
 
   def index
     @familles = Famille.all
+    @familles = Famille.includes(:items)
   end
 
   def show

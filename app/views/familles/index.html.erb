@@ -19,6 +19,9 @@
 </div> %>
 <div class="container-test">
 
+<!-- app/views/familles/index.html.erb -->
+<div id="temperature"></div>
+
           <div class="container-card-famille">
             <% @familles.each do |famille| %>
               <div class="card-famille-index">
@@ -71,6 +74,17 @@
             </div>
 </div>
           </div>
+
+
+<% @familles.each do |famille| %>
+  <h2><%= famille.name %></h2>
+  <ul>
+    <% famille.items.each do |item| %>
+      <li><%= item.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 
   <% if policy(Famille).create? %>
 <div class="bouton-admin">
