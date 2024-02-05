@@ -76,6 +76,18 @@
           </div>
 
   <div class="container">
+
+<%= simple_form_for :filter, url: familles_path, method: :get do |f| %>
+  <div class="form-check">
+    <%= f.input :familles,
+                collection: Famille.all.map { |famille| [famille.name, famille.id] },
+                as: :check_boxes
+    %>
+  </div>
+  <%= f.button :submit, "Filter", class: "btn btn-primary" %>
+<% end %>
+
+
     <div class="card-store">
       <div class="card-index">
 
@@ -100,6 +112,7 @@
       </div>
     </div>
   </div>
+
 
   <% if policy(Famille).create? %>
     <div class="bouton-admin">

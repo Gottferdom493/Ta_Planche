@@ -6,6 +6,12 @@ class FamillesController < ApplicationController
   def index
     @familles = Famille.all
     @familles = Famille.includes(:items)
+
+    if params[:filter].present?
+      famille_ids = params[:filter][:familles]
+
+      @familles = @familles.where(id: famille_ids) if famille_ids.present?
+    end
   end
 
   def show
