@@ -7,11 +7,17 @@ Rails.application.routes.draw do
 
   root to: 'familles#index'
 
+  resources :items
   resources :profils
 
   resources :familles do
     resources :items
   end
+
+  # resources :items do
+  #   resources :profils
+  # end
+
 
   get '/weather/forecast', to: 'weather#forecast', defaults: { format: 'json' }
 

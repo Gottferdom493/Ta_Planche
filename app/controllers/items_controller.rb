@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.user = current_user
     @item.update(item_params)
-    redirect_to famille_item_path(@famille, @item)
+    redirect_to profil_path, notice: 'L\'item a été modifié avec succès.'
     authorize @item
   end
 

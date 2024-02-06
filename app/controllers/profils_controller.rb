@@ -10,6 +10,9 @@ class ProfilsController < ApplicationController
     @profil = Profil.find(params[:id])
     authorize @profil
 
+    @profil = current_user.profil
+    @items = current_user.items
+
     @user = current_user
   end
 
