@@ -7,10 +7,13 @@ class ProfilsController < ApplicationController
   end
 
   def show
-    @profil = Profil.find(params[:id])
+    @profil = current_user.profil
     authorize @profil
 
+    @items = current_user.items
+
     @user = current_user
+    # @item = current_user.items.find(params[:id]) # Ajoutez cette ligne pour récupérer l'item associé
   end
 
   def new
@@ -55,9 +58,13 @@ class ProfilsController < ApplicationController
   end
 
   private
+  def set_item
+
+  end
 
   def set_profil
     @profil = Profil.find(params[:id])
+    redirect_to root_path, alert: "Profil non trouvé" unless @profil
   end
 
   def profil_params
