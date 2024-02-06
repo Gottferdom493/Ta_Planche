@@ -18,42 +18,20 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-<% if user_signed_in? && @profil.present? %>
-  <img src="<%= cl_image_path(@profil.img_profil.key) %>" class="profil_avatar" alt="Avatar">
-<% end %>
-          <%# <%= cl_image_tag @profil.img_profil.key, class: "profil_avatar", gravity: :face %> %>
-
-            <%= image_tag "https://avatars.githubusercontent.com/u/96231434?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% if user_signed_in? && @profil.present? %>
+              <%= cl_image_tag @profil.img_profil.key, class: "profil_avatar", gravity: :face,  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+            <%# <%= image_tag "https://avatars.githubusercontent.com/u/96231434?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-<%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> %>
   <% if current_user.profil.present? %>
     <%= link_to "Profil", profil_path(current_user.profil), class: "dropdown-item" %>
     <%= link_to "Modif ton Profil", edit_profil_path(current_user.profil), class: "dropdown-item" %>
   <% else %>
     <span class="dropdown-item disabled">Profil</span>
     <span class="dropdown-item disabled">Modif ton Profil</span>
-    <!-- Vous pouvez ajouter un message ou un lien vers la création de profil ici -->
   <% end %>
-  <%# <%= link_to "Modif tes paramètres", edit_user_registration_path, class: "dropdown-item" %> %>
-  <%# <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %> %>
-<%# </div> %>
-
-
-
-
-<%# <%= link_to "Profil", profil_path(current_user.profil), class: "dropdown-item" %> %>
-<%# <%= link_to "Profil", profils_path, class: "dropdown-item" %> %>
-
-<%# <%= link_to "Modif ton Profil", edit_profil_path(current_user.profil), class: "dropdown-item" %> %>
-<%# <%= link_to "Modif ton Profil", edit_profil_path(@profil), class: "dropdown-item" %> %>
-
-
-              <%# <%= link_to "Profil", profil_path, class: "dropdown-item" %>
-              <%# <%= link_to "Modif ton Profil", edit_profil_path, class: "dropdown-item"%>
               <%= link_to "Modif tes paramètres", edit_user_registration_path, class: "dropdown-item" %>
-              <%# <%= link_to "Mon Profil", profil_path(current_user.profil), class: "nav-link" %>
-              <%# <%= link_to "Supprimer ton Profil", "#", class: "dropdown-item"%> %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

@@ -64,6 +64,7 @@ class ProfilsController < ApplicationController
 
   def set_profil
     @profil = Profil.find(params[:id])
+    redirect_to root_path, alert: "Profil non trouvé" unless @profil
   end
 
   def profil_params
