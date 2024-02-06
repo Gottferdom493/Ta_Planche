@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user! #vérouille par défaut tous les controller
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :set_profil
+  
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
@@ -22,4 +23,9 @@ class ApplicationController < ActionController::Base
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
+
+  def set_profil
+    @profil = current_user.profil if user_signed_in?
+  end
+
 end

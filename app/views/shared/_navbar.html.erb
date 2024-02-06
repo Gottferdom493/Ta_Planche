@@ -18,6 +18,11 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
+<% if user_signed_in? && @profil.present? %>
+  <img src="<%= cl_image_path(@profil.img_profil.key) %>" class="profil_avatar" alt="Avatar">
+<% end %>
+          <%# <%= cl_image_tag @profil.img_profil.key, class: "profil_avatar", gravity: :face %> %>
+
             <%= image_tag "https://avatars.githubusercontent.com/u/96231434?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
