@@ -19,7 +19,7 @@
             <h1><%= item.marque.capitalize %></h1>
             <h2><%= item.taille %></h2>
             <h3><%= item.price %>€</h3>
-<%= link_to 'Modifier', edit_item_path(@item) %>
+<%= link_to 'Modifier', edit_famille_item_path(item.famille_id, item) %>
           </ul>
         </div>
       </div>
@@ -29,6 +29,5 @@
 
   <div class="bouton-add">
     <%= link_to'Retour', profils_path %>
-    <%# <%= link_to "Modifie ton profil", edit_profil_path(current_user.profil) %> %>
 
   </div>

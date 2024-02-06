@@ -14,6 +14,7 @@ class ProfilsController < ApplicationController
     @items = current_user.items
 
     @user = current_user
+    # @item = current_user.items.find(params[:id]) # Ajoutez cette ligne pour récupérer l'item associé
   end
 
   def new
@@ -58,6 +59,9 @@ class ProfilsController < ApplicationController
   end
 
   private
+  def set_item
+
+  end
 
   def set_profil
     @profil = Profil.find(params[:id])
