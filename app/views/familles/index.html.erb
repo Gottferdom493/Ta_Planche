@@ -22,6 +22,12 @@
 <!-- app/views/familles/index.html.erb -->
 <div id="temperature"></div>
 
+  <% if policy(Famille).create? %>
+    <div class="bouton-admin">
+    <%= link_to 'Ajouter une Famille' , new_famille_path %>
+  <% end %>
+</div>
+
           <div class="container-card-famille">
             <% @familles.each do |famille| %>
               <div class="card-famille-index">
@@ -94,6 +100,12 @@
     <%= f.input :max_price, as: :numeric, input_html: { class: 'form-control' } %>
   </div>
 
+    <!-- Champ de filtre pour la taille minimale -->
+  <%= f.input :min_size, label: "Taille minimale" %>
+
+  <!-- Champ de filtre pour la taille maximale -->
+  <%= f.input :max_size, label: "Taille maximale" %>
+
   <%= f.button :submit, "Filter", class: "btn btn-primary" %>
   <% end %>
 
@@ -126,10 +138,3 @@
       </div>
     </div>
   </div>
-
-
-  <% if policy(Famille).create? %>
-    <div class="bouton-admin">
-    <%= link_to 'Ajouter' , new_famille_path %>
-  <% end %>
-</div>

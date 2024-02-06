@@ -7,6 +7,7 @@ class FamillesController < ApplicationController
     @familles = Famille.all
     @familles = Famille.includes(:items)
 
+    # Filtrer pour le type de Famille
     if params[:filter].present?
       famille_ids = params[:filter][:familles]
 
@@ -18,8 +19,16 @@ class FamillesController < ApplicationController
       max_price = params[:filter][:max_price].to_i
 
       @familles = @familles.joins(:items).where(items: { price: min_price..max_price })
-    end
+      # Filtrer par taille minimale
+      if params[:filter][:min_size].present?
+        @familles = @familles.joins(:items).where("items.size >= ?", params[:filter][:min_size])
+      end
 
+      # Filtrer par taille maximale
+      if params[:filter][:max_size].present?
+        @familles = @familles.joins(:items).where("items.size <= ?", params[:filter][:max_size])
+      end
+    end
   end
 
   def show
