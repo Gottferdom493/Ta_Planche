@@ -8,17 +8,39 @@
       <%= f.label :prenom, "Entre ton prenoms" %>
       <%= f.text_field :prenom %>
 
-      <%= f.label :email, "Entre ton emails" %>
-      <%= f.text_field :email %>
+      <%# <%= f.label :email, "Entre ton emails" %> %>
+      <%# <%= f.text_field :email %> %>
 
-      <%= f.label :age, "Entre ton age" %>
-      <%= f.text_field :age %>
+      <%# <%= f.label :age, "Entre ton age" %> %>
+      <%# <%= f.text_field :age %> %>
 
-      <%= f.file_field :img_profil %>
+    <div class="container">
+      <%= f.label :date_naissance, "Date de naissance" %>
+      <%= f.date_select :date_naissance, {  order: [:day, :month, :year], start_year: Date.current.year - 100, end_year: Date.current.year, use_month_numbers: true }, { class: "form-control" } %>
+    </div>
+
+      <%= f.file_field :img_profil, onchange: "previewImage(this);" %>
 
       <%= f.submit :Création %>
 
     <% end %>
+
+<img id="photo-famille-preview" src="#" alt="Aperçu de l'image" style="display:none; max-width: 100%; max-height: 200px; border-radius: 10px" />
+
+<script type="text/javascript">
+  function previewImage(input) {
+    var preview = document.getElementById('photo-famille-preview');
+    preview.style.display = 'block';
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+</script>
 
   <div class="bouton-add">
     <%= link_to'Retour', profils_path %>

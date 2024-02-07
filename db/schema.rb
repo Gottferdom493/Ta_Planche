@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_30_140006) do
+ActiveRecord::Schema.define(version: 2024_02_07_160721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2024_01_30_140006) do
     t.string "prenom"
     t.string "email"
     t.float "age"
+    t.date "date_naissance"
     t.index ["user_id"], name: "index_profils_on_user_id"
   end
 
