@@ -14,8 +14,10 @@
       <%= f.label :age, "Entre ton age" %>
       <%= f.text_field :age %>
 
+    <div class="container">
       <%= f.label :date_naissance, "Date de naissance" %>
-      <%= f.date_select :date_naissance, { start_year: Date.current.year - 100, end_year: Date.current.year, use_month_numbers: true }, { class: "form-control" } %>
+      <%= f.date_select :date_naissance, {  order: [:day, :month, :year], start_year: Date.current.year - 100, end_year: Date.current.year, use_month_numbers: true }, { class: "form-control" } %>
+    </div>
 
       <%= f.file_field :img_profil %>
 
