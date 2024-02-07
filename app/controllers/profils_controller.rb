@@ -1,5 +1,5 @@
 class ProfilsController < ApplicationController
-
+  before_action :set_profil, only: [:show, :edit, :update, :destroy]
 
   def index
     @profils = Profil.all
@@ -58,13 +58,19 @@ class ProfilsController < ApplicationController
   end
 
   private
+
   def set_item
 
   end
 
   def set_profil
-    @profil = Profil.find(params[:id])
-    redirect_to root_path, alert: "Profil non trouvé" unless @profil
+    if params[:id].present?
+      @profil = Profil.find(params[:id])
+    else
+      @profil = Profil.new
+    end
+    # @profil = Profil.find(params[:id])
+    # redirect_to root_path, alert: "Profil non trouvé" unless @profil
   end
 
   def profil_params
