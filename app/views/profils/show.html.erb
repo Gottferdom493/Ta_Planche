@@ -2,12 +2,22 @@
   <div class="bouton-add">
     <%= link_to'Home', familles_path %>
   </div>
+
 <div class="container">
 <h1>Ton Profil</h1>
 
   <ul>
     <h2><%= @user.nickname %></h2>
-    <%= cl_image_tag @profil.img_profil.key, class: "profil_avatar", gravity: :face %>
+
+      <% if user_signed_in? && @profil.present? %>
+        <% if @profil.img_profil.attached? %>
+          <%= cl_image_tag(@profil.img_profil.key, class: "profil_avatar rounded-circle", style: "object-fit: cover; width: 200px; height: 200px;", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+        <% else %>
+          <%= image_tag("https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png", class: "profil_avatar rounded-circle", style: "object-fit: cover; width: 200px; height: 200px;", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+        <% end %>
+      <% end %>
+
+    <%# <%= cl_image_tag @profil.img_profil.key, class: "profil_avatar", gravity: :face %>
     <h2><%= @profil.nom.capitalize %></h1>
     <h2><%= @profil.prenom.capitalize %></h2>
     <h3><%= @profil.age %>ans</h3>
@@ -23,8 +33,7 @@
       <h3><%= item.price %>€</h3>
       <%= link_to 'Modifier', edit_famille_item_path(item.famille_id, item) %>
     </ul>
+    <% end %>
   </div>
 </div>
-<% end %>
-
 </div>

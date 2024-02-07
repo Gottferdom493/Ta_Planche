@@ -6,18 +6,15 @@
       <%= f.text_field :nom %>
 
       <%= f.label :prenom, "Entre ton prenoms" %>
-      <%= f.text_area :prenom %>
+      <%= f.text_field :prenom %>
 
       <%= f.label :email, "Entre ton emails" %>
-      <%= f.text_area :email %>
+      <%= f.text_field :email %>
 
       <%= f.label :age, "Entre ton age" %>
-      <%= f.text_area :age %>
+      <%= f.text_field :age %>
 
       <%= f.file_field :img_profil %>
-
-      <%# <%= f.collection_select :item_id, Item.all, :id, :name, prompt: "Sélectionnez un élément" %> %>
-
 
       <%= f.submit :Création %>
 

@@ -28,10 +28,6 @@
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-
-
-
-
   <% if current_user.profil.present? %>
     <%= link_to "Profil", profil_path(current_user.profil), class: "dropdown-item" %>
     <%= link_to "Modif ton Profil", edit_profil_path(current_user.profil), class: "dropdown-item" %>
