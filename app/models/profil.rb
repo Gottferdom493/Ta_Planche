@@ -1,5 +1,5 @@
 class Profil < ApplicationRecord
-  validates :nom, :prenom, :email, :age, presence: true
+  validates :nom, :prenom, presence: true
   # belongs_to :item
   belongs_to :user
 
