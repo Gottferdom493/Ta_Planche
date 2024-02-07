@@ -17,11 +17,15 @@
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
+
           <li class="nav-item dropdown">
             <% if user_signed_in? && @profil.present? %>
-              <%= cl_image_tag @profil.img_profil.key, class: "profil_avatar", gravity: :face,  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% if @profil.img_profil.attached? %>
+                <%= cl_image_tag(@profil.img_profil.key, class: "profil_avatar rounded-circle", style: "object-fit: cover; width: 40px; height: 40px;", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+              <% else %>
+                <%= image_tag("https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png", class: "profil_avatar rounded-circle", style: "object-fit: cover; width: 40px; height: 40px;", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+              <% end %>
             <% end %>
-            <%# <%= image_tag "https://avatars.githubusercontent.com/u/96231434?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
   <% if current_user.profil.present? %>
@@ -40,6 +44,11 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
+    </li>
+                      <%# <%= link_to "Modif tes paramètres", edit_user_registration_path, class: "dropdown-item" %>
+
+                      <%# <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
       </ul>
     </div>
   </div>

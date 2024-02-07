@@ -19,8 +19,11 @@
 
   <% @profils.each do |profil| %>
           <ul>
+
             <h2><%= profil.nom %></h2>
             <h2><%= profil.prenom %></h2>
+            <h2><%= profil.email %></h2>
+
           </ul>
 
           <%= link_to "Ton profil", profil_path(profil) %>
