@@ -21,7 +21,7 @@
     <h2>Email : <%= @user.email %></h2>
     <h2>Nom : <%= @profil.nom.capitalize %></h2>
     <h2>Prenom : <%= @profil.prenom.capitalize %></h2>
-    <h2>Date de naissance : <%= @profil.date_naissance.strftime('%d/%m/%Y') %></h2>
+    <%# <h2>Date de naissance : <%= @profil.date_naissance.strftime('%d/%m/%Y') %></h2> %>
 
   </ul>
 
@@ -30,8 +30,9 @@
       <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
       <h1><%= item.marque.capitalize %></h1>
       <h2><%= item.taille %></h2>
-      <%# <h3><%= item.price %>€</h3> %>
+      <h3><%= item.price%>€</h3>
       <%= link_to 'Modifier', edit_famille_item_path(item.famille_id, item) %>
+      <%= button_to "Supprimer", item_path(item), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cet item ?" }, class: "btn btn-danger" %>
     </ul>
     <% end %>
   </div>
