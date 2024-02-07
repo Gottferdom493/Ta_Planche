@@ -7,7 +7,6 @@
 <h1>Ton Profil</h1>
 
   <ul>
-    <h2><%= @user.nickname %></h2>
 
       <% if user_signed_in? && @profil.present? %>
         <% if @profil.img_profil.attached? %>
@@ -18,8 +17,9 @@
       <% end %>
 
     <%# <%= cl_image_tag @profil.img_profil.key, class: "profil_avatar", gravity: :face %>
-    <h2><%= @profil.nom.capitalize %></h1>
-    <h2><%= @profil.prenom.capitalize %></h2>
+    <h2>Pseudo : <%= @user.nickname %></h2>
+    <h2>Nom : <%= @profil.nom.capitalize %></h1>
+    <h2>Prenom : <%= @profil.prenom.capitalize %></h2>
     <h3><%= @profil.age %>ans</h3>
     <h3><%= @user.email %></h3>
   </ul>
