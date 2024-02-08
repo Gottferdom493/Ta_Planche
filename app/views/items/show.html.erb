@@ -66,6 +66,7 @@
         <h3><%= @item.price %>€</h2>
         <h4><%= @item.detail %></h2>
         <h4><%= @item.matiere %></h2>
+        <p>Mise en ligne le :<%= @item.created_at.strftime("%d/%m/%Y") %></p>
       </div>
       <%# </div> %>
     </div>
