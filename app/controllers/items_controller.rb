@@ -44,6 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @famille = @item.famille
     @item = @famille.items.find(params[:id])
     @familles = Famille.all
     authorize @item
