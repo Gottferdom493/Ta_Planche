@@ -22,7 +22,7 @@
     <h2>Nom : <%= @profil.nom.capitalize %></h2>
     <h2>Prenom : <%= @profil.prenom.capitalize %></h2>
     <h2>Date de naissance : <%= @profil.date_naissance.strftime('%d/%m/%Y') %></h2>
-
+    <h2>Date de création du profil :<%= @profil.created_at.strftime("%d/%m/%Y") %></h2>
   </ul>
 
 <h1>Mes Planches en Vente</h1>
@@ -31,6 +31,7 @@
       <h1><%= item.marque.capitalize %></h1>
       <h2><%= item.taille %></h2>
       <h3><%= item.price%>€</h3>
+      <p>Mise en ligne le :<%= item.created_at.strftime("%d/%m/%Y") %></p>
       <%= link_to 'Modifier', edit_famille_item_path(item.famille_id, item) %>
       <%= button_to "Supprimer", item_path(item), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cet item ?" }, class: "btn btn-danger" %>
     </ul>

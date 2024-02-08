@@ -23,7 +23,7 @@
 
       <% @items.each do |item| %>
         <div class="card-index">
-          <%=link_to 'profil', profils_path(item) %>
+          <%=link_to 'profil', profil_path(item) %>
 
           <%= link_to famille_item_path(@famille, item) do %>
             <% if item.photo_1.attached? %>
@@ -37,6 +37,7 @@
             <li>Marque :<%= item.marque.capitalize %></li>
             <li>Taille :<%= item.taille %></li>
             <li>Prix :<%= item.price %>€</li>
+            <p>Mise en ligne le :<%= item.created_at.strftime("%d/%m/%Y") %></p>
           </ul>
 
           <% if policy(item).update? %>

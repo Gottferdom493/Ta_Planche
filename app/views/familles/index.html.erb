@@ -120,6 +120,7 @@
           <h2><%= famille.name %></h2>
           <ul>
             <% famille.items.each do |item| %>
+              <p>Mise en ligne le :<%= item.created_at.strftime("%d/%m/%Y") %></p>
               <li><%= item.name %></li>
               <li><%= item.taille %></li>
               <li><%= item.price %>€</li>
