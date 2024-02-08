@@ -12,6 +12,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     authorize @item
 
+    @famille = @item.famille
+
     @items = Item.where(address: @item.address)
     @markers = @items.geocoded.map do |item|
       {
@@ -42,6 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @famille = @item.famille
     @item = @famille.items.find(params[:id])
     @familles = Famille.all
     authorize @item
@@ -58,15 +61,16 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    redirect_to famille_items_path
-    @item.destroy
     authorize @item
+    # redirect_to famille_items_path
+    @item.destroy
+    redirect_to profil_path(current_user.profil), notice: "L'item a été supprimé avec succès."
   end
 
   private
 
   def set_item
-    @famille = Famille.find(params[:famille_id])
+    # @famille = Famille.find(params[:famille_id])
     @item = Item.find(params[:id])
   end
 
