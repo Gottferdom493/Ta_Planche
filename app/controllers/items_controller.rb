@@ -54,9 +54,12 @@ class ItemsController < ApplicationController
     @famille = Famille.find(params[:famille_id])
     @item = Item.find(params[:id])
     @item.user = current_user
-    @item.update(item_params)
-    redirect_to profil_path(@famille, @item)
     authorize @item
+    if @item.update(item_params)
+      redirect_to profil_path(current_user.profil)
+    else
+      render :edit
+    end
   end
 
   def destroy
