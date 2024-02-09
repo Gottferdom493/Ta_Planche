@@ -1,0 +1,31 @@
+
+.titre_registration{
+  padding-top: 30px;
+
+}
+
+.container_registration{
+  // border: solid black;
+  border-top: solid 1px black;
+  margin-top: 30px;
+  padding-top: 30px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.inputs_registration{
+  // border: solid red;
+  width: 500px;
+
+}
+
+.container_registration_delete{
+    // border: solid blue;
+    border-top: solid 1px black;
+    margin-top: 30px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: center;
+}
