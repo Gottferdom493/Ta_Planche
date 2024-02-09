@@ -1,0 +1,53 @@
+
+.titre_edit_profil{
+  padding-top: 30px;
+}
+
+.container_edit_profil{
+  // border: solid black;
+  display:flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 21%;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+
+  padding-top: 30px;
+}
+
+.edit_profil_img{
+  // border: solid green;
+
+}
+
+.avatar_edit_profil{
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: solid 2px;
+  object-fit: cover;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.edit_profil_info{
+    // border: solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+  margin-bottom: 5px;
+}
+
+input{
+  margin-bottom: 20px;
+}
+
+.container_date_naissance{
+  // border: solid blue;
+  display: flex;
+  margin-bottom: 20px;
+
+}
