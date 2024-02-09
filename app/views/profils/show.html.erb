@@ -17,14 +17,14 @@
           <% end %>
         <% end %>
 
-      <h2>Pseudo : <%= @user.nickname %></h2>
-      <h2>Email : <%= @user.email %></h2>
+      <h6>Pseudo :</h6> <h2><%= @user.nickname %></h2>
+      <h6><h6><h6>Email : </h6><h2><%= @user.email %></h2>
     </div>
     <div class="profil_info_profil">
-      <h2>Nom : <%= @profil.nom.capitalize %></h2>
-      <h2>Prenom : <%= @profil.prenom.capitalize %></h2>
-      <h2>Date de naissance : <%= @profil.date_naissance.strftime('%d/%m/%Y') %></h2>
-      <h2>Date de création du profil :<%= @profil.created_at.strftime("%d/%m/%Y") %></h2>
+      <h6>Nom : </h6><h2><%= @profil.nom.capitalize %></h2>
+      <h6>Prenom :</h6> <h2><%= @profil.prenom.capitalize %></h2>
+      <h6>Date de naissance :</h6><h2> <%= @profil.date_naissance.strftime('%d/%m/%Y') %></h2>
+      <h6>Date de création du profil :</h6><h2><%= @profil.created_at.strftime("%d/%m/%Y") %></h2>
       </ul>
     </div>
   </div>
@@ -44,9 +44,9 @@
 <% end %>
 
         <div class="card_profil_items_form">
-          <h3><%= item.marque.capitalize %></h3>
-          <h3><%= item.taille %></h3>
-          <h3><%= item.price%>€</h3>
+          <h5><%= item.marque.capitalize %></h5>
+          <h6><%= item.price%>€</h6>
+          <h6><%= item.taille %></h6>
         </div>
       </div>
           <p>Mise en ligne le :<%= item.created_at.strftime("%d/%m/%Y") %></p>
