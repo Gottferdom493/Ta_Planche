@@ -92,14 +92,16 @@
       <% @items.sample(6).each do |item| %>
       <div class="card-recommandation">
         <div>
-            <%= link_to famille_item_path(@famille, item) do %>
-              <% if @item.photo_1.attached? %>
-                <%= cl_image_tag @item.photo_1.key, alt: "photo n°1", class:"card-item-img"%>
-              <% else %>
-                <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
-              <% end %>
+<% @items.each do |item| %>
+  <%= link_to famille_item_path(@famille, item) do %>
+    <% if item.photo_1.attached? %>
+      <%= cl_image_tag item.photo_1.key, alt: "photo n°1", class:"card-item-img"%>
+    <% else %>
+      <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
+    <% end %>
+  <% end %>
+<% end %>
 
-            <% end %>
         </div>
         <div>
           <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
