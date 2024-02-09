@@ -36,7 +36,13 @@
     <div class="card_profil_items">
         <%# <ul> %>
       <div class="img_info_card">
-        <img class="img_profil_item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
+
+<% if item.url_image.present? %>
+  <%= image_tag @item.photo_1.key, class: "item-image" %>
+<% else %>
+  <img class="img_profil_item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
+<% end %>
+
         <div class="card_profil_items_form">
           <h3><%= item.marque.capitalize %></h3>
           <h3><%= item.taille %></h3>
