@@ -57,7 +57,7 @@
           <ul style="list-style-type:none">
 
               <div class="field">
-                <%= f.label :famille_id, "Quelle est le type de Planche?" %>
+                <%= f.label :famille_id, "Choisi ton type de Planche*" %>
                 <%= f.collection_select :famille_id, @familles, :id, :name, prompt: "Choisissez une famille" %>
               </div>
 
@@ -93,11 +93,12 @@
         <h2>Description de ta planche</h2>
       </div>
         <div class="description_new_item">
-          <ul style="list-style-type:none">
-              <li>
-                <%= f.label :detail, "6 / " %>
+          <%# <ul style="list-style-type:none"> %>
+              <%# <li> %>
+              <div class="input_description_new_item">
                 <%= f.text_area :detail, placeholder: "La description" %>
-              </li>
+              </div>
+              <%# </li> %>
 
           </ul>
         </div>

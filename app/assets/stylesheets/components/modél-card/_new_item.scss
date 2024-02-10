@@ -41,6 +41,25 @@
 }
 
 .description_new_item{
-  border: solid blue;
+  // border: solid blue;
+  display: flex;
+  justify-content: center;
+  height: 250px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  // padding-top: 30px;
+}
 
+.input_description_new_item{
+  // border: solid pink;
+  // flex: 1; /* Ajout de flex: 1 pour occuper tout l'espace disponible */
+  display: flex; /* Utilisation de flexbox pour gérer la hauteur */
+  // align-items: stretch;
+  width: 60%;
+}
+
+.description_new_item .input_description_new_item textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* Inclure le padding et la bordure dans la taille */
 }
