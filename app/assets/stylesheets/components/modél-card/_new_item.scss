@@ -5,14 +5,23 @@
 
 .titre_secondaire_new_item{
   padding-top: 30px;
-
 }
 
 .container_new_item{
   // border: solid black;
   border-top: solid 1px black;
   margin-top: 30px;
+}
 
+.container_ligne_paragraphe{
+  display: flex;
+  justify-content: center;
+}
+
+.ligne_paragraphe{
+  border-top: solid 1px black;
+  margin-top: 50px;
+  width: 50%;
 }
 
 .container_img_new_item{
@@ -35,9 +44,37 @@
   justify-content: center;
 }
 
-.info_new_item{
-  border: solid red;
+// .container_info_new_item{
+//   // border: solid red;
+//   // display: flex;
+// }
 
+.info_new_item{
+  // border: solid blueviolet;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.info2_new_item{
+  // border: solid blueviolet;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input_info_new_item{
+  // border: solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input2_info_new_item{
+  // border: solid yellowgreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .description_new_item{
@@ -47,15 +84,12 @@
   height: 250px;
   margin-top: 30px;
   margin-bottom: 30px;
-  // padding-top: 30px;
 }
 
 .input_description_new_item{
   // border: solid pink;
-  // flex: 1; /* Ajout de flex: 1 pour occuper tout l'espace disponible */
   display: flex; /* Utilisation de flexbox pour gérer la hauteur */
-  // align-items: stretch;
-  width: 60%;
+  width: 55%;
 }
 
 .description_new_item .input_description_new_item textarea {
