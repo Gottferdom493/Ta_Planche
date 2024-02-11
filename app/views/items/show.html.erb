@@ -31,6 +31,11 @@
               <% end %>
             </div>
 
+
+
+
+
+
             <div class="carousel-item">
               <% if @item.photo_2.attached? %>
                 <%= cl_image_tag @item.photo_2.key, alt: "photo n°2", class:"card-item-img"%>
@@ -60,10 +65,10 @@
         </div>
 
       <div class="card-achat">
-        <h1><%= @item.marque.capitalize %></h2>
+        <h2><%= @item.marque.capitalize %></h2>
         <h2><%= @item.name.capitalize %></h2>
         <h2><%= @item.taille %></h2>
-        <h3><%= @item.price %>€</h2>
+        <h2><%= @item.price %>€</h2>
         <h4><%= @item.detail %></h2>
         <h4><%= @item.matiere %></h2>
         <p>Mise en ligne le :<%= @item.created_at.strftime("%d/%m/%Y") %></p>
@@ -75,7 +80,7 @@
       <h2>La Planche est mise en vente par : <%= @item.user.nickname.capitalize %></h2>
 
       <%= @item.address%>
-      <%= @markers%>
+      <%# <%= @markers%>
     </div>
 
     <div
