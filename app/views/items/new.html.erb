@@ -66,18 +66,12 @@
               <%= f.collection_select :famille_id, @familles, :id, :name, prompt: "Choisissez une famille" %>
             </div>
 
-            <%# <li> %>
-              <%# <%= f.label :address, " 1 / " %>
             <div class="input_info_new_item">
               <%= f.text_area  :address,  placeholder: "Ton adresse?" %>
-            <%# </li> %>
             </div>
 
-            <%# <li> %>
-              <%# <%= f.label :marque, " 2 / " %>
             <div class="input_info_new_item">
               <%= f.text_field :marque,  placeholder: "La marque" %>
-            <%# </li> %>
             </div>
               </div>
 
@@ -117,9 +111,3 @@
   </div>
     <%= link_to'Retour', familles_path %>
 </div>
-
-          <%# </ul> %>
-
-
-
-  <%# </ul> %>
