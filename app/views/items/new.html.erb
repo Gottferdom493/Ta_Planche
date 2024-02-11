@@ -1,119 +1,113 @@
+<div class=container>
 
-<h2>Ajoute ta Planche</h2>
-<%# <div class="card-new-item"> %>
-  <%# <ul style="list-style-type:none; padding-left:38%; margin-bottom:0px;"> %>
+  <div class= "titre_new_item">
+    <h1>Ajoute ta Planche</h1>
+  </div>
 
+  <div class="container_new_item">
     <%= form_for [@famille, @item] do |f| %>
 
-      <div class = "container-new-item">
-        <div class="card-grid-01">
-          <ul style="list-style-type:none">
-
-              <div class="field">
-                <%= f.label :famille_id, "Quelle est le type de Planche?" %>
-                <%# <%= f.collection_select :famille_id, Famille.all, :id, :name, prompt: "Choisissez une famille" %> %>
-                <%= f.collection_select :famille_id, @familles, :id, :name, prompt: "Choisissez une famille" %>
-              </div>
-
-              <li>
-                <%= f.label :address, " 1 / " %>
-                <%= f.text_field :address,  placeholder: "Ton adresse?" %>
-              </li>
-
-              <li>
-                <%= f.label :marque, " 2 / " %>
-                <%= f.text_field :marque,  placeholder: "La marque" %>
-              </li>
-
-              <li>
-                <%= f.label :name, " 3 / " %>
-                <%= f.text_field :name, placeholder: "Le nom" %>
-
-
-
-
-                <%# <%= form.select :name, ["Longboard", "Test user1"] %> %>
-                  <%# <select name="city" id="city"> %>
-                    <%# <option value="Longboard">Longboard</option>
-                    <option value="Test user1">Test user1</option>
-                  </select> %>
-
-      <%# <select name="languages" id="lang"> %>
-        <%# <option value="Test user1">Test user1</option> %>
-        <%# <option value="Longboard">Longboard</option> %>
-        <%# <option value="java">Java</option> %>
-        <%# <option value="golang">Golang</option> %>
-        <%# <option value="python">Python</option> %>
-        <%# <option value="c#">C#</option> %>
-        <%# <option value="C++">C++</option> %>
-        <%# <option value="erlang">Erlang</option> %>
-      </select>
-              </li>
-
-              <li>
-                <%= f.label :taille, " 4 / " %>
-                <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
-              </li>
-
-              <li>
-                <%= f.label :price, " 5 / " %>
-                <%= f.number_field :price, placeholder: "Le prix en €" %>
-              </li>
-          </ul>
-        </div>
-
-        <div class="card-grid-02">
-          <ul style="list-style-type:none">
-              <li>
-                <%= f.label :detail, "6 / " %>
-                <%= f.text_area :detail, placeholder: "La description" %>
-              </li>
-          </ul>
-        </div>
-
-    <label for="lang">Language</label>
-
-
-
-        <div class="card-grid-03">
-          <ul style="list-style-type:none">
-              <li>
-                <%= f.file_field :photo_1, onchange: "previewImage(this, 'preview-1');" %>
-              </li>
-
-              <li>
-                <%= f.file_field :photo_2, onchange: "previewImage(this, 'preview-2');" %>
-              </li>
-
-              <li>
-                <%= f.file_field :photo_3, onchange: "previewImage(this, 'preview-3');" %>
-              </li>
-      <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
-          </ul>
-        </div>
+      <div class= "titre_secondaire_new_item">
+        <h2>Ajoute tes photos</h2>
       </div>
 
+        <div class="container_img_new_item">
+              <div class="input_img_new_item">
+                <%= f.file_field :photo_1, onchange: "previewImage(this, 'preview-1');" %>
+                  <div class="preview_img_new_item">
+                    <img id="preview-1" src="#" alt="Aperçu de l'image 1" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+                  </div>
+              </div>
+
+                <div class="input_img_new_item">
+                <%= f.file_field :photo_2, onchange: "previewImage(this, 'preview-2');" %>
+                  <div class="preview_img_new_item">
+                    <img id="preview-2" src="#" alt="Aperçu de l'image 2" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+                  </div>
+                </div>
+
+                <div class="input_img_new_item">
+                <%= f.file_field :photo_3, onchange: "previewImage(this, 'preview-3');" %>
+                  <div class="preview_img_new_item">
+                    <img id="preview-3" src="#" alt="Aperçu de l'image 3" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+                  </div>
+                </div>
+
+        <script type="text/javascript">
+          function previewImage(input, previewId) {
+            var preview = document.getElementById(previewId);
+            preview.style.display = 'block';
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+              preview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+          }
+        </script>
+        </div>
+
+        <div class="container_ligne_paragraphe">
+            <div class="ligne_paragraphe">
+            </div>
+        </div>
+
+      <div class= "titre_secondaire_new_item">
+        <h2>Ajoute les infos de la planche</h2>
+      </div>
+
+        <div class="container_info_new_item">
+          <div class="info_new_item">
+
+            <div class="input_info_new_item">
+              <%= f.label :famille_id, "Choisi ton type de Planche*" %>
+              <%= f.collection_select :famille_id, @familles, :id, :name, prompt: "Choisissez une famille" %>
+            </div>
+
+            <div class="input_info_new_item">
+              <%= f.text_area  :address,  placeholder: "Ton adresse?" %>
+            </div>
+
+            <div class="input_info_new_item">
+              <%= f.text_field :marque,  placeholder: "La marque" %>
+            </div>
+              </div>
+
+          <div class="info2_new_item">
+            <div class="input2_info_new_item">
+              <%= f.text_field :name, placeholder: "Le nom" %>
+            </div>
+
+            <div class="input2_info_new_item">
+              <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
+            </div>
+
+            <div class="input2_info_new_item">
+              <%= f.number_field :price, placeholder: "Le prix en €" %>
+            </div>
+          </div>
+      </div>
+
+      <div class="container_ligne_paragraphe">
+          <div class="ligne_paragraphe">
+          </div>
+      </div>
+
+      <div class= "titre_secondaire_new_item">
+        <h2>Description de ta planche</h2>
+      </div>
+        <div class="description_new_item">
+          <div class="input_description_new_item">
+            <%= f.text_area :detail, placeholder: "La description" %>
+          </div>
+          </div>
+            <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
+          </div>
+        </div>
+      </div>
     <% end %>
-
-<img id="preview-1" src="#" alt="Aperçu de l'image 1" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
-<img id="preview-2" src="#" alt="Aperçu de l'image 2" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
-<img id="preview-3" src="#" alt="Aperçu de l'image 3" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
-
-<script type="text/javascript">
-  function previewImage(input, previewId) {
-    var preview = document.getElementById(previewId);
-    preview.style.display = 'block';
-
-    var reader = new FileReader();
-
-    reader.onload = function (e) {
-      preview.src = e.target.result;
-    };
-
-    reader.readAsDataURL(input.files[0]);
-  }
-</script>
-
-  </ul>
-
+  </div>
     <%= link_to'Retour', familles_path %>
+</div>
