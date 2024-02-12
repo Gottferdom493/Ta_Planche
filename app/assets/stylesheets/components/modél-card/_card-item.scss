@@ -11,7 +11,7 @@
 
 .banner {
   width: 100%;
-  border-bottom: 1px solid #B0B0B0;
+  border-bottom: 1px solid black;
   background: #FFFFFF;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -24,41 +24,120 @@
   }
 }
 
-// .img_item{
-//   // border: solid red;
-//   // object-fit: cover;
-// }
+.card-grid {
+  // border: solid red;
+  display: grid; /* creéation de la grille  */
+  grid-template-columns: 1fr 1fr; /* nombre de colonne */
+  row-gap: 1ch; /* espace entre les lignes */
+  column-gap: 1ch; /* espace entre les colonnes */
 
-.carousel{
-  border: solid yellowgreen;
-  width: 600px;
-  height: 450px;
 }
 
+.carousel{ // c'est ici que modifie les dimensions du carousel //
+  // border: solid black;
+  width: 600px;
+  height: 557px;
+}
+
+// ----------- Bouton pour le Carousel ----------- //
+// .carousel-control-prev{
+//   border: solid green;
+// }
+
+// .carousel-control-prev-icon{
+//   border: solid pink;
+// }
+
+// .carousel-control-next{
+//   border: solid green;
+// }
+
+// .carousel-control-next-icon{
+//   border: solid pink;
+// }
+// ----------- Bouton pour le Carousel ----------- //
+
 .carousel-inner{
-  border: solid blue;
+  // border: solid red;
   width: 100%;
   height: 100%;
-
 }
 
 .carousel-item{
-    border: solid red;
-    width: 100%;
-    height: 100%;
-
+  // border: solid blue;
+  width: 100%;
+  height: 100%;
 }
 
 .card-item-img{
-    border: solid green;
-    width: 100%;
-    height: 100%;
+  // border: solid yellowgreen;
+  width: 100%;
+  height: 100%;
 
   // max-width: 100%;
   // max-height: 450px; /* Ajustez la hauteur maximale selon vos besoins */
   display: block;
   margin: 0 auto; /* Pour centrer l'image horizontalement */
   object-fit: contain;
+}
+
+.img-item{
+  // border: solid red;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto; /* Pour centrer l'image horizontalement */
+  // margin-top: 18%;
+  object-fit: contain;
+}
+
+.container_profil_achat_show_item{
+  // border: solid black;
+  display: flex;
+  padding-top: 30px;
+}
+
+.profil_map_show_item{
+  // border: solid red;
+  width: 50%;
+}
+
+.profil_info_show_item{
+  // border: solid blue;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 30px;
+
+}
+
+.titre_profil_info_show_item{
+  // border: solid green;
+  display: flex;
+  justify-content: center;
+}
+
+.container_profil_info_show_item{
+  // border: solid red;
+  display: flex;
+  height: 100%;
+}
+
+.avatar_profil_info_show_item{
+  // border: solid pink;
+  padding-left: 20px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info_profil_info_show_item{
+  // border: solid yellowgreen;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .centered-item {
@@ -69,38 +148,39 @@
 }
 
 .card-achat {
-  font-family: 'Ubuntu', sans-serif;
   // border: 1px solid black;
-  border-radius: 5px;
-  background: #FFFFFF;
+  // font-family: 'Ubuntu', sans-serif;
+  // border-radius: 5px;
+  // background: #FFFFFF;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 10px;
   margin-bottom: 10px;
+  height: 100%;
 
-  h1 {
-    font-family: 'Ubuntu',sans-serif;
-    font-weight: 700;
-  font-size: 2.7rem;
-  }
+  // h1 {
+  //   font-family: 'Ubuntu',sans-serif;
+  //   font-weight: 700;
+  // font-size: 2.7rem;
+  // }
 
-  h2{
-    font-family: 'Lato', sans-serif;
-    opacity: .7;
-    font-weight: 700;
-    font-size: 26px;
-  }
+  // h2{
+  //   font-family: 'Lato', sans-serif;
+  //   opacity: .7;
+  //   font-weight: 700;
+  //   font-size: 26px;
+  // }
 
-  h3 {
-    font-family: 'Ubuntu',sans-serif;
-    font-weight: 600;
-    font-size: 2.4rem;
-  }
+  // h3 {
+  //   font-family: 'Ubuntu',sans-serif;
+  //   font-weight: 600;
+  //   font-size: 2.4rem;
+  // }
 
-  h4 {
-    padding-top: 5%;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.6rem;
-  }
+  // h4 {
+  //   padding-top: 5%;
+  //   font-family: 'Lato', sans-serif;
+  //   font-size: 1.6rem;
+  // }
 
 }
 
@@ -108,23 +188,17 @@
   margin-top: 20px;
   padding: 10px;
   width: 100%;
-  border-top: 1px solid #B0B0B0;
+  // border-top: 1px solid #B0B0B0;
   background: #FFFFFF;
 
 
-  h2 {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
+  // h2 {
+  //   font-family: 'Ubuntu', sans-serif;
+  //   font-size: 1.4rem;
+  //   font-weight: 700;
+  // }
 }
 
-.card-grid {
-  display: grid; /* creéation de la grille  */
-  grid-template-columns: 1fr 1fr; /* nombre de colonne */
-  row-gap: 1ch; /* espace en les lignes */
-  column-gap: 1ch; /* espace entre les colonnes */
-}
 
 .recommadation {
   display: grid; /* creéation de la grille  */
