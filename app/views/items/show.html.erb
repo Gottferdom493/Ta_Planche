@@ -1,18 +1,16 @@
-<%# <head google_webfonts_init(config hash)> %>
-</head>
-
-<body class="body">
 
   <div class="container">
     <div class="row">
 
-      <%# <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
     <div class="banner">
-      <h1>Ta Planche</h1>
-      <div class="banner-choix">
-        <%= link_to 'Famille de Planche/', familles_path %>
-        <%= link_to 'Tes Planches/', famille_items_path %>
+      <div class= "titre_show_item">
+        <h1>Ta Planche</h1>
       </div>
+
+      <%# <div class="banner-choix"> %>
+        <%# <%= link_to 'Famille de Planche/', familles_path %>
+        <%# <%= link_to 'Tes Planches/', famille_items_path %>
+      <%# </div> %>
     </div>
 
 
@@ -59,14 +57,13 @@
 
       <div class="card-achat">
         <p>Mise en ligne le : <h4><%= @item.created_at.strftime("%d/%m/%Y") %></h4>
-        <h6>Marque :</h6> <h2><%= @item.marque.capitalize %></h2>
-        <h6>Nom :</h6> <h2><%= @item.name.capitalize %></h2>
-        <h6>Taille :</h6> <h2><%= @item.taille %></h2>
-        <h6>Prix :</h6> <h2><%= @item.price %>€</h2>
+        <h6>Marque :</h6> <h3><%= @item.marque.capitalize %></h3>
+        <h6>Nom :</h6> <h3><%= @item.name.capitalize %></h3>
+        <h6>Taille :</h6> <h3><%= @item.taille %></h3>
+        <h6>Prix :</h6> <h3><%= @item.price %>€</h3>
         <h6>Description :</h6> <h5><%= @item.detail %></h5>
-        <h4><%= @item.matiere %></h2>
+        <%# <h4><%= @item.matiere</h4> %>
       </div>
-      <%# </div> %>
     </div>
 
     <div class="container_ligne_paragraphe">
@@ -123,7 +120,6 @@
     </div>
 
     <div class="container_recommandation_show_item">
-      <%# <div class="recommadation"> %>
       <% @famille.items.sample(8).each do |item| %>
         <div class="card_recommandation_show_item">
           <div class="img_card_recommandation_show_item">
@@ -145,19 +141,5 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-            <%# <% end %>
-        <%# <div> %>
-
-        <%# </div> %>
-  <%# </div> %>
-
 
 </body>

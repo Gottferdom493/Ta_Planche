@@ -4,6 +4,11 @@
   width : 100%;
 }
 
+.titre_show_item{
+  padding-top: 30px;
+
+}
+
 .container {
   width: 1000px;
   margin: 0 auto;
@@ -11,34 +16,32 @@
 
 .banner {
   width: 100%;
-  border-bottom: 1px solid black;
   background: #FFFFFF;
-  margin-top: 5px;
-  margin-bottom: 5px;
   text-align: center;
-  margin-bottom: 20px;
   .banner-choix {
     text-decoration: none;
     text-decoration: underline;
-    margin-bottom: 5px;
   }
 }
 
 .card-grid {
   // border: solid red;
+  border-top: 1px solid black;
   display: grid; /* creéation de la grille  */
   grid-template-columns: 1fr 1fr; /* nombre de colonne */
   row-gap: 1ch; /* espace entre les lignes */
   column-gap: 1ch; /* espace entre les colonnes */
+  margin-top: 30px;
+  padding-top: 20px;
 
 }
 
 .carousel{ // c'est ici que modifie les dimensions du carousel //
   // border: solid black;
   width: 600px;
-  height: 557px;
+  height: 450px;
 }
-
+// 557px
 // ----------- Bouton pour le Carousel ----------- //
 // .carousel-control-prev{
 //   border: solid green;
@@ -73,9 +76,6 @@
   // border: solid yellowgreen;
   width: 100%;
   height: 100%;
-
-  // max-width: 100%;
-  // max-height: 450px; /* Ajustez la hauteur maximale selon vos besoins */
   display: block;
   margin: 0 auto; /* Pour centrer l'image horizontalement */
   object-fit: contain;
@@ -87,7 +87,6 @@
   height: 100%;
   display: block;
   margin: 0 auto; /* Pour centrer l'image horizontalement */
-  // margin-top: 18%;
   object-fit: contain;
 }
 
@@ -148,40 +147,8 @@
 }
 
 .card-achat {
-  // border: 1px solid black;
-  // font-family: 'Ubuntu', sans-serif;
-  // border-radius: 5px;
-  // background: #FFFFFF;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 10px;
   margin-bottom: 10px;
   height: 100%;
-
-  // h1 {
-  //   font-family: 'Ubuntu',sans-serif;
-  //   font-weight: 700;
-  // font-size: 2.7rem;
-  // }
-
-  // h2{
-  //   font-family: 'Lato', sans-serif;
-  //   opacity: .7;
-  //   font-weight: 700;
-  //   font-size: 26px;
-  // }
-
-  // h3 {
-  //   font-family: 'Ubuntu',sans-serif;
-  //   font-weight: 600;
-  //   font-size: 2.4rem;
-  // }
-
-  // h4 {
-  //   padding-top: 5%;
-  //   font-family: 'Lato', sans-serif;
-  //   font-size: 1.6rem;
-  // }
-
 }
 
 .card-user {
@@ -190,13 +157,6 @@
   width: 100%;
   // border-top: 1px solid #B0B0B0;
   background: #FFFFFF;
-
-
-  // h2 {
-  //   font-family: 'Ubuntu', sans-serif;
-  //   font-size: 1.4rem;
-  //   font-weight: 700;
-  // }
 }
 
 .titre_recommandation_show_item{
@@ -214,17 +174,6 @@
   flex-wrap: inherit;
   margin-bottom: 30px;
 }
-
-
-// .recommadation {
-//   border: solid red;
-//   // display: grid; /* creéation de la grille  */
-//   // grid-template-columns: 1fr 1fr 1fr; /* nombre de colonne */
-//   // row-gap: 1ch; /* espace en les lignes */
-//   // column-gap: 1ch;
-//   // margin-bottom: 10px;
-// }
-
 
 .card_recommandation_show_item{
   border: 1px solid black;
@@ -245,13 +194,7 @@
   height: 100%;
   object-fit: contain;
 }
-// border: solid red;
-// width: 50%;
-// height: 100%;
-// display: block;
-// margin: 0 auto; /* Pour centrer l'image horizontalement */
-// // margin-top: 18%;
-// object-fit: contain;
+
 
 .info_card_recommandation_show_item{
   // border: solid yellowgreen;
@@ -259,40 +202,4 @@
   flex-direction: column;
   justify-content: center;width: 100%;
   padding-left: 20px;
-
-    // border: solid red;
-    // width: 100%;
-    // height: 100%;
-    // display: block;
-    // margin: 0 auto; /* Pour centrer l'image horizontalement */
-    // // margin-top: 18%;
-    // object-fit: contain;
 }
-
-
-  // display: grid; /* creéation de la grille  */
-  // grid-template-columns: 1fr 1fr; /* nombre de colonne */
-  // row-gap: 1ch; /* espace en les lignes */
-  // column-gap: 1ch;
-  // background: white;
-  // width: 95%;
-
-
-  // h1 {
-  //   font-family: 'Ubuntu',sans-serif;
-  //   font-weight: 700;
-  // font-size: 1.2rem;
-  // }
-
-  // h2{
-  //   font-family: 'Lato', sans-serif;
-  //   opacity: .7;
-  //   font-weight: 700;
-  //   font-size: 15px;
-  // }
-
-  // h3 {
-  //   font-family: 'Ubuntu',sans-serif;
-  //   font-weight: 600;
-  //   font-size: 1rem;
-  // }
