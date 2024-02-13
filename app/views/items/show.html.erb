@@ -118,36 +118,46 @@
       </div>
     </div>
 
-    <h2>Recommandation <%= @famille.name %> </h2>
-
-    <div class="recommadation">
-      <% @items.sample(6).each do |item| %>
-      <div class="card-recommandation">
-        <div>
-<% @items.each do |item| %>
-  <%= link_to famille_item_path(@famille, item) do %>
-    <% if item.photo_1.attached? %>
-      <%= cl_image_tag item.photo_1.key, alt: "photo n°1", class:"card-item-img"%>
-    <% else %>
-      <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
-    <% end %>
-  <% end %>
-<% end %>
-
-        </div>
-        <div>
-          <ul style="list-style-type:none; padding-left:0px; margin-bottom:0px;">
-            <h1><%= item.marque.capitalize %></h1>
-            <h2><%= item.taille %></h2>
-            <h3><%= item.price %>€</h3>
-          </ul>
-        </div>
-      </div>
-      <% end %>
+    <div class="titre_recommandation_show_item">
+      <h2>Recommandation de <%= @famille.name %> </h2>
     </div>
 
+    <div class="container_recommandation_show_item">
+      <%# <div class="recommadation"> %>
+      <% @famille.items.sample(8).each do |item| %>
+        <div class="card_recommandation_show_item">
+          <div class="img_card_recommandation_show_item">
+            <%= link_to famille_item_path(@famille, item) do %>
+              <% if item.photo_1.attached? %>
+                <%= cl_image_tag item.photo_1.key, alt: "photo n°1", class:"card-item-img" %>
+              <% else %>
+                <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
+              <% end %>
+          </div>
+            <% end %>
+            <div class="info_card_recommandation_show_item">
+              <h5><%= item.marque.capitalize %></h5>
+              <h6><%= item.taille %></h6>
+              <h6><%= item.price %>€</h6>
+            </div>
+        </div>
+          <% end %>
+      </div>
+    </div>
   </div>
 
-</div>
+
+
+
+
+
+
+
+            <%# <% end %>
+        <%# <div> %>
+
+        <%# </div> %>
+  <%# </div> %>
+
 
 </body>
