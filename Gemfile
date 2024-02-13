@@ -35,7 +35,7 @@ gem 'simple_form', github: 'heartcombo/simple_form'
 # Gem Rajouté
 gem 'cloudinary'
 gem 'devise'
-gem 'google-webfonts-rails'
+# gem 'google-webfonts-rails'
 gem 'pundit'
 gem 'geocoder'
 gem 'stimulus-rails'
