@@ -81,40 +81,47 @@
 </div>
           </div>
 
+
+    <div class="container_filtre_index_familles">
+
+    <div class="filtre_choix_famille_index_familles">
+      <%= simple_form_for :filter, url: familles_path, method: :get do |f| %>
+        <div class="form-check">
+          <%= f.input :familles,
+                      collection: Famille.all.map { |famille| [famille.name, famille.id] },
+                      as: :check_boxes
+          %>
+        </div>
+    </div>
+
+  <div class="filtre_choix_prix_index_familles">
+    <div class="form-group">
+      <%= f.label :min_price, "Prix minimum" %>
+      <%= f.input :min_price, as: :numeric, input_html: { class: 'form-control' } %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :max_price, "Prix maximum" %>
+      <%= f.input :max_price, as: :numeric, input_html: { class: 'form-control' } %>
+    </div>
+  </div>
+
+  <div class="filtre_choix_taille_index_familles">
+      <!-- Champ de filtre pour la taille minimale -->
+    <%= f.input :min_size, label: "Taille minimale" %>
+
+    <!-- Champ de filtre pour la taille maximale -->
+    <%= f.input :max_size, label: "Taille maximale" %>
+
+    <%= f.button :submit, "Filter", class: "btn btn-primary" %>
+    <% end %>
+
+      <%= link_to 'Réinitialiser' , familles_path , class: "btn btn-primary"%>
+  </div>
+</div>
+
   <div class="container">
 
-<%= simple_form_for :filter, url: familles_path, method: :get do |f| %>
-  <div class="form-check">
-    <%= f.input :familles,
-                collection: Famille.all.map { |famille| [famille.name, famille.id] },
-                as: :check_boxes
-    %>
-  </div>
-  <div class="form-group">
-    <%= f.label :min_price, "Prix minimum" %>
-    <%= f.input :min_price, as: :numeric, input_html: { class: 'form-control' } %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :max_price, "Prix maximum" %>
-    <%= f.input :max_price, as: :numeric, input_html: { class: 'form-control' } %>
-  </div>
-
-    <!-- Champ de filtre pour la taille minimale -->
-  <%= f.input :min_size, label: "Taille minimale" %>
-
-  <!-- Champ de filtre pour la taille maximale -->
-  <%= f.input :max_size, label: "Taille maximale" %>
-
-  <%= f.button :submit, "Filter", class: "btn btn-primary" %>
-  <% end %>
-
-    <%= link_to 'Réinitialiser' , familles_path , class: "btn btn-primary"%>
-
-
-
-    <%# <div class="card-store"> %>
-      <%# <div class="card-index"> %>
 
       <div class="container_recommandation_index_familles">
         <% @familles.each do |famille| %>
@@ -144,6 +151,4 @@
             <% end %>
         <% end %>
       </div>
-
-        <%# </div> %>
 </div>

@@ -1,7 +1,32 @@
 
+.container_filtre_index_familles {
+  // border: solid black;
+  display: flex;
+  width: 15%;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+
+}
+
+.filtre_choix_famille_index_familles{
+  // border: solid blue;
+
+}
+
+.filtre_choix_prix_index_familles{
+  // border: solid red;
+}
+
+.filtre_choix_taille_index_familles{
+  // border: solid yellowgreen;
+
+}
+
+
 .container_recommandation_index_familles {
     // border: solid black;
-    // border-top: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -11,6 +36,9 @@
 .titre_recommandation_index_familles{
   // border: solid green;
   border-top: 1px solid black;
+  padding-top: 20px;
+  padding-bottom: 15px;
+
   width: 100%;
 }
 
@@ -22,7 +50,7 @@
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   width: 300px;
   height: 150px;
 }
