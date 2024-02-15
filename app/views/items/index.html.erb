@@ -2,11 +2,14 @@
 <div class="container">
 <%#   <div class="row mt-5">
     <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
-  <div class="banner">
-    <h1>Les Planches</h1>
-  </div>
+  <%# <div class="banner"> %>
+    <div class= "titre_index_items">
+      <h1>Les Planches</h1>
+    </div>
+  <%# </div> %>
 
-  <div class='card-titre'>
+
+  <div class='description_index_items'>
     <h2> <%= @famille.name.capitalize %> </h2>
     <h5> <%= @famille.info.capitalize %> </h5>
 
@@ -19,40 +22,44 @@
     <% end %>
   </div>
 
-  <div class="card-store">
+  <%# <div class="card-store"> %>
 
+    <div class="container_recommandation_index_items">
       <% @items.each do |item| %>
-        <div class="card-index">
-          <%=link_to 'profil', profil_path(item) %>
-
+      <div class="card_recommandation_index_items">
+        <div class="img_card_recommandation_index_items">
+          <%# <div class="card-index"> %>
+          <%# <%=link_to 'profil', profil_path(item) %>
           <%= link_to famille_item_path(@famille, item) do %>
             <% if item.photo_1.attached? %>
-              <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
+              <%= cl_image_tag item.photo_1.key, class:"card-item-img" %>
             <% else %>
               <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
             <% end %>
-          <% end %>
-
-          <ul class="info-index-item">
-            <li>Marque :<%= item.marque.capitalize %></li>
-            <li>Taille :<%= item.taille %></li>
-            <li>Prix :<%= item.price %>€</li>
-            <p>Mise en ligne le :<%= item.created_at.strftime("%d/%m/%Y") %></p>
-          </ul>
-
-          <% if policy(item).update? %>
-            <div class="bouton-user-item">
-              <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
-            </div>
-          <% end %>
-
-          <% if policy(item).destroy? %>
-            <div class="bouton-user-item">
-              <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
-            </div>
-          <% end %>
+            <% end %>
         </div>
-      <% end %>
-  </div>
 
+        <div class="info_card_recommandation_index_items">
+          <ul class="info-index-item">
+            <li><%= item.marque.capitalize %></li>
+            <li><%= item.taille %></li>
+            <li><%= item.price %>€</li>
+            <p><%= item.created_at.strftime("%d/%m/%Y")%></p>
+          </ul>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <%# </div> %>
 </div>
+          <%# <% if policy(item).update? %
+            <%# <div class="bouton-user-item"> %>
+              <%# <%= link_to 'Modifier', edit_famille_item_path(@famille, item) %>
+            <%# </div> %>
+          <%# <% end %>
+
+          <%# <% if policy(item).destroy? %>
+            <%# <div class="bouton-user-item"> %>
+              <%# <%= link_to 'Supprimer', famille_item_path(@famille, item), method: :delete, data: {confirm: "tu es sure?"} %>
+            <%# </div> %>
+          <%# <% end %>

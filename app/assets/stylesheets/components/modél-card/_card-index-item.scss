@@ -16,6 +16,8 @@ body{
 }
 
 .card-store {
+    border: solid blue;
+
   display: grid; /* creéation de la grille  */
   grid-template-columns: 1fr 1fr 1fr; /* nombre de colonne */
   row-gap: 1ch; /* espace en les lignes */
