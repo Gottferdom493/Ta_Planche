@@ -1,12 +1,9 @@
 
 <div class="container">
-<%#   <div class="row mt-5">
-    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
-  <%# <div class="banner"> %>
-    <div class= "titre_index_items">
-      <h1>Les Planches</h1>
-    </div>
-  <%# </div> %>
+  <div class= "titre_index_items">
+    <h1>Les Planches</h1>
+  </div>
+
 
 
   <div class='description_index_items'>
@@ -22,35 +19,28 @@
     <% end %>
   </div>
 
-  <%# <div class="card-store"> %>
-
-    <div class="container_recommandation_index_items">
-      <% @items.each do |item| %>
-      <div class="card_recommandation_index_items">
-        <div class="img_card_recommandation_index_items">
-          <%# <div class="card-index"> %>
-          <%# <%=link_to 'profil', profil_path(item) %>
-          <%= link_to famille_item_path(@famille, item) do %>
-            <% if item.photo_1.attached? %>
-              <%= cl_image_tag item.photo_1.key, class:"card-item-img" %>
-            <% else %>
-              <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
-            <% end %>
-            <% end %>
-        </div>
-
-        <div class="info_card_recommandation_index_items">
-          <ul class="info-index-item">
-            <li><%= item.marque.capitalize %></li>
-            <li><%= item.taille %></li>
-            <li><%= item.price %>€</li>
-            <p><%= item.created_at.strftime("%d/%m/%Y")%></p>
-          </ul>
-        </div>
+  <div class="container_recommandation_index_items">
+    <% @items.each do |item| %>
+    <div class="card_recommandation_index_items">
+      <div class="img_card_recommandation_index_items">
+        <%= link_to famille_item_path(@famille, item) do %>
+          <% if item.photo_1.attached? %>
+            <%= cl_image_tag item.photo_1.key, class:"card-item-img" %>
+          <% else %>
+            <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
+          <% end %>
+          <% end %>
       </div>
-      <% end %>
+
+      <div class="info_card_recommandation_index_items">
+          <h5><%= item.marque.capitalize %></h5>
+          <h6><%= item.taille %></h6>
+          <h6><%= item.price %>€</h6>
+          <p><%= item.created_at.strftime("%d/%m/%Y")%></p>
+      </div>
     </div>
-  <%# </div> %>
+    <% end %>
+  </div>
 </div>
           <%# <% if policy(item).update? %
             <%# <div class="bouton-user-item"> %>

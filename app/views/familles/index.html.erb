@@ -1,5 +1,5 @@
 
-<%# <div class="container"> %>
+<div class="c:ontainer">
   <%# <div class="row mt-5"> %>
     <%# <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
       <%# <div class="banner_homepage"> %>
@@ -113,29 +113,37 @@
 
 
 
-    <div class="card-store">
-      <div class="card-index">
+    <%# <div class="card-store"> %>
+      <%# <div class="card-index"> %>
 
+      <div class="container_recommandation_index_familles">
         <% @familles.each do |famille| %>
+              <div class="titre_recommandation_index_familles">
           <h2><%= famille.name %></h2>
-          <ul>
+      </div>
+
             <% famille.items.each do |item| %>
-              <p>Mise en ligne le :<%= item.created_at.strftime("%d/%m/%Y") %></p>
-              <li><%= item.name %></li>
-              <li><%= item.taille %></li>
-              <li><%= item.price %>€</li>
+          <div class="card_recommandation_index_familles">
+              <div class="img_card_recommandation_index_familles">
                 <%= link_to famille_item_path(famille, item), class: "card-link" do %>
                 <% if item.photo_1.attached? %>
-                  <%= cl_image_tag item.photo_1.key, class:"card-index-img" %>
+                  <%= cl_image_tag item.photo_1.key, class:"card-item-img" %>
                 <% else %>
                   <img class="img-item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="photo">
                 <% end %>
-              <% end %>
-
+              </div>
             <% end %>
-          </ul>
-        <% end %>
 
+            <div class="info_card_recommandation_index_familles">
+              <h6><%= item.created_at.strftime("%d/%m/%Y") %></h6>
+              <h6><%= item.name %></h6>
+              <h6><%= item.taille %></h6>
+              <h6><%= item.price %>€</h6>
+            </div>
+        </div>
+            <% end %>
+        <% end %>
       </div>
-    </div>
-  </div>
+
+        <%# </div> %>
+</div>
