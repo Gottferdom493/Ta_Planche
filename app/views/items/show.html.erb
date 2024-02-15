@@ -135,6 +135,7 @@
               <h5><%= item.marque.capitalize %></h5>
               <h6><%= item.taille %></h6>
               <h6><%= item.price %>€</h6>
+              <h6><%= item.created_at.strftime("%d/%m/%Y")%></h6>
             </div>
         </div>
           <% end %>

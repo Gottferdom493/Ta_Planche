@@ -22,9 +22,7 @@
     <% end %>
   </div>
 
-  <div class="card-store">
-
-
+  <%# <div class="card-store"> %>
 
     <div class="container_recommandation_index_items">
       <% @items.each do |item| %>
@@ -41,19 +39,18 @@
             <% end %>
         </div>
 
-          <div class="info_card_recommandation_index_items">
-            <ul class="info-index-item">
-              <li>Marque :<%= item.marque.capitalize %></li>
-              <li>Taille :<%= item.taille %></li>
-              <li>Prix :<%= item.price %></li>
-              <p>Mise en ligne le :<%= item.created_at.strftime("%d/%m/%Y")%></p>
-            </ul>
+        <div class="info_card_recommandation_index_items">
+          <ul class="info-index-item">
+            <li><%= item.marque.capitalize %></li>
+            <li><%= item.taille %></li>
+            <li><%= item.price %>€</li>
+            <p><%= item.created_at.strftime("%d/%m/%Y")%></p>
+          </ul>
         </div>
       </div>
       <% end %>
     </div>
-
-
+  <%# </div> %>
 </div>
           <%# <% if policy(item).update? %
             <%# <div class="bouton-user-item"> %>
