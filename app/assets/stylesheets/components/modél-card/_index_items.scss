@@ -3,12 +3,14 @@
   padding-top: 30px;
 }
 
-.titre_recommandation_show_item{
+.description_index_items{
   // border: solid green;
   margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 25px;
+  border-top: 1px solid black;
+  padding-top: 30px;
+  border-bottom: 1px solid black;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .container_recommandation_index_items{
