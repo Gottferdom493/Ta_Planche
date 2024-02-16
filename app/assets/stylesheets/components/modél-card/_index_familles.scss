@@ -1,12 +1,19 @@
 
-.container_filtre_index_familles {
+.container_filtre_recommandation{
   // border: solid black;
+  display: flex;
+}
+
+
+.container_filtre_index_familles {
+  // border: solid green;
   display: flex;
   width: 15%;
   flex-direction: column;
   margin-left: 5px;
   margin-right: 5px;
   padding: 10px;
+  width: 350px;
 
 }
 
@@ -26,7 +33,7 @@
 
 
 .container_recommandation_index_familles {
-    // border: solid black;
+    // border: solid blueviolet;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
