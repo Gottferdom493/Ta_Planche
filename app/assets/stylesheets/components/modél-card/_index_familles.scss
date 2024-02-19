@@ -1,0 +1,110 @@
+
+.container_filtre_recommandation{
+  // border: solid black;
+  display: flex;
+  margin-top: 30px;
+}
+
+
+.container_filtre_index_familles {
+  // border: solid green;
+  display: flex;
+  // width: 15%;
+  flex-direction: column;
+  // margin-left: 5px;
+  margin-right: 50px;
+  padding: 10px;
+  width: 350px;
+}
+
+
+
+// .filtre_choix_famille_index_familles{
+//   // border: solid blue;
+// }
+
+// .filtre_choix_prix_index_familles{
+//   // border: solid red;
+// }
+
+// .filtre_choix_taille_index_familles{
+//   // border: solid yellowgreen;
+// }
+
+.container_btn_filtre_index_familles{
+  // border: solid yellowgreen;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.btn_filtre_index_familles{
+  background-color: #DCDCDC;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 8px;
+  color: black;
+  height: 100%;
+  text-decoration: none;
+  width: 105px;
+}
+
+.btn_filtre_index_familles:hover{
+  // transition: 1s;
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid yellowgreen;
+  border-radius: 8px;
+  color: black;
+  height: 100%;
+  text-decoration: none;
+  width: 105px;
+}
+
+.container_recommandation_index_familles {
+    // border: solid blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.titre_recommandation_index_familles{
+  // border: solid green;
+  border-top: 1px solid black;
+  padding-top: 20px;
+  padding-bottom: 15px;
+
+  width: 100%;
+}
+
+.card_recommandation_index_familles{
+  // border: solid blue;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  margin-bottom: 30px;
+  width: 300px;
+  height: 150px;
+}
+
+.img_card_recommandation_index_familles{
+  // border: solid pink;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.info_card_recommandation_index_familles{
+  // border: solid yellowgreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;width: 100%;
+  padding-left: 20px;
+}
