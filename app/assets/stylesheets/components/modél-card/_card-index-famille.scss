@@ -5,6 +5,9 @@
 .container-card-famille {
   display: flex;
   align-items: center;
+
+  border-top: 1px solid black;
+  margin-top: 30px;
   // border: 3px solid green;
 
   // column-gap: 1ch; /* espace entre les colonnes */
@@ -18,7 +21,6 @@
   flex-direction: column;
   // border: 2px solid blue;
 
-  // border: 1px solid black;
   // border-radius: 5px;
   // background: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);

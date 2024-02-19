@@ -4,31 +4,33 @@
     <%# <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4"> %>
       <%# <div class="banner_homepage"> %>
       <%# </div> %>
-        <div class="banner">
-          <h1> Famille de Planche </h1>
+
+        <div class="titre_index_items">
+          <h1> <span>&#129305;</span> Trouve ta planche
             <% if user_signed_in? %>
-              <p>
-                <span>&#129305;</span>
-                  Bonjour
                 <%= current_user.nickname.capitalize %>
                 <span>&#129305;</span>
               </p>
+              <% else %>
+              <span>&#129305;</span>
             <% end %>
+          </h1>
         </div>
-<%# <div class="box-card">
-</div> %>
-<%# <div class="container-test"> %>
 
 <!-- app/views/familles/index.html.erb -->
-<div id="temperature"></div>
+<%# <div id="temperature"></div> %>
 
-  <% if policy(Famille).create? %>
-    <div class="bouton-admin">
-    <%= link_to 'Ajouter une Famille' , new_famille_path %>
-  <% end %>
-</div>
+  <div class="container-card-famille">
 
-          <div class="container-card-famille">
+<%# ----------- Bouton User pour ajout de famille ----------- %>
+  <%# <% if policy(Famille).create? %>
+    <%# <div class="bouton-admin"> %>
+    <%# <%= link_to 'Ajouter une Famille' , new_famille_path %>
+    <%# </div> %>
+  <%# <% end %>
+<%# -----------Fin Bouton User pour ajout de famille ----------- %>
+
+
             <% @familles.each do |famille| %>
               <div class="card-famille-index">
 
@@ -45,37 +47,34 @@
                 <div class="titre-index-famille">
                   <h2><%= famille.name.capitalize %></h2>
                 </div>
-                <div class="container-btn">
-                  <% if famille.user == current_user %>
-                    <div class="bouton-user-famille">
-                      <% if policy(famille).update? %>
-                        <td><%= link_to 'edite', edit_famille_path(famille) %></td>
-                      <% end %>
-                    </div>
-                    <% if policy(famille).destroy? %>
-                      <div class="bouton-user-famille">
-                        <td><%= link_to 'supp', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %></td>
-                      </div>
-                    <% end %>
-                  <% end %>
-                </div>
+
+<%# ----------- Bouton User pour Modiffier et Supprimer la famille ----------- %>
+                <%# <div class="container-btn"> %>
+                  <%# <% if famille.user == current_user %>
+                    <%# <div class="bouton-user-famille"> %>
+                      <%# <% if policy(famille).update? %>
+                        <%# <td><%= link_to 'edite', edit_famille_path(famille) %></td>
+                      <%# <% end %>
+                    <%# </div> %>
+                    <%# <% if policy(famille).destroy? %>
+                      <%# <div class="bouton-user-famille"> %>
+                        <%# <td><%= link_to 'supp', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %></td>
+                      <%# </div> %>
+                    <%# <% end %>
+                  <%# <% end %>
+                <%# </div> %>
+<%# ----------- Fin Bouton User pour Modiffier et Supprimer la famille----------- %>
+
           </div>
 </div>
-                  <%# </div> %>
 
-<%# <div class="box-titre-btn"> %>
-            <%# <div class="titre-index-famille"> %>
-              <%# <h2><%= famille.name.capitalize %></h2>
-            <%# </div> %>
-
-
-
-<%# </div> %>
-
+<%# ----------- Bouton Admin pour Modiffier et Supprimer la famille ----------- %>
               <%# <div> %>
                 <%# <%= link_to 'Modifier', edit_famille_path(famille)%>
                 <%# <%= link_to 'Supprimer', famille_path(famille), method: :delete, data: {confirm: "tu es sure?"} %>
               <%# </div> %>
+<%# ----------- Fin Bouton Admin pour Modiffier et Supprimer la famille----------- %>
+
             <% end %>
             </div>
 </div>
@@ -91,8 +90,7 @@
         <div class="form-check">
           <%= f.input :familles,
                       collection: Famille.all.map { |famille| [famille.name, famille.id] },
-                      as: :check_boxes
-          %>
+                      as: :check_boxes %>
         </div>
     </div>
 
@@ -115,10 +113,12 @@
     <!-- Champ de filtre pour la taille maximale -->
     <%= f.input :max_size, label: "Taille maximale" %>
 
-    <%= f.button :submit, "Filter", class: "btn btn-primary" %>
+<div class="container_btn_filtre_index_familles">
+    <%= f.button :submit, "Filter", class: "btn_filtre_index_familles" %>
+    <%= link_to 'Réinitialiser' , familles_path , class: "btn_filtre_index_familles" %>
+</div>
     <% end %>
 
-      <%= link_to 'Réinitialiser' , familles_path , class: "btn btn-primary"%>
   </div>
 </div>
 

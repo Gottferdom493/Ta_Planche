@@ -2,35 +2,66 @@
 .container_filtre_recommandation{
   // border: solid black;
   display: flex;
+  margin-top: 30px;
 }
 
 
 .container_filtre_index_familles {
   // border: solid green;
   display: flex;
-  width: 15%;
+  // width: 15%;
   flex-direction: column;
-  margin-left: 5px;
-  margin-right: 5px;
+  // margin-left: 5px;
+  margin-right: 50px;
   padding: 10px;
   width: 350px;
-
 }
 
-.filtre_choix_famille_index_familles{
-  // border: solid blue;
 
-}
 
-.filtre_choix_prix_index_familles{
-  // border: solid red;
-}
+// .filtre_choix_famille_index_familles{
+//   // border: solid blue;
+// }
 
-.filtre_choix_taille_index_familles{
+// .filtre_choix_prix_index_familles{
+//   // border: solid red;
+// }
+
+// .filtre_choix_taille_index_familles{
+//   // border: solid yellowgreen;
+// }
+
+.container_btn_filtre_index_familles{
   // border: solid yellowgreen;
-
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
 }
 
+.btn_filtre_index_familles{
+  background-color: #DCDCDC;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 8px;
+  color: black;
+  height: 100%;
+  text-decoration: none;
+  width: 105px;
+}
+
+.btn_filtre_index_familles:hover{
+  // transition: 1s;
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid yellowgreen;
+  border-radius: 8px;
+  color: black;
+  height: 100%;
+  text-decoration: none;
+  width: 105px;
+}
 
 .container_recommandation_index_familles {
     // border: solid blueviolet;
