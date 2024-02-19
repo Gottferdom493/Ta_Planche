@@ -91,6 +91,7 @@
           <%= f.input :familles,
                       collection: Famille.all.map { |famille| [famille.name, famille.id] },
                       as: :check_boxes %>
+          <%= f.input :toutes_les_familles, as: :boolean, label: "Toutes les familles" %>
         </div>
     </div>
 
@@ -115,7 +116,7 @@
 
 <div class="container_btn_filtre_index_familles">
     <%= f.button :submit, "Filter", class: "btn_filtre_index_familles" %>
-    <%= link_to 'Réinitialiser' , familles_path , class: "btn_filtre_index_familles" %>
+    <%# <%= link_to 'Réinitialiser' , familles_path , class: "btn_filtre_index_familles" %>
 </div>
     <% end %>
 
