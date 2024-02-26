@@ -37,23 +37,29 @@
   <% if @items.any? %>
     <% @items.each do |item| %>
       <div class="card_profil_items">
-        <div class="img_info_card">
-          <% if item.url_image.present? %>
-            <%= image_tag item.photo_1.key, class: "item-image" %>
+        <div class="container_img_info_card_show_profil">
+          <div class="img_card_show_profil">
+                          <%= link_to famille_item_path(item.famille_id, item), class: "card-link" do %>
+          <% if item.photo_1.attached? %>
+            <%= image_tag item.photo_1, class: "card-item-img" %>
           <% else %>
             <img class="img_profil_item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
           <% end %>
-          <div class="card_profil_items_form">
+                      <% end %>
+
+          </div>
+
+          <div class="info_card_show_profil">
             <h5><%= item.marque.capitalize %></h5>
             <h6><%= item.price %>€</h6>
             <h6><%= item.taille %></h6>
+        <p><%= item.created_at.strftime("%d/%m/%Y") %></p>
           </div>
-        </div>
-        <p>Mise en ligne le :<%= item.created_at.strftime("%d/%m/%Y") %></p>
         <div class="btn_card_profil_items">
-          <%= link_to 'Apercu', famille_item_path(item.famille_id, item) %>
-          <%= link_to 'Modifier', edit_famille_item_path(item.famille_id, item) %>
+          <%# <%= button_to 'Apercu', famille_item_path(item.famille_id, item) %>
+          <%= button_to 'Modifier', edit_famille_item_path(item.famille_id, item) %>
           <%= button_to "Supprimer", item_path(item), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cet item ?" } %>
+        </div>
         </div>
       </div>
     <% end %>
@@ -61,6 +67,7 @@
     <p>Aucune planche mise en vente</p>
   <% end %>
 </div>
+
 
 
   </div>
