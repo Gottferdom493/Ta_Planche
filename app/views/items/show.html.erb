@@ -71,32 +71,33 @@
       </div>
     </div>
 
-    <div class="container_profil_achat_show_item">
-      <div class="profil_info_show_item">
-
-          <div class="titre_profil_info_show_item">
-            <h2>Infos sur le vendeur :</h2>
-          </div>
-        <div class="container_profil_info_show_item">
-
-        <div class="avatar_profil_info_show_item">
-          <% if @item.user.present? && @item.user.profil.present? %>
-            <% if @item.user.profil.img_profil.attached? %>
-              <%= cl_image_tag(@item.user.profil.img_profil.key, class: "avatar rounded-circle", style: "object-fit: cover; width: 200px; height: 200px;   border: solid black;
-  border-radius: 50%;") %>
-            <% else %>
+<div class="container_profil_achat_show_item">
+  <div class="profil_info_show_item">
+    <div class="titre_profil_info_show_item">
+      <h2>Infos sur le vendeur :</h2>
+    </div>
+    <div class="container_profil_info_show_item">
+      <div class="avatar_profil_info_show_item">
+        <% if @item.user.present? && @item.user.profil.present? %>
+          <% if @item.user.profil.img_profil.attached? %>
+            <%= link_to profil_path(@item.user.profil), class: "avatar-link" do %>
+              <%= cl_image_tag(@item.user.profil.img_profil.key, class: "avatar rounded-circle", style: "object-fit: cover; width: 200px; height: 200px;   border: solid black; border-radius: 50%;") %>
+            <% end %>
+          <% else %>
+            <%= link_to profil_path(@item.user.profil), class: "avatar-link" do %>
               <%= image_tag("https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png", class: "avatar rounded-circle", style: "object-fit: cover; width: 200px; height: 200px;") %>
             <% end %>
           <% end %>
-        </div>
+        <% end %>
+      </div>
+      <div class="info_profil_info_show_item">
+        <h6>Pseudo :</h6> <h5><%= @item.user.nickname%></h5>
+        <h6>Email : </h6><h5><%= @item.user.email%></h5>
+      </div>
+    </div>
+  </div>
 
-        <div class="info_profil_info_show_item">
-          <h6>Pseudo :</h6> <h5><%= @item.user.nickname%></h5>
-          <h6>Email : </h6><h5><%= @item.user.email%></h5>
-        </div>
-        </div>
 
-        </div>
       <div class="profil_map_show_item">
         <h2>L'ocalisation de la planche :</h2>
         <%# <%= @item.address%>

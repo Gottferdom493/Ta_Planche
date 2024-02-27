@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root to: 'familles#index'
 
-  resources :items, only: [:edit, :update]
+  # resources :items, only: [:edit, :update]
   resources :profils
 
   resources :familles do
