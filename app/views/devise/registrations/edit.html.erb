@@ -3,7 +3,7 @@
   <div class= "titre_registration">
     <h1>Modifie mes paramètres <%= resource_name.to_s.humanize %></h1>
   </div>
-  
+
   <div class="container_registration">
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -43,7 +43,5 @@
   <div class="container_registration_delete">
     <p> <%= current_user.nickname.capitalize %> veux tu vraiment supprimer ton compte? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
   </div>
-    <%= link_to "Back", :back %>
-
 
 </div>

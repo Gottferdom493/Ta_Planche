@@ -6,7 +6,9 @@
   </div>
 
   <div class="container_new_item">
-    <%= form_for [@famille, @item] do |f| %>
+    <%= form_for [@famille, @item] do |f|%>
+<%# <%= form_for @item, url: famille_item_path(@famille, @item), method: :patch do |f| %>
+
 
       <div class= "titre_secondaire_new_item">
         <h2>Modifi tes photos</h2>
@@ -104,7 +106,7 @@
             <%= f.text_area :detail, placeholder: "La description" %>
           </div>
           </div>
-            <%= f.submit :Création, data: {confirm: "Valide ta planche"} %>
+            <%= f.submit "Modifier", data: {confirm: "Valide ta modification"} %>
           </div>
         </div>
       </div>

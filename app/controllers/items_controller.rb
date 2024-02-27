@@ -33,10 +33,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    authorize @item
 
     if @item.save
       redirect_to famille_item_path(@item.famille, @item)
-      authorize @item
     else
       @familles = Famille.all
       render :new
@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
 
   def destroy
     @item = Item.find(params[:id])

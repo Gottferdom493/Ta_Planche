@@ -7,26 +7,36 @@
 
   <div class="container_edit_profil">
 
-    <div class="edit_profil_img">
-      <%= form_for @profil do |f| %>
+<div class="edit_profil_img">
+  <%= form_for @profil do |f| %>
 
-        <%= f.file_field :img_profil, onchange: "previewImage(this);" %>
-        <img id="photo-famille-preview" class="avatar_edit_profil" src="#" alt=" " />
-        <script type="text/javascript">
-          function previewImage(input) {
-            var preview = document.getElementById('photo-famille-preview');
-            preview.style.display = 'block';
+    <!-- Champ de fichier pour l'image du profil -->
+    <%= f.file_field :img_profil, id: "img_profil_input", onchange: "previewImage(this);" %>
 
-            var reader = new FileReader();
+    <!-- Image actuelle de l'avatar du profil -->
+    <% if @profil.img_profil.attached? %>
+      <%= image_tag @profil.img_profil, class: "avatar_edit_profil", id: "photo-famille-preview", style: "display: block;" %>
+    <% else %>
+      <img id="photo-famille-preview" class="avatar_edit_profil" src="url_de_l_image_par_defaut" alt="Image par défaut" style="display: none;" />
+    <% end %>
 
-            reader.onload = function (e) {
-              preview.src = e.target.result;
-            };
+    <!-- Script JavaScript pour afficher l'aperçu de l'image -->
+    <script type="text/javascript">
+      function previewImage(input) {
+        var preview = document.getElementById('photo-famille-preview');
+        preview.style.display = 'block';
 
-            reader.readAsDataURL(input.files[0]);
-          }
-        </script>
-    </div>
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    </script>
+  </div>
+
 
     <div class="edit_profil_info">
       <%= f.label :nom, "Entre ton nom" %>
@@ -44,9 +54,5 @@
     </div>
   </div>
 
-
-  <div class="bouton-add">
-    <%= link_to'Retour', profil_path %>
-  </div>
 
 </div>

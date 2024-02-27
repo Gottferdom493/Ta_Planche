@@ -32,37 +32,45 @@
     </div>
   </div>
 
-    <h1>Mes Planches en Vente</h1>
-  <div class="profil_items">
+<h1>Mes Planches en Vente</h1>
+<div class="profil_items">
+  <% if @items.any? %>
+    <% @items.each do |item| %>
+      <div class="card_profil_items">
+        <div class="container_img_info_card_show_profil">
+          <div class="img_card_show_profil">
+                          <%= link_to famille_item_path(item.famille_id, item), class: "card-link" do %>
+          <% if item.photo_1.attached? %>
+            <%= image_tag item.photo_1, class: "card-item-img" %>
+          <% else %>
+            <img class="img_profil_item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
+          <% end %>
+                      <% end %>
 
-      <% @items.each do |item| %>
-    <div class="card_profil_items">
-        <%# <ul> %>
-      <div class="img_info_card">
+          </div>
 
-<% if item.url_image.present? %>
-  <%= image_tag @item.photo_1.key, class: "item-image" %>
-<% else %>
-  <img class="img_profil_item" src="https://res.cloudinary.com/dx8iv40ym/image/upload/v1661785315/pas_d_images_tritoq.png" alt="pas de photo">
-<% end %>
+          <div class="info_card_show_profil">
+            <h5><%= item.marque.capitalize %></h5>
+            <h6><%= item.price %>€</h6>
+            <h6><%= item.taille %></h6>
+        <p><%= item.created_at.strftime("%d/%m/%Y") %></p>
+          </div>
+        <div class="btn_card_profil_items">
+          <%# <%= button_to 'Apercu', famille_item_path(item.famille_id, item) %>
+          <%# <%= button_to'Modifier', edit_item_path(item) %> %>
+          <%= button_to "Modifier", edit_item_path(item), method: :get %>
 
-        <div class="card_profil_items_form">
-          <h5><%= item.marque.capitalize %></h5>
-          <h6><%= item.price%>€</h6>
-          <h6><%= item.taille %></h6>
+          <%# <%= button_to 'Modifier', edit_famille_item_path(item.famille_id, item) %>
+          <%= button_to "Supprimer", item_path(item), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cet item ?" } %>
+        </div>
         </div>
       </div>
-          <p>Mise en ligne le :<%= item.created_at.strftime("%d/%m/%Y") %></p>
-          <div class="btn_card_profil_items">
-            <%= link_to 'Apercu', famille_item_path(item.famille_id, item) %>
-            <%= link_to 'Modifier', edit_famille_item_path(item.famille_id, item) %>
-            <%= button_to "Supprimer", item_path(item), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cet item ?" } %>
-          </div>
-        <%# </ul> %>
-    </div>
-      <% end %>
+    <% end %>
+  <% else %>
+    <p>Aucune planche mise en vente</p>
+  <% end %>
+</div>
 
-  </div>
 
 
   </div>

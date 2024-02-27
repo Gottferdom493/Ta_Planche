@@ -3,12 +3,14 @@
   border: solid 1px black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 15px;
-  width: 30%;
+  // width: 30%;
+  width: 350px;
+  height: 150px;
   padding-left: 0px;
   padding-bottom: 5px;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .card_profil_items:hover {
@@ -23,27 +25,44 @@
   object-position: center; /* centrer l'image dans le conteneur */
 }
 
-.img_info_card{
+.container_img_info_card_show_profil{
   // border: solid 1px red;
   display: flex;
-  justify-content: space-around;
+  height: 100%;
 }
 
-.card_profil_items_form{
-  // border: solid 1px green;
-  width: 50%; /* définir la largeur de l'image */
+.img_card_show_profil{
+  // border: solid blueviolet;
+  width: 30%; /* définir la largeur de l'image */
+  padding: 10px;
+  border-radius: 10px;
+  width: 70%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.info_card_show_profil{
+  // border: solid green;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
 }
 
-p{
-  margin-bottom: 5px;
-}
-
 .btn_card_profil_items{
+  // border: solid blue;
+  width: 100px;
+  padding: 10px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 5px;
 }
+
+// p{
+//   // margin-bottom: 5px;
+// }
