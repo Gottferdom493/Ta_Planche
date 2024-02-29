@@ -1,47 +1,59 @@
-<h1>Crée ton profil</h1>
 
-    <%= form_for @profil do |f| %>
+<div class="container">
 
+  <div class= "titre_edit_profil">
+    <h1>Création de ton profil</h1>
+  </div>
+
+  <div class="container_edit_profil">
+
+<div class="edit_profil_img">
+  <%= form_for @profil do |f| %>
+
+    <!-- Champ de fichier pour l'image du profil -->
+<%= f.file_field :img_profil, id: "img_profil_input", onchange: "previewImage(this);", placeholder: "Ajoute ta photo" %>
+
+
+    <!-- Image actuelle de l'avatar du profil -->
+    <% if @profil.img_profil.attached? %>
+      <%= image_tag @profil.img_profil, class: "avatar_edit_profil", id: "photo-famille-preview", style: "display: block;" %>
+    <% else %>
+      <img id="photo-famille-preview" class="avatar_edit_profil" src="url_de_l_image_par_defaut" alt="Image par défaut" style="display: none;" />
+    <% end %>
+
+    <!-- Script JavaScript pour afficher l'aperçu de l'image -->
+    <script type="text/javascript">
+      function previewImage(input) {
+        var preview = document.getElementById('photo-famille-preview');
+        preview.style.display = 'block';
+
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    </script>
+  </div>
+
+
+    <div class="edit_profil_info">
       <%= f.label :nom, "Entre ton nom" %>
       <%= f.text_field :nom %>
 
       <%= f.label :prenom, "Entre ton prenoms" %>
       <%= f.text_field :prenom %>
 
-      <%# <%= f.label :email, "Entre ton emails" %> %>
-      <%# <%= f.text_field :email %> %>
-
-      <%# <%= f.label :age, "Entre ton age" %> %>
-      <%# <%= f.text_field :age %> %>
-
-    <div class="container">
-      <%= f.label :date_naissance, "Date de naissance" %>
-      <%= f.date_select :date_naissance, {  order: [:day, :month, :year], start_year: Date.current.year - 100, end_year: Date.current.year, use_month_numbers: true }, { class: "form-control" } %>
-    </div>
-
-      <%= f.file_field :img_profil, onchange: "previewImage(this);" %>
-
+        <%= f.label :date_naissance, "Date de naissance" %>
+      <div class="container_date_naissance">
+        <%= f.date_select :date_naissance, {  order: [:day, :month, :year], start_year: Date.current.year - 100, end_year: Date.current.year, use_month_numbers: true }, { class: "form-control" } %>
+      </div>
       <%= f.submit :Création %>
-
-    <% end %>
-
-<img id="photo-famille-preview" src="#" alt="Aperçu de l'image" style="display:none; max-width: 100%; max-height: 200px; border-radius: 10px" />
-
-<script type="text/javascript">
-  function previewImage(input) {
-    var preview = document.getElementById('photo-famille-preview');
-    preview.style.display = 'block';
-
-    var reader = new FileReader();
-
-    reader.onload = function (e) {
-      preview.src = e.target.result;
-    };
-
-    reader.readAsDataURL(input.files[0]);
-  }
-</script>
-
-  <div class="bouton-add">
-    <%= link_to'Retour', profils_path %>
+      <% end %>
+    </div>
   </div>
+
+
+</div>
