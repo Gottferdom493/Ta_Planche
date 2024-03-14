@@ -41,6 +41,7 @@ gem 'geocoder'
 gem 'stimulus-rails'
 gem 'httparty' # Gem de météo - API Storm Glass
 
+
 # Specify Bundler version
 # gem 'bundler', '~> 2.3.10'
 
