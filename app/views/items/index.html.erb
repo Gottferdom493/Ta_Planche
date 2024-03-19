@@ -20,7 +20,7 @@
   </div>
 
   <div class="container_recommandation_index_items">
-    <% @items.each do |item| %>
+    <% @items.order(created_at: :desc).each do |item| %>
     <div class="card_recommandation_index_items">
       <div class="img_card_recommandation_index_items">
         <%= link_to famille_item_path(@famille, item) do %>

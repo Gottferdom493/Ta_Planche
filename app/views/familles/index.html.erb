@@ -131,7 +131,8 @@
           <h2><%= famille.name %></h2>
       </div>
 
-            <% famille.items.each do |item| %>
+  <%# Trier les items du plus récent au plus ancien avant de les afficher %>
+            <% famille.items.order(created_at: :desc).each do |item| %>
           <div class="card_recommandation_index_familles">
               <div class="img_card_recommandation_index_familles">
                 <%= link_to famille_item_path(famille, item), class: "card-link" do %>

@@ -35,7 +35,8 @@
 <h1>Mes Planches en Vente</h1>
 <div class="profil_items">
   <% if @items.any? %>
-    <% @items.each do |item| %>
+
+    <% @items.order(created_at: :desc).each do |item| %>
       <div class="card_profil_items">
         <div class="container_img_info_card_show_profil">
           <div class="img_card_show_profil">
@@ -57,7 +58,7 @@
           </div>
         <div class="btn_card_profil_items">
           <%# <%= button_to 'Apercu', famille_item_path(item.famille_id, item) %>
-          <%# <%= button_to'Modifier', edit_item_path(item) %> %>
+          <%# <%= button_to'Modifier', edit_item_path(item) %>
           <%= button_to "Modifier", edit_item_path(item), method: :get %>
 
           <%# <%= button_to 'Modifier', edit_famille_item_path(item.famille_id, item) %>
