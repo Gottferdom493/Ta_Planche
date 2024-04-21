@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :profils
   end
 
-
+  get '/regles', to: 'regles#show'
   get '/weather/forecast', to: 'weather#forecast', defaults: { format: 'json' }
 
   # resources :items do

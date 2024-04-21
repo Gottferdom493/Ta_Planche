@@ -17,25 +17,28 @@ class FamillesController < ApplicationController
       elsif famille_ids.present?
         @familles = @familles.where(id: famille_ids)
       end
-    end
 
-    if params[:filter].present? && params[:filter][:min_price].present? && params[:filter][:max_price].present?
-      min_price = params[:filter][:min_price].to_i
-      max_price = params[:filter][:max_price].to_i
+      if params[:filter][:min_price].present? && params[:filter][:max_price].present?
+        min_price = params[:filter][:min_price].to_f
+        max_price = params[:filter][:max_price].to_f
 
-      @familles = @familles.joins(:items).where(items: { price: min_price..max_price })
+        # Filtrer les familles en fonction du prix des articles
+        @familles = @familles.joins(:items).where(items: { price: min_price..max_price })
 
-      # Filtrer par taille minimale
-      if params[:filter][:min_size].present?
-        @familles = @familles.joins(:items).where("items.size >= ?", params[:filter][:min_size])
-      end
+        # Filtrer par taille minimale
+        if params[:filter][:min_size].present?
+          @familles = @familles.joins(:items).where("items.size >= ?", params[:filter][:min_size])
+        end
 
-      # Filtrer par taille maximale
-      if params[:filter][:max_size].present?
-        @familles = @familles.joins(:items).where("items.size <= ?", params[:filter][:max_size])
+        # Filtrer par taille maximale
+        if params[:filter][:max_size].present?
+          @familles = @familles.joins(:items).where("items.size <= ?", params[:filter][:max_size])
+        end
       end
     end
   end
+
+
 
 
   def show
