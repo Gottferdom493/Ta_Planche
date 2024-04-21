@@ -4,6 +4,7 @@ class ReglePolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+
     def show?
       true
     end
