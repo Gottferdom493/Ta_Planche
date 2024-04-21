@@ -20,8 +20,6 @@ Rails.application.routes.draw do
 
   get '/regles', to: 'regles#show'
   get '/weather/forecast', to: 'weather#forecast', defaults: { format: 'json' }
-  get 'bonnes_pratiques/show'
-
 
   # resources :items do
   #   resources :profils
