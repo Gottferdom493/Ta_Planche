@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'calendriers/index'
   # devise_for :users
   devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_scope :user do
@@ -19,6 +20,8 @@ Rails.application.routes.draw do
   end
 
   get '/regles', to: 'regles#show'
+  get '/calendriers', to: 'calendriers#index'
+
   get '/weather/forecast', to: 'weather#forecast', defaults: { format: 'json' }
 
   # resources :items do
