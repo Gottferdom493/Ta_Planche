@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendrier</title>
+</head>
+<body>
+  <h1>Liste des Programmations</h1>
+  <table border="1">
+    <tr>
+      <th>Fin</th>
+      <th>Début</th>
+      <th>Competition</th>
+    </tr>
+    <% @calendriers.each do |calendrier| %>
+      <tr>
+        <td><%= calendrier[:fin] %></td>
+        <td><%= calendrier[:debut] %></td>
+        <td><%= calendrier[:competition] %></td>
+      </tr>
+    <% end %>
+  </table>
+</body>
+</html>
