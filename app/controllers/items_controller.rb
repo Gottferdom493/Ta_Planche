@@ -14,6 +14,13 @@ class ItemsController < ApplicationController
 
     @famille = @item.famille
 
+    @address = {
+      city: @item.city,
+      postal_code: @item.postal_code,
+      address: @item.address,
+      country: @item.country
+    }.compact
+
     @items = Item.where(address: @item.address)
     @markers = @items.geocoded.map do |item|
       {

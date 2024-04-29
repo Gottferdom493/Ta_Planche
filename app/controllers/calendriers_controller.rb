@@ -4,7 +4,7 @@ class CalendriersController < ApplicationController
   def index
     skip_authorization
     # Lire le fichier Excel
-    xlsx = Roo::Excelx.new(File.join(Rails.root, 'public', 'excel', 'calendrier.xlsx'))
+    xlsx = Roo::Excelx.new("#{Rails.root}/public/excel/calendrier.xlsx")
     # Lire la première feuille
     xlsx.default_sheet = xlsx.sheets.first
 
@@ -12,9 +12,9 @@ class CalendriersController < ApplicationController
     @calendriers = []
 
     # Parcourir chaque ligne et extraire les données
-    2.upto(xlsx.last_row) do |line|
-      debut = xlsx.cell(line, 'A')
-      fin = xlsx.cell(line, 'B')
+    3.upto(xlsx.last_row) do |line|
+      debut = xlsx.cell(line, 'A').strftime('%d/%m/%Y')
+      fin = xlsx.cell(line, 'B').strftime('%d/%m/%Y')
       competition = xlsx.cell(line, 'C')
       @calendriers << { debut: debut, fin: fin, competition: competition }
     end
