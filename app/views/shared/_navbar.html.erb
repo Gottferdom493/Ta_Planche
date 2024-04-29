@@ -13,12 +13,19 @@
           <div class="nav-item">
             <%= link_to "Les règles d'or", regles_path, class: "nav-link" %>
           </div>
-          <div class="nav-item">
-            <%= link_to "Ajout ta Planche", new_item_path, class: "nav-link" %>
-          </div>
+
           <div class="nav-item">
             <%= link_to "Calendrier", calendriers_path, class: "nav-link" %>
           </div>
+
+          <div class="nav-item">
+            <% if @familles.present? %>
+              <% first_famille = @familles.first %>
+              <%= link_to "Vents ta plache", new_famille_item_path(first_famille), class: "btn btn-primary"%>
+            <% end %>
+          </div>
+
+
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
