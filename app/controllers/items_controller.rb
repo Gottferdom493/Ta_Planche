@@ -31,10 +31,18 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @famille = Famille.find(params[:famille_id])
-    @item = Item.new
+    if params[:famille_id].present?
+      @famille = Famille.find(params[:famille_id])
+      @item = @famille.items.build
+    else
+      @item = Item.new
+    end
     @familles = Famille.all
     authorize @item
+    # @famille = Famille.find(params[:famille_id])
+    # @item = Item.new
+    # @familles = Famille.all
+    # authorize @item
   end
 
   def create
