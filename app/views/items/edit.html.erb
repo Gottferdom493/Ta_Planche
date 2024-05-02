@@ -1,40 +1,63 @@
-
-<div class=container>
-
-  <div class= "titre_new_item">
+<div class="container">
+  <div class="titre_new_item">
     <h1>Modif ta Planche</h1>
   </div>
 
   <div class="container_new_item">
-    <%= form_for [@famille, @item] do |f|%>
-<%# <%= form_for @item, url: famille_item_path(@famille, @item), method: :patch do |f| %>
-
-
-      <div class= "titre_secondaire_new_item">
-        <h2>Modifi tes photos</h2>
+    <%= form_for [@famille, @item] do |f| %>
+      <div class="titre_secondaire_new_item">
+        <h2>Modifie l'adresse de ta planche</h2>
       </div>
 
-        <div class="container_img_new_item">
-              <div class="input_img_new_item">
-                <%= f.file_field :photo_1, onchange: "previewImage(this, 'preview-1');" %>
-                  <div class="preview_img_new_item">
-                    <img id="preview-1" src="#" alt="Aperçu de l'image 1" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
-                  </div>
-              </div>
+      <div class="container_info_new_item">
+        <div class="info_new_item">
+          <div class="input_info_new_item">
+            <%= f.text_area :address, placeholder: "L'adresse?", value: @item.address %>
+          </div>
 
-                <div class="input_img_new_item">
-                <%= f.file_field :photo_2, onchange: "previewImage(this, 'preview-2');" %>
-                  <div class="preview_img_new_item">
-                    <img id="preview-2" src="#" alt="Aperçu de l'image 2" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
-                  </div>
-                </div>
+          <div class="input_info_new_item">
+            <%= f.text_field :city, placeholder: "La ville?", value: @item.city %>
+          </div>
 
-                <div class="input_img_new_item">
-                <%= f.file_field :photo_3, onchange: "previewImage(this, 'preview-3');" %>
-                  <div class="preview_img_new_item">
-                    <img id="preview-3" src="#" alt="Aperçu de l'image 3" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
-                  </div>
-                </div>
+          <div class="input_info_new_item">
+            <%= f.text_field :postal_code, placeholder: "Le code postal", value: @item.postal_code %>
+          </div>
+
+          <div class="input_info_new_item">
+            <%= f.text_field :country, placeholder: "Le pays", value: @item.country %>
+          </div>
+
+          <div class="container_ligne_paragraphe">
+            <div class="ligne_paragraphe"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="titre_secondaire_new_item">
+        <h2>Modifie tes photos</h2>
+      </div>
+
+      <div class="container_img_new_item">
+        <div class="input_img_new_item">
+          <%= f.file_field :photo_1, onchange: "previewImage(this, 'preview-1');" %>
+          <div class="preview_img_new_item">
+            <img id="preview-1" src="#" alt="Aperçu de l'image 1" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+          </div>
+        </div>
+
+        <div class="input_img_new_item">
+          <%= f.file_field :photo_2, onchange: "previewImage(this, 'preview-2');" %>
+          <div class="preview_img_new_item">
+            <img id="preview-2" src="#" alt="Aperçu de l'image 2" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+          </div>
+        </div>
+
+        <div class="input_img_new_item">
+          <%= f.file_field :photo_3, onchange: "previewImage(this, 'preview-3');" %>
+          <div class="preview_img_new_item">
+            <img id="preview-3" src="#" alt="Aperçu de l'image 3" style="display:none; max-width: 100%; max-height: 200px;border-radius: 10px;" />
+          </div>
+        </div>
 
         <script type="text/javascript">
           function previewImage(input, previewId) {
@@ -50,67 +73,59 @@
             reader.readAsDataURL(input.files[0]);
           }
         </script>
-        </div>
-
-        <div class="container_ligne_paragraphe">
-            <div class="ligne_paragraphe">
-            </div>
-        </div>
-
-      <div class= "titre_secondaire_new_item">
-        <h2>Rajoute les infos de la planche</h2>
-      </div>
-
-        <div class="container_info_new_item">
-          <div class="info_new_item">
-
-            <div class="input_info_new_item">
-              <%= f.label :famille_id, "Choisi ton type de Planche*" %>
-              <%= f.collection_select :famille_id, @familles, :id, :name, prompt: "Choisissez une famille" %>
-            </div>
-
-            <div class="input_info_new_item">
-              <%= f.text_area  :address,  placeholder: "Ton adresse?" %>
-            </div>
-
-            <div class="input_info_new_item">
-              <%= f.text_field :marque,  placeholder: "La marque" %>
-            </div>
-              </div>
-
-          <div class="info2_new_item">
-            <div class="input2_info_new_item">
-              <%= f.text_field :name, placeholder: "Le nom" %>
-            </div>
-
-            <div class="input2_info_new_item">
-              <%= f.text_field :taille, placeholder: "La taille (pouce)" %>
-            </div>
-
-            <div class="input2_info_new_item">
-              <%= f.number_field :price, placeholder: "Le prix en €" %>
-            </div>
-          </div>
       </div>
 
       <div class="container_ligne_paragraphe">
-          <div class="ligne_paragraphe">
-          </div>
+        <div class="ligne_paragraphe"></div>
       </div>
 
-      <div class= "titre_secondaire_new_item">
-        <h2>Modifi la description de ta planche</h2>
+      <div class="titre_secondaire_new_item">
+        <h2>Modifie les infos de la planche</h2>
       </div>
-        <div class="description_new_item">
-          <div class="input_description_new_item">
-            <%= f.text_area :detail, placeholder: "La description" %>
+
+      <div class="container_info_new_item">
+        <div class="info_new_item">
+          <div class="input_info_new_item">
+            <%= f.label :famille_id, "Choisi ton type de Planche*" %>
+            <%= f.collection_select :famille_id, @familles, :id, :name, prompt: "Choisissez une famille" %>
           </div>
+
+          <div class="input_info_new_item">
+            <%= f.text_field :marque,  placeholder: "La marque", value: @item.marque %>
           </div>
-            <%= f.submit "Modifier", data: {confirm: "Valide ta modification"} %>
+        </div>
+
+        <div class="info2_new_item">
+          <div class="input2_info_new_item">
+            <%= f.text_field :name, placeholder: "Le nom", value: @item.name %>
+          </div>
+
+          <div class="input2_info_new_item">
+            <%= f.text_field :taille, placeholder: "La taille (pouce)", value: @item.taille %>
+          </div>
+
+          <div class="input2_info_new_item">
+            <%= f.number_field :price, placeholder: "Le prix en €", value: @item.price %>
           </div>
         </div>
       </div>
+
+      <div class="container_ligne_paragraphe">
+        <div class="ligne_paragraphe"></div>
+      </div>
+
+      <div class="titre_secondaire_new_item">
+        <h2>Modifie la description de ta planche</h2>
+      </div>
+
+      <div class="description_new_item">
+        <div class="input_description_new_item">
+          <%= f.text_area :detail, placeholder: "La description", value: @item.detail %>
+        </div>
+      </div>
+
+      <%= f.submit "Modifier", data: { confirm: "Valide ta modification" } %>
     <% end %>
   </div>
-    <%= link_to'Retour', familles_path %>
+  <%= link_to'Retour', familles_path %>
 </div>

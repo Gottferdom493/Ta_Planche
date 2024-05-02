@@ -16,10 +16,6 @@
             <% end %>
           </h1>
         </div>
-<%= link_to "Page de bonnes pratiques", regles_path %>
-
-
-<%= link_to "Voir les dates", calendriers_path %>
 
 <!-- app/views/familles/index.html.erb -->
 <%# <div id="temperature"></div> %>
@@ -38,9 +34,11 @@
 <%# -----------Fin Bouton User pour ajout de famille ----------- %>
 
 
+      <%# <%= link_to "Créer un nouvel item", new_famille_item_path(@famille), class: "btn btn-primary" %>
+
             <% @familles.each do |famille| %>
               <div class="card-famille-index">
-
+<%# <%= link_to "Créer un nouvel item", new_famille_item_path(famille), class: "btn btn-primary" %>
                 <div class= "img-index-famille">
                   <%= link_to famille_items_path(famille) do %>
                   <% if famille.photo_famille.attached? %>
@@ -135,7 +133,7 @@
       <div class="container_recommandation_index_familles">
         <% @familles.each do |famille| %>
               <div class="titre_recommandation_index_familles">
-          <h2><%= famille.name %></h2>
+          <h2><%= famille.name.capitalize %></h2>
       </div>
 
   <%# Trier les items du plus récent au plus ancien avant de les afficher %>

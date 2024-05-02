@@ -14,6 +14,13 @@ class ItemsController < ApplicationController
 
     @famille = @item.famille
 
+    @address = {
+      city: @item.city,
+      postal_code: @item.postal_code,
+      address: @item.address,
+      country: @item.country
+    }.compact
+
     @items = Item.where(address: @item.address)
     @markers = @items.geocoded.map do |item|
       {
@@ -79,7 +86,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :price, :img_avatar, :photo_1, :photo_2, :photo_3, :url_img2, :url_img3, :url_achat,
+    params.require(:item).permit(:name, :price, :img_avatar, :photo_1, :photo_2, :photo_3, :country, :city, :postal_code,
     :taille, :marque, :detail, :user_id, :matiere, :address, :famille_id)
   end
 

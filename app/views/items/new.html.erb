@@ -8,6 +8,38 @@
     <%= form_for [@famille, @item] do |f| %>
 
       <div class= "titre_secondaire_new_item">
+        <h2>Ajoute l'adresse de ta planche</h2>
+      </div>
+
+<%# inforamtion sur l'adresse %>
+        <div class="container_info_new_item">
+          <div class="info_new_item">
+
+      <div class="input_info_new_item">
+        <%= f.text_area  :address,  placeholder: "L'adresse?" %>
+      </div>
+
+      <div class="input_info_new_item">
+        <%= f.text_field  :city,  placeholder: "La ville?" %>
+      </div>
+
+      <div class="input_info_new_item">
+        <%= f.text_field  :postal_code,  placeholder: "Le code postal" %>
+      </div>
+
+      <div class="input_info_new_item">
+        <%= f.text_field  :country,  placeholder: "Le pays" %>
+      </div>
+
+        <div class="container_ligne_paragraphe">
+            <div class="ligne_paragraphe">
+            </div>
+        </div>
+                </div>
+        </div>
+
+
+      <div class= "titre_secondaire_new_item">
         <h2>Ajoute tes photos</h2>
       </div>
 
@@ -33,6 +65,7 @@
                   </div>
                 </div>
 
+        <%# permet la visulaisation des images %>
         <script type="text/javascript">
           function previewImage(input, previewId) {
             var preview = document.getElementById(previewId);
@@ -64,10 +97,6 @@
             <div class="input_info_new_item">
               <%= f.label :famille_id, "Choisi ton type de Planche*" %>
               <%= f.collection_select :famille_id, @familles, :id, :name, prompt: "Choisissez une famille" %>
-            </div>
-
-            <div class="input_info_new_item">
-              <%= f.text_area  :address,  placeholder: "Ton adresse?" %>
             </div>
 
             <div class="input_info_new_item">

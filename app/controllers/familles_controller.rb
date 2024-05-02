@@ -4,6 +4,7 @@ class FamillesController < ApplicationController
 
 
   def index
+    @famille = Famille.new
     @familles = Famille.all.includes(:items)
 
     # Filtrer pour le type de Famille
@@ -36,6 +37,7 @@ class FamillesController < ApplicationController
         end
       end
     end
+
   end
 
 
