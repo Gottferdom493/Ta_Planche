@@ -19,10 +19,16 @@
           </div>
 
           <div class="nav-item">
+          <%= link_to "Vente", new_item_path, class: "nav-link" %>
+        </li>
+
+        <!-- Si vous êtes sur la page show d'une règle, affichez le bouton "Vends ta planche" -->
+        <% if params[:controller] == "regles" && params[:action] == "show" %>
             <% if @familles.present? %>
               <% first_famille = @familles.first %>
-              <%= link_to "Vents ta plache", new_famille_item_path(first_famille), class: "btn btn-primary"%>
+              <%= link_to "Vends ta planche", new_famille_item_path(first_famille), class: "nav-link btn btn-primary"%>
             <% end %>
+        <% end %>
           </div>
 
 
